@@ -1,2162 +1,675 @@
-<!DOCTYPE html>
-<html lang="zxx">
-  <head>
-    <!-- Meta -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1"
-    />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="Awaiken" />
-    <!-- Page Title -->
-    <title>Fintech - Business Consulting HTML Template</title>
-    <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-    <!-- Google Fonts Css-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap Css -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
-    <!-- SlickNav Css -->
-    <link href="css/slicknav.min.css" rel="stylesheet" />
-    <!-- Swiper Css -->
-    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-    <!-- Font Awesome Icon Css-->
-    <link href="css/all.min.css" rel="stylesheet" media="screen" />
-    <!-- Animated Css -->
-    <link href="css/animate.css" rel="stylesheet" />
-    <!-- Magnific Popup Core Css File -->
-    <link rel="stylesheet" href="css/magnific-popup.css" />
-    <!-- Mouse Cursor Css File -->
-    <link rel="stylesheet" href="css/mousecursor.css" />
-    <!-- Main Custom Css -->
-    <link href="css/custom.css" rel="stylesheet" media="screen" />
-  </head>
-  <body>
-    <!-- Preloader Start -->
-    <div class="preloader">
-      <div class="loading-container">
-        <div class="loading"></div>
-        <div id="loading-icon"><img src="images/loader.svg" alt="" /></div>
-      </div>
-    </div>
-    <!-- Preloader End -->
+<!doctype html>
+<html lang="en">
 
-    <!-- Header Start -->
-    <header class="main-header">
-      <div class="header-sticky">
-        <nav class="navbar navbar-expand-lg">
-          <div class="container">
-            <!-- Logo Start -->
-            <a class="navbar-brand" href="index.html">
-              <img src="images/logo.svg" alt="Logo" />
-            </a>
-            <!-- Logo End -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ethica Holdings | Home</title>
+    <link rel="stylesheet" href="assets/css/font.css">
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .cubeSwiper .swiper-slide {
+            height: 620px;
+            border-radius: 10px;
+            position: relative;
+        }
 
-            <!-- Main Menu Start -->
-            <div class="collapse navbar-collapse main-menu">
-              <div class="nav-menu-wrapper">
-                <ul class="navbar-nav mr-auto" id="menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="blog.html">Blog</a>
-                  </li>
-                  <li class="nav-item submenu">
-                    <a class="nav-link" href="index-video.html#">Pages</a>
-                    <ul>
-                      <li class="nav-item">
-                        <a class="nav-link" href="team.html">Our Team</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="pricing.html">Pricing Plan</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="clients.html">Clients</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="testimonial.html"
-                          >Testimonials</a
-                        >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="image-gallery.html"
-                          >Image Gallery</a
-                        >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="video-gallery.html"
-                          >Video Gallery</a
-                        >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="faqs.html">FAQs</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item highlighted-menu">
-                    <a class="nav-link" href="contact.html">Contact Us</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- Header Btn Start -->
-              <div class="header-btn d-inline-flex">
-                <a href="contact.html" class="btn-default btn-highlighted"
-                  >contact us</a
-                >
-              </div>
-              <!-- Header Btn End -->
-            </div>
-            <!-- Main Menu End -->
-            <div class="navbar-toggle"></div>
-          </div>
-        </nav>
-        <div class="responsive-menu"></div>
-      </div>
-    </header>
-    <!-- Header End -->
+        @media (max-width: 992px) {
+            .cubeSwiper .swiper-slide  {
+                height: 420px;
+            }
+        }
+        
+        .cubeSwiper .swiper-slide img {
+            border-radius: 10px;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
 
-    <!-- Hero Section Start -->
-    <div class="hero hero-bg-image hero-video">
-      <!-- Video Start -->
-      <div class="hero-bg-video">
-        <!-- Selfhosted Video Start -->
-        <!-- <video autoplay muted loop id="myVideo"><source src="images/hero-bg-video.mp4" type="video/mp4"></video> -->
-        <video autoplay muted loop id="myVideo">
-          <source
-            src="https://demo.awaikenthemes.com/assets/videos/fintech-video.mp4"
-            type="video/mp4"
-          />
-        </video>
+        .dropDownMenu {
+            background: #ffffffb6;
+            backdrop-filter: blur(10px);
+        }
 
-        <!-- Selfhosted Video End -->
-
-        <!-- Youtube Video Start -->
-        <!-- <div id="herovideo" class="player" data-property="{videoURL:'74DWwSxsVSs',containment:'.hero-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> -->
-        <!-- Youtube Video End -->
-      </div>
-      <!-- Video End -->
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-12">
-            <!-- Hero Content Start -->
-            <div class="hero-content">
-              <!-- Section Title Start -->
-              <div class="section-title dark-section">
-                <h3 class="wow fadeInUp">welcome to financial</h3>
-                <h1 class="text-anime-style-2" data-cursor="-opaque">
-                  <span>Empowering</span> your financial success journey
-                </h1>
-                <p class="wow fadeInUp" data-wow-delay="0.2s">
-                  Guiding you with expert insights and strategic solutions to
-                  achieve financial growth, stability, and long-term success.
-                </p>
-              </div>
-              <!-- Section Title End -->
-
-              <!-- Hero Content Body Start -->
-              <div class="hero-content-body wow fadeInUp" data-wow-delay="0.4s">
-                <!-- Hero Button Start -->
-                <div class="hero-btn">
-                  <a href="contact.html" class="btn-default">get started</a>
-                </div>
-                <!-- Hero Button End -->
-
-                <!-- Hero Introduction Video Start -->
-                <div class="hero-introduction-video">
-                  <!-- Video Play Button Start -->
-                  <div class="video-play-button">
-                    <a
-                      href="https://www.youtube.com/watch?v=Y-x0efG1seA"
-                      class="popup-video"
-                      data-cursor-text="Play"
-                    >
-                      <img src="images/icon-play.svg" alt="" />
+        #h_scroll_container {
+            min-height: 100vh;
+            display: flex;
+            transform: translateX(0%);
+        }
+        .h_scroll_item {
+            min-width: fit-content !important;
+        }
+    </style>
+</head>
+<body class="bg_body">
+    
+    <div id="content">
+        
+        <section id="nav">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container wrapper">
+                    <a class="navbar-brand" href="#">
+                        <img src="assets/img/logo.png" width="140" alt="ethica holdings">
                     </a>
-                    <p>introduction</p>
-                  </div>
-                  <!-- Video Play Button End -->
-                </div>
-                <!-- Hero Introduction Video End -->
-              </div>
-              <!-- Hero Content Body End -->
-            </div>
-            <!-- Hero Content End -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Hero Section End -->
-
-    <!-- About Us Section Start -->
-    <div class="about-us">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <!-- About Us Images Start -->
-            <div class="about-us-images">
-              <!-- About Image 1 Start -->
-              <div class="about-img-1">
-                <figure class="image-anime reveal">
-                  <img src="images/about-img-1.jpg" alt="" />
-                </figure>
-              </div>
-              <!-- About Image 1 End -->
-
-              <!-- About Image 2 Start -->
-              <div class="about-img-2">
-                <figure class="image-anime reveal">
-                  <img src="images/about-img-2.jpg" alt="" />
-                </figure>
-              </div>
-              <!-- About Image 2 End -->
-
-              <!-- Contact Circle Start -->
-              <div class="contact-circle">
-                <img src="images/contact-us-img.svg" alt="" />
-              </div>
-              <!-- Contact Circle End -->
-            </div>
-            <!-- About Us Images End -->
-          </div>
-
-          <div class="col-lg-6">
-            <!-- About Us Content Start -->
-            <div class="about-us-content">
-              <!-- Section Title Start -->
-              <div class="section-title">
-                <h3 class="wow fadeInUp">about us</h3>
-                <h2 class="text-anime-style-2" data-cursor="-opaque">
-                  Trusted guidance for <span>financial growth</span>
-                </h2>
-                <p class="wow fadeInUp" data-wow-delay="0.2s">
-                  With years of expertise in finance and consulting, we provide
-                  tailored strategies to help you achieve sustainable growth.
-                  Our commitment is to guide you integrity, insight, and a
-                  personalized approach.
-                </p>
-              </div>
-              <!-- Section Title End -->
-
-              <!-- About Content body Start -->
-              <div class="about-content-body">
-                <div class="row align-items-center">
-                  <div class="col-md-6">
-                    <!-- About Content Info Start -->
-                    <div class="about-content-info">
-                      <!-- About Goal Box Start -->
-                      <div
-                        class="about-goal-box wow fadeInUp"
-                        data-wow-delay="0.4s"
-                      >
-                        <div class="icon-box">
-                          <img
-                            src="images/icon-financial-strategies.svg"
-                            alt=""
-                          />
+                    <ul class="navbar-nav gap-1 d-lg-flex d-none">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Investment Criteria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Investor Relations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Road Map</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center navbar_ctas">
+                        <a href="#" class="btn_primary d-sm-inline-flex d-none rounded-pill fs_7">
+                            <span>Investor Login</span>
+                        </a>
+                        <div class="dropdown d-inline-flex">
+                            <button class="btn_transparent dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/img/united-kingdom.png" width="24" height="24" alt="united kingdom flag">
+                            </button>
+                            <ul class="dropdown-menu dropDownMenu dropdown-menu-end border-0 shadow-sm">
+                                <li><a class="dropdown-item d-flex align-items-center gap-1 py-2" href="index.it.html">
+                                    <img src="assets/img/italy.png" width="18" height="18" alt="italian">
+                                    <span class="fs_7">Italian</span>
+                                </a></li>
+                            </ul>
                         </div>
-
-                        <div class="about-goal-box-content">
-                          <h3>financial strategies</h3>
-                          <p>
-                            Tailored plans to meet your unique financial needs
-                            and goals.
-                          </p>
-                        </div>
-                      </div>
-                      <!-- About Goal Box End -->
-
-                      <!-- About Contact Box Start -->
-                      <div
-                        class="about-contact-box wow fadeInUp"
-                        data-wow-delay="0.6s"
-                      >
-                        <div class="icon-box">
-                          <img src="images/icon-phone.svg" alt="" />
-                        </div>
-
-                        <div class="about-contact-content">
-                          <p><a href="tel:658456975">+(658) 456-975</a></p>
-                        </div>
-                      </div>
-                      <!-- About Contact Box End -->
+                        <button class="btn_transparent lg_hidden" data-bs-toggle="offcanvas" data-bs-target="#smallSidebar">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="24" width="24"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+                        </button>
                     </div>
-                    <!-- About Content Info End -->
-                  </div>
+                </div>
+            </nav>
+    
+            <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="smallSidebar" aria-labelledby="smallSidebarLabel">
+                <div class="offcanvas-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="assets/img/logo.png" width="140" alt="ethica holdings">
+                    </a>
+                    <button type="button" class="btn_transparent shadow-none ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="28" width="28"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+                    </button>
+                </div>
+                <div class="offcanvas-body py-1">
+                    <ul class="list-unstyled">
+                        <li><a class="smallSidebarLink py-3" href="#">Home</a></li>
+                        <li><a class="smallSidebarLink py-3" href="#">About</a></li>
+                        <li><a class="smallSidebarLink py-3" href="#">Investment Criteria</a></li>
+                        <li><a class="smallSidebarLink py-3" href="#">Investor Relations</a></li>
+                        <li><a class="smallSidebarLink py-3" href="#">Road Map</a></li>
+                        <li><a class="smallSidebarLink py-3" href="#">Contact</a></li>
+                        <li class="my-3"><a href="#" class="btn_primary w-100 rounded py-3">Investor Login</a></li>
+                        <li class="d-flex align-items-center justify-content-center gap-3">
+                            <a href="#" class="smallSidebarSocialLinks">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" height="18" width="18"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
+                            </a>
+                            <a href="#" class="smallSidebarSocialLinks">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18" width="18"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                            </a>
+                            <a href="#" class="smallSidebarSocialLinks">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="18" width="18"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-                  <div class="col-md-6">
-                    <!-- About Author Box Start -->
-                    <div
-                      class="about-author-box wow fadeInUp"
-                      data-wow-delay="0.4s"
-                    >
-                      <!-- About Info Box Start -->
-                      <div class="about-info-box">
-                        <figure class="image-anime reveal">
-                          <img src="images/author-1.jpg" alt="" />
-                        </figure>
-
-                        <div class="about-author-content">
-                          <h3>Sarah T.</h3>
-                          <p>Co. founder</p>
+        <header>
+            <div class="container wrapper pt-5 mt-4">
+                <div class="row">
+                    <div class="col-lg-6 col-12 my-2">
+                        <h1 class="fs_heading headingTxt display-2">Ethica Holding - <span class="text_dark_primary">Ethical</span> Access to your DeFi Yeild</h1>
+                        <p class="text_dark_em paraTxt fs-5">Where AI shapes the future of capital, uniting ethics with the limitless potential of Decentralized Finance.</p>
+                        <div class="btn_cont d-flex align-items-center gap-2 my-4">
+                            <a href="#" class="btn_dark rounded-pill fs_6">Download Pitch Deck</a>
+                            <a href="#" class="btn_outline_primary rounded-pill fs_6">Schedule Meeting</a>
                         </div>
-                      </div>
-                      <!-- About Info Box End -->
+                    </div>
+                    <div class="col-lg-6 col-12 my-2">
+                        <div class="headerImageCont">
+                            <div class="swiper cubeSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="assets/img/header_1.jpg" height="100%" width="100%" alt="" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/img/header_2.png" height="100%" width="100%" alt="" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/img/header_3.png" height="100%" width="100%" alt="" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/img/header_4.png" height="100%" width="100%" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-                      <!-- About Info List Start -->
-                      <div class="about-info-list">
-                        <ul>
-                          <li>risk management</li>
-                          <li>communication</li>
-                          <li>24/7 support</li>
+        <section id="about" class="bg_dark py-5">
+            <div class="container wrapper my-5">
+                <div class="row">
+                    <div class="col-lg-4 col-12 my-3 py-3">
+                        <div class="sectionTxt text_light_em d-flex align-items-center mb-3 gap-3">
+                            <span class="fs-4 fw-bold">•</span>
+                            <span class="fs_5 text-uppercase">Beyond the noise</span>
+                        </div>
+                        <h2 class="headingTxt text_light_em fs_heading m-0 display-4">Shaping the future of businesses</h2> 
+                    </div>
+                    <div class="col-lg-8 col-12 my-3">
+                        <div class="aboutCard aboutCard_1 rounded-4 p-3 py-4">
+                            <p class="text_light_em fw-light fs_5">We do not chase ephemeral trends. Our mission is to weave a future built on trust, safeguard what truly matters, and guide capital towards deeper meaning.</p>
+                            <p class="text_light_em fw-light fs_5">Ethica Holdings was born from an unwavering belief: financial growth should never sacrifice personal values. We have forged a sanctuary for investors – whether audacious visionaries or seasoned architects – where prosperity flourishes with clarity, stability, and meticulous care.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 my-3">
+                        <div class="aboutCard aboutCard_2 rounded-4 p-3 py-4">
+                            <h3 class="text_light_em fs-2 fw-medium mb-5"><span class="underlinedEffect">56</span>&nbsp;million</h3>
+                            <div class="pt-5">
+                                <div class="my-2 mt-4 text-uppercase text_light_em fs_6">Capital Invested</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 my-3">
+                        <div class="aboutCard aboutCard_3 rounded-4 p-3 py-4">
+                            <h3 class="text_light_em fs-2 fw-medium mb-5"><span class="underlinedEffect">24</span>&nbsp;startups</h3>
+                            <div class="pt-5">
+                                <div class="my-2 mt-4 text-uppercase text_light_em fs_6">business in our portfolio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12 my-3">
+                        <a href="#" class="aboutCard aboutCard_4 d-block text-decoration-none rounded-4 p-3 py-4">
+                            <h3 class="text_light_em fs-2 fw-medium mb-5">Get started</h3>
+                            <div class="pt-5">
+                                <div class="my-2 mt-4 text-uppercase text_light_em fs_6">pitch your startup today</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bot" class="my-5 pt-4 pb-2">
+            <div class="container wrapper">
+                <div class="row my-4">
+                    <div class="col-lg-7 col-md-6 col-12 my-3">
+                       <div class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3">
+                            <span class="fs-4 fw-bold">•</span>
+                            <span class="fs_5 text-uppercase">The Algorithmic Heartbeat</span>
+                        </div>
+                        <h2 class="fs_heading m-0 display-3 headingTxt">It Doesn't Chase, It Deciphers</h2> 
+                        <p class="text_dark_em fs_5 mt-3 paraTxt">In the uninterrupted maelstrom of decentralized markets, where shifting currents and dissonant signals make investment uncertain, our solution emerges. Our investment engine does not merely react: it deciphers. </p>
+                        <p class="text_dark_em fs_5 mb-4 paraTxt2">Thousands of bots, silent sentinels, operate in symbiosis with Artificial Intelligence algorithms, orchestrating micro-operations that minimize risk while maximizing efficiency. A serene and thoughtful system, capable of guiding your capital with surgical precision, in perfect harmony with your values.</p>
+                        <div class="my-3 cta_link">
+                            <a href="#" class="btn_dark rounded-pill fs_6">Get started today!</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-12 my-3">
+                        <div class="botImgCont rounded-5">
+                            <img src="assets/img/ai-bot-trading.png" class="img-fluid" width="100%" height="100%" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="steps" class="my-5 py-4">
+            <div class="container wrapper">
+                <div class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3">
+                    <span class="fs-4 fw-bold">•</span>
+                    <span class="fs_5 text-uppercase">Investment Criteria</span>
+                </div>
+                <h2 class="headingTxt fs_heading m-0 display-3">Sowing for a Lasting Legacy</h2> 
+                <p class="paraTxt text_dark_em fs_5 mb-4 mt-1">Because every capital deserves to be employed with discernment, nourishing both reason and intuition. We do not leap at every opportunity; we ponder, we question, and we seek projects that are authentic, rooted, and worthy of trust.</p>
+                <div class="row stepsCardCont">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+                        <div class="investmentCards p-3 py-4 rounded-4">
+                            <div class="cardIcon mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M20,11H23V13H20V11M1,11H4V13H1V11M13,1V4H11V1H13M4.92,3.5L7.05,5.64L5.63,7.05L3.5,4.93L4.92,3.5M16.95,5.63L19.07,3.5L20.5,4.93L18.37,7.05L16.95,5.63M12,6A6,6 0 0,1 18,12C18,14.22 16.79,16.16 15,17.2V19A1,1 0 0,1 14,20H10A1,1 0 0,1 9,19V17.2C7.21,16.16 6,14.22 6,12A6,6 0 0,1 12,6M14,21V22A1,1 0 0,1 13,23H11A1,1 0 0,1 10,22V21H14M11,18H13V15.87C14.73,15.43 16,13.86 16,12A4,4 0 0,0 12,8A4,4 0 0,0 8,12C8,13.86 9.27,15.43 11,15.87V18Z" /></svg>
+                            </div>
+                            <h3 class="text_dark fs_5 fw-medium">The Sprout of Vision</h3>
+                            <p class="text_dark_em fs_6">If a project lacks a clear reason for being, it is not destined to prosper. We seek ideas that simplify and improve life.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+                        <div class="investmentCards p-3 py-4 rounded-4">
+                            <div class="cardIcon mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M12,5A3.5,3.5 0 0,0 8.5,8.5A3.5,3.5 0 0,0 12,12A3.5,3.5 0 0,0 15.5,8.5A3.5,3.5 0 0,0 12,5M12,7A1.5,1.5 0 0,1 13.5,8.5A1.5,1.5 0 0,1 12,10A1.5,1.5 0 0,1 10.5,8.5A1.5,1.5 0 0,1 12,7M5.5,8A2.5,2.5 0 0,0 3,10.5C3,11.44 3.53,12.25 4.29,12.68C4.65,12.88 5.06,13 5.5,13C5.94,13 6.35,12.88 6.71,12.68C7.08,12.47 7.39,12.17 7.62,11.81C6.89,10.86 6.5,9.7 6.5,8.5C6.5,8.41 6.5,8.31 6.5,8.22C6.2,8.08 5.86,8 5.5,8M18.5,8C18.14,8 17.8,8.08 17.5,8.22C17.5,8.31 17.5,8.41 17.5,8.5C17.5,9.7 17.11,10.86 16.38,11.81C16.5,12 16.63,12.15 16.78,12.3C16.94,12.45 17.1,12.58 17.29,12.68C17.65,12.88 18.06,13 18.5,13C18.94,13 19.35,12.88 19.71,12.68C20.47,12.25 21,11.44 21,10.5A2.5,2.5 0 0,0 18.5,8M12,14C9.66,14 5,15.17 5,17.5V19H19V17.5C19,15.17 14.34,14 12,14M4.71,14.55C2.78,14.78 0,15.76 0,17.5V19H3V17.07C3,16.06 3.69,15.22 4.71,14.55M19.29,14.55C20.31,15.22 21,16.06 21,17.07V19H24V17.5C24,15.76 21.22,14.78 19.29,14.55M12,16C13.53,16 15.24,16.5 16.23,17H7.77C8.76,16.5 10.47,16 12,16Z" /></svg>
+                            </div>
+                            <h3 class="text_dark fs_5 fw-medium">Human Trust, Not Algorithmic</h3>
+                            <p class="text_dark_em fs_6">Behind every great idea, a team pulsates. We invest in people who are proactive, creative, and transparent about what they build.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+                        <div class="investmentCards p-3 py-4 rounded-4">
+                            <div class="cardIcon mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M18,15H16V17H18M18,11H16V13H18M20,19H12V17H14V15H12V13H14V11H12V9H20M10,7H8V5H10M10,11H8V9H10M10,15H8V13H10M10,19H8V17H10M6,7H4V5H6M6,11H4V9H6M6,15H4V13H6M6,19H4V17H6M12,7V3H2V21H22V7H12Z" /></svg>
+                            </div>
+                            <h3 class="text_dark fs_5 fw-medium">Deep Roots, Not Just Sails</h3>
+                            <p class="text_dark_em fs_6">Projects conceived to endure. We seek solid structures, robust systems, and the patience to grow sustainably.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+                        <div class="investmentCards p-3 py-4 rounded-4">
+                            <div class="cardIcon mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" /></svg>
+                            </div>
+                            <h3 class="text_dark fs_5 fw-medium">The Positive Imprint</h3>
+                            <p class="text_dark_em fs_6">We seek projects that bring benefit, access, or care into the world. If we are listening, we like the idea that help can be part of something better.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+                        <div class="investmentCards p-3 py-4 rounded-4">
+                            <div class="cardIcon mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M12 1L21 5V11C21 16.55 17.16 21.74 12 23C6.84 21.74 3 16.55 3 11V5L12 1M12 3.18L5 6.3V11.22C5 15.54 8.25 20 12 21C15.75 20 19 15.54 19 11.22V6.3L12 3.18M16 14V15.5L16 15.59C15.96 15.81 15.78 15.96 15.53 16L15.43 16H8.57L8.47 16C8.22 15.96 8.04 15.81 8 15.59L8 15.5V14H16M17 8L16 13H8L7 8L7 8L9.67 10.67L12 8.34L14.33 10.67L17 8L17 8Z" /></svg>
+                            </div>
+                            <h3 class="text_dark fs_5 fw-medium">Safety, A Non-Negotiable Dogma</h3>
+                            <p class="text_dark_em fs_6">We do not compromise on capital protection. Every protocol and solution must demonstrate absolute integrity and have passed rigorous testing.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+                        <div class="investmentCards p-3 py-4 rounded-4">
+                            <div class="cardIcon mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M13.13 22.19L11.5 18.36C13.07 17.78 14.54 17 15.9 16.09L13.13 22.19M5.64 12.5L1.81 10.87L7.91 8.1C7 9.46 6.22 10.93 5.64 12.5M19.22 4C19.5 4 19.75 4 19.96 4.05C20.13 5.44 19.94 8.3 16.66 11.58C14.96 13.29 12.93 14.6 10.65 15.47L8.5 13.37C9.42 11.06 10.73 9.03 12.42 7.34C15.18 4.58 17.64 4 19.22 4M19.22 2C17.24 2 14.24 2.69 11 5.93C8.81 8.12 7.5 10.53 6.65 12.64C6.37 13.39 6.56 14.21 7.11 14.77L9.24 16.89C9.62 17.27 10.13 17.5 10.66 17.5C10.89 17.5 11.13 17.44 11.36 17.35C13.5 16.53 15.88 15.19 18.07 13C23.73 7.34 21.61 2.39 21.61 2.39S20.7 2 19.22 2M14.54 9.46C13.76 8.68 13.76 7.41 14.54 6.63S16.59 5.85 17.37 6.63C18.14 7.41 18.15 8.68 17.37 9.46C16.59 10.24 15.32 10.24 14.54 9.46M8.88 16.53L7.47 15.12L8.88 16.53M6.24 22L9.88 18.36C9.54 18.27 9.21 18.12 8.91 17.91L4.83 22H6.24M2 22H3.41L8.18 17.24L6.76 15.83L2 20.59V22M2 19.17L6.09 15.09C5.88 14.79 5.73 14.47 5.64 14.12L2 17.76V19.17Z" /></svg>
+                            </div>
+                            <h3 class="text_dark fs_5 fw-medium">Anchored in Reality</h3>
+                            <p class="text_dark_em fs_6">If a project cannot adhere to real-world regulations, we avoid it. We prefer solid foundations for long-term growth, without concealing or circumventing rules.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="bg_dark py-5">
+            <div class="container wrapper my-5">
+                <div class="sectionTxt text_light_em d-flex align-items-center mb-2 gap-3">
+                    <span class="fs-4 fw-bold">•</span>
+                    <span class="fs_5 text-uppercase">Roadmap</span>
+                </div>
+                <div class="row align-items-baseline">
+                    <div class="col-lg-7 col-md-6 col-12 my-2">
+                        <h2 class="headingTxt text_light_em fs_heading m-0 display-3">Our Course: Towards an Enlightened <span class="text_dark_primary">Financial Future</span></h2> 
+                    </div>
+                </div>
+                <div id="h_scroll_container" class="my-3">
+                    <div class="h_scroll_item">
+                        <div class="row align-items-center m-0">
+                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
+                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
+                                    <img src="assets/img/phase_1.gif" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-6 col-12 my-3">
+                                <div class="d-flex align-items-center justify-content-between gap-1">
+                                    <div>
+                                        <p class="text_light_em fs-6 mb-2">Phase 1</p>
+                                        <h3 class="text_light_em fs-2 mb-1">Genesis</h3>
+                                    </div>
+                                    <img src="assets/img/phase_1.gif" class="d-sm-none d-block" height="100" width="100" alt="">
+                                </div>
+                                <div class="heading_line mb-4"></div>
+                                <p class="text_light_em fw-light fs_6_res">The foundational phase, where vision meets its tangible validation. Here, Ethica comes to life, launching its inaugural product, establishing its Swiss stronghold, and proving its model to the first, trusting pioneers.</p>
+                                <ul class="list-unstyled my-2">
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. MVP Launch: AI-powered DeFi investment functionalities, a preview of the revolution.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Swiss Consolidation: Establishment of the Swiss entity, with a complete regulatory architecture (AML/KYC) guaranteeing transparency and security.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. The Guardians of the Future: Over 100 initial clients welcomed through an exclusive and personalized network.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. Internal Architecture: Creation of the proprietary DeFi portfolio, woven with secure and inviolable protocols.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Strategic Alliances: Commencement of partnerships with elite consultants, with a privileged focus on Swiss and Italian experts.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h_scroll_item">
+                        <div class="row align-items-center m-0">
+                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
+                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
+                                    <img src="assets/img/phase_2.gif" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-6 col-12 my-3">
+                                <div class="d-flex align-items-center justify-content-between gap-1">
+                                    <div>
+                                        <p class="text_light_em fs-6 mb-2">Phase 2</p>
+                                        <h3 class="text_light_em fs-2 mb-1">Build</h3>
+                                    </div>
+                                    <img src="assets/img/phase_2.gif" class="d-sm-none d-block" height="100" width="100" alt="">
+                                </div>
+                                <div class="heading_line mb-4"></div>
+                                <p class="text_light_em fw-light fs_6_res">Time to grow, improve, and expand into the world. A full year of development, education, and European scaling – laying the bricks of long-term infrastructure.</p>
+                                <ul class="list-unstyled my-2">
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. Mobile AI investment app: launched with smart contract integration.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Expansion into Germany & France: under MiCA compliance.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. Ethica Academy launched: education with certification.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. White-label DeFi tools: offered to banks.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Incubator program: for ethical DeFi startups.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">6. Strategic partnerships: with financial advisors and banks.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">7. 1,000+ active clients milestone.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h_scroll_item">
+                        <div class="row align-items-center m-0">
+                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
+                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
+                                    <img src="assets/img/phase_3.gif" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-6 col-12 my-3">
+                                <div class="d-flex align-items-center justify-content-between gap-1">
+                                    <div>
+                                        <p class="text_light_em fs-6 mb-2">Phase 3</p>
+                                        <h3 class="text_light_em fs-2 mb-1">Evolve</h3>
+                                    </div>
+                                    <img src="assets/img/phase_3.gif" class="d-sm-none d-block" height="100" width="100" alt="">
+                                </div>
+                                <div class="heading_line mb-4"></div>
+                                <p class="text_light_em fw-light fs_6_res">From platform to ecosystem – a global reach begins. Ethica steps beyond Europe, begins DAO governance, and expands tech into powerful new tools.</p>
+                                <ul class="list-unstyled my-2">
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. Expansion into Asia, MENA, and Latin America.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Quantum-resistant security and AI risk tools: integrated.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. Launch of DAO governance model.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. Cross-chain DeFi platform: activated.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Fortune 500 partnerships: begin.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">6. Growth targets: unicorn-stage valuation and full ecosystem deployment.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h_scroll_item">
+                        <div class="row align-items-center m-0">
+                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
+                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
+                                    <img src="assets/img/phase_4.gif" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-6 col-12 my-3">
+                                <div class="d-flex align-items-center justify-content-between gap-1">
+                                    <div>
+                                        <p class="text_light_em fs-6 mb-2">Phase 4</p>
+                                        <h3 class="text_light_em fs-2 mb-1">Lead</h3>
+                                    </div>
+                                    <img src="assets/img/phase_4.gif" class="d-sm-none d-block" height="100" width="100" alt="">
+                                </div>
+                                <div class="heading_line mb-4"></div>
+                                <p class="text_light_em fw-light fs_6_res">Establishing leadership – ethically, technologically, globally. Now leading Europe’s ethical DeFi space, Ethica focuses on deeper innovation and institutional solutions.</p>
+                                <ul class="list-unstyled my-2">
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. Market leader in EU: for ethical DeFi.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Quantum computing: integrated into investment algorithms.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. Cross-chain automated yield optimization: live.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. Institutional-grade custody and DeFi solutions: launched.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Expansion into Africa and Southeast Asia.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">6. IPO or strategic acquisition planning.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">7. Full ESG & sustainable finance model: deployed.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h_scroll_item">
+                        <div class="row align-items-center m-0">
+                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
+                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
+                                    <img src="assets/img/phase_5.gif" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-6 col-12 my-3">
+                                <div class="d-flex align-items-center justify-content-between gap-1">
+                                    <div>
+                                        <p class="text_light_em fs-6 mb-2">Phase 5</p>
+                                        <h3 class="text_light_em fs-2 mb-1">Connect</h3>
+                                    </div>
+                                    <img src="assets/img/phase_5.gif" class="d-sm-none d-block" height="100" width="100" alt="">
+                                </div>
+                                <div class="heading_line mb-4"></div>
+                                <p class="text_light_em fw-light fs_6_res">Bridging systems, governments, and the human side of AI. From central banks to next-gen AI advisors, this is where Ethica becomes an industry pillar.</p>
+                                <ul class="list-unstyled my-2">
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. Launch of Ethica Global Network: (regional HQs).</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Partnerships with central banks: for CBDC integration.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. Blockchain-based identity system: introduced.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. Next-gen AI financial assistant (human-collaborative): goes live.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Venture Capital arm: launched for early-stage investing.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">6. B-Corp certification: for social impact.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h_scroll_item">
+                        <div class="row align-items-center m-0">
+                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
+                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
+                                    <img src="assets/img/phase_6.gif" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-6 col-12 my-3">
+                                <div class="d-flex align-items-center justify-content-between gap-1">
+                                    <div>
+                                        <p class="text_light_em fs-6 mb-2">Phase 6</p>
+                                        <h3 class="text_light_em fs-2 mb-1">Flourish</h3>
+                                    </div>
+                                    <img src="assets/img/phase_6.gif" class="d-sm-none d-block" height="100" width="100" alt="">
+                                </div>
+                                <div class="heading_line mb-4"></div>
+                                <p class="text_light_em fw-light fs_6_res">Vision realized. Now building a legacy that lasts. Ethica achieves its €100M goal, goes fully decentralized, and begins exploring the next frontier — space, education, and global impact.</p>
+                                <ul class="list-unstyled my-2">
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. €100M+ revenue target: reached.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Full DAO governance: in place.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. Launch of sustainable finance platform.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. Educational institutions: opened in multiple countries.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Space-based financial research: begins.</li>
+                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">6. Global impact report: published.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="company" class="my-5 py-4">
+            <div class="container wrapper">
+                <div class="row companyCardCont">
+                    <div class="col-lg-4 col-12 my-3 py-3">
+                        <div class="sectionTxt text_dark_em d-flex align-items-center mb-3 gap-3">
+                            <span class="fs-4 fw-bold">•</span>
+                            <span class="fs_5 text-uppercase">Industries</span>
+                        </div>
+                        <h2 class="headingTxt text_dark_em fs_heading m-0 display-4">Top industries we invest in</h2> 
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
+                        <div class="industriesCard rounded-4 p-3 py-4">
+                            <img src="assets/img/slide_5.png" class="industriesCardImg" alt="">
+                            <div class="position-relative h-100 d-flex justify-content-between flex-column">
+                                <div>
+                                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">We invest in</div>
+                                    <h3 class="text_dark_em fs-4 fw-medium mb-5">Venture Capital Companies</h3>
+                                </div>
+                                <div class="text-end m-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32"><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
+                        <div class="industriesCard rounded-4 p-3 py-4">
+                            <img src="assets/img/slide_5.png" class="industriesCardImg" alt="">
+                            <div class="position-relative h-100 d-flex justify-content-between flex-column">
+                                <div>
+                                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">We invest in</div>
+                                    <h3 class="text_dark_em fs-4 fw-medium mb-5">Family Offices</h3>
+                                </div>
+                                <div class="text-end m-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32"><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
+                        <div class="industriesCard rounded-4 p-3 py-4">
+                            <img src="assets/img/slide_5.png" class="industriesCardImg" alt="">
+                            <div class="position-relative h-100 d-flex justify-content-between flex-column">
+                                <div>
+                                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">We invest in</div>
+                                    <h3 class="text_dark_em fs-4 fw-medium mb-5">Wealth Management Firms</h3>
+                                </div>
+                                <div class="text-end m-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32"><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
+                        <div class="industriesCard rounded-4 p-3 py-4">
+                            <img src="assets/img/slide_5.png" class="industriesCardImg" alt="">
+                            <div class="position-relative h-100 d-flex justify-content-between flex-column">
+                                <div>
+                                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">We invest in</div>
+                                    <h3 class="text_dark_em fs-4 fw-medium mb-5">DeFi & Web3 Startups</h3>
+                                </div>
+                                <div class="text-end m-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32"><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
+                        <div class="industriesCard rounded-4 p-3 py-4">
+                            <img src="assets/img/slide_5.png" class="industriesCardImg" alt="">
+                            <div class="position-relative h-100 d-flex justify-content-between flex-column">
+                                <div>
+                                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">We invest in</div>
+                                    <h3 class="text_dark_em fs-4 fw-medium mb-5">Regulated Crypto Custody Platforms</h3>
+                                </div>
+                                <div class="text-end m-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32"><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="my-5 py-3">
+            <div class="container wrapper">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6 col-12 my-3">
+                        <div class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3">
+                            <span class="fs-4 fw-bold">•</span>
+                            <span class="fs_5 text-uppercase">Contact</span>
+                        </div>
+                        <h2 class="headingTxt text_dark_em fs_heading m-0 display-4">Ready to work together? Get in touch with us</h2> 
+                        <div class="my-3 cta_cont">
+                            <a href="tel:+412911231234" class="btn_primary cta_btn rounded-pill fs_6">+41 (291) 123 1234</a>
+                            <a href="mailto:info@ethica.holdings" class="btn_outline_primary cta_btn rounded-pill fs_6">Email us</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-12 my-3 px-lg-5">
+                        <form class="contactForm my-4">
+                            <div class="mb-4 contactFormItem">
+                                <input type="text" name="name" id="name" class="form-control shadow-none inputField" placeholder="Your Name">
+                            </div>
+                            <div class="mb-4 contactFormItem">
+                                <input type="text" name="name" id="name" class="form-control shadow-none inputField" placeholder="Your Work Email">
+                            </div>
+                            <div class="mb-4 contactFormItem">
+                                <input type="text" name="name" id="name" class="form-control shadow-none inputField" placeholder="Your Company Name">
+                            </div>
+                            <div class="mb-4 contactFormItem">
+                                <textarea name="name" id="name" class="form-control shadow-none inputField" placeholder="Your Message"></textarea>
+                            </div>
+                            <div class="mb-4 contactFormItem pt-2">
+                                <button class="btn_dark w-100 rounded py-3">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="footer" class="pt-5 pb-3 bg_dark">
+            <div class="container wrapper">
+                <div class="row my-4 justify-content-between">
+                    <div class="col-lg-5 col-md-6 col-sm-6 col-12 mb-3">
+                        <a href="#" class="sectionTxt d-inline-flex mb-4">
+                            <img src="assets/img/logo_invert.png" width="140" alt="">
+                        </a>
+                        <h2 class="headingTxt text_light_em fs_heading display-6">Shape your <span class="text_dark_primary">business future</span> with us today!</h2> 
+                        <p class="paraTxt text_light_emphasis fw-light mb-4">Let's get your business started with us and shape your future with our strategies and roadmaps. And see the difference in just one year!</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+                        <h4 class="sectionTitle text_light_em fw-medium fs-5 mb-4">Main links</h4>
+                        <ul class="footerLinksCont list-unstyled my-2">
+                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Home</a></li>
+                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">About us</a></li>
+                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Investment Criteria</a></li>
+                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Investors Relations</a></li>
+                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Road Map</a></li>
                         </ul>
-                      </div>
-                      <!-- About Info List End -->
                     </div>
-                    <!-- About Author Box End -->
-                  </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+                        <h4 class="sectionTitle2 text_light_em fw-medium fs-5 mb-4">Quick links</h4>
+                        <ul class="footerLinksCont2 list-unstyled my-2">
+                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Investor Login</a></li>
+                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Download Pitch Deck</a></li>
+                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Schedule a Meeting</a></li>
+                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
-              <!-- About Content body End -->
+                <hr class="border-light">
+                <p class="copyrightTxt text_light_emphasis fw-light fs_6 text-center my-1">Copyright &copy; 2025. All rights reserved</p>
+                <p class="companyTxt fw-light fs_6 text-center my-1"><a href="https://heckto.com" target="_blank" class="text-decoration-none text_light_emphasis">Powered by Heckto</a></p>
             </div>
-            <!-- About Us Content End -->
-          </div>
-        </div>
-      </div>
+        </section>
+
     </div>
-    <!-- About Us Section End -->
 
-    <!-- Our Services Section Start -->
-    <div class="our-services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <!-- Service Content Start -->
-            <div class="our-service-content">
-              <!-- Section Title Start -->
-              <div class="section-title">
-                <h3 class="wow fadeInUp">services</h3>
-                <h2 class="text-anime-style-2" data-cursor="-opaque">
-                  Expert finance & consult services <span>for success</span>
-                </h2>
-              </div>
-              <!-- Section Title End -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/gsap.js"></script>
+    <script>
+        var swiper = new Swiper(".cubeSwiper", {
+            effect: "cube",
+            grabCursor: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            cubeEffect: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    </script>
+</body>
 
-              <!-- Section content Button Start -->
-              <div
-                class="service-content-btn wow fadeInUp"
-                data-wow-delay="0.25s"
-              >
-                <a href="services.html" class="btn-default">all services</a>
-              </div>
-              <!-- Section content Button End -->
-            </div>
-            <!-- Service Content End -->
-          </div>
-
-          <div class="col-lg-8">
-            <!-- Our Service List Start -->
-            <div class="our-service-list">
-              <!-- Service Item Start -->
-              <div class="service-item">
-                <div class="service-no">
-                  <h2>01</h2>
-                </div>
-                <div class="service-content-box">
-                  <div class="icon-box">
-                    <img src="images/icon-service-1.svg" alt="" />
-                  </div>
-
-                  <div class="service-item-content">
-                    <h3>financial planning</h3>
-                    <p>
-                      Financial planing involve creating strategy to manage your
-                      income, expenses, term financial goals.
-                    </p>
-                    <a href="service-single.html" class="service-btn"
-                      ><img src="images/arrow-white.svg" alt=""
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <!-- Service Item End -->
-
-              <!-- Service Item Start -->
-              <div class="service-item">
-                <div class="service-no">
-                  <h2>02</h2>
-                </div>
-                <div class="service-content-box">
-                  <div class="icon-box">
-                    <img src="images/icon-service-2.svg" alt="" />
-                  </div>
-
-                  <div class="service-item-content">
-                    <h3>investment management</h3>
-                    <p>
-                      Financial planing involve creating strategy to manage your
-                      income, expenses, term financial goals.
-                    </p>
-                    <a href="service-single.html" class="service-btn"
-                      ><img src="images/arrow-white.svg" alt=""
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <!-- Service Item End -->
-
-              <!-- Service Item Start -->
-              <div class="service-item">
-                <div class="service-no">
-                  <h2>03</h2>
-                </div>
-                <div class="service-content-box">
-                  <div class="icon-box">
-                    <img src="images/icon-service-3.svg" alt="" />
-                  </div>
-
-                  <div class="service-item-content">
-                    <h3>retirement planning</h3>
-                    <p>
-                      Financial planing involve creating strategy to manage your
-                      income, expenses, term financial goals.
-                    </p>
-                    <a href="service-single.html" class="service-btn"
-                      ><img src="images/arrow-white.svg" alt=""
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <!-- Service Item End -->
-
-              <!-- Service Item Start -->
-              <div class="service-item">
-                <div class="service-no">
-                  <h2>04</h2>
-                </div>
-                <div class="service-content-box">
-                  <div class="icon-box">
-                    <img src="images/icon-service-4.svg" alt="" />
-                  </div>
-
-                  <div class="service-item-content">
-                    <h3>tax optimization</h3>
-                    <p>
-                      Financial planing involve creating strategy to manage your
-                      income, expenses, term financial goals.
-                    </p>
-                    <a href="service-single.html" class="service-btn"
-                      ><img src="images/arrow-white.svg" alt=""
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <!-- Service Item End -->
-
-              <!-- Service Item Start -->
-              <div class="service-item">
-                <div class="service-no">
-                  <h2>05</h2>
-                </div>
-                <div class="service-content-box">
-                  <div class="icon-box">
-                    <img src="images/icon-service-5.svg" alt="" />
-                  </div>
-
-                  <div class="service-item-content">
-                    <h3>risk assessment</h3>
-                    <p>
-                      Financial planing involve creating strategy to manage your
-                      income, expenses, term financial goals.
-                    </p>
-                    <a href="service-single.html" class="service-btn"
-                      ><img src="images/arrow-white.svg" alt=""
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <!-- Service Item End -->
-
-              <!-- Service Item Start -->
-              <div class="service-item">
-                <div class="service-no">
-                  <h2>06</h2>
-                </div>
-                <div class="service-content-box">
-                  <div class="icon-box">
-                    <img src="images/icon-service-6.svg" alt="" />
-                  </div>
-
-                  <div class="service-item-content">
-                    <h3>budgeting & forecasting</h3>
-                    <p>
-                      Financial planing involve creating strategy to manage your
-                      income, expenses, term financial goals.
-                    </p>
-                    <a href="service-single.html" class="service-btn"
-                      ><img src="images/arrow-white.svg" alt=""
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <!-- Service Item End -->
-            </div>
-            <!-- Our Service List End -->
-
-            <!-- Service Footer Start -->
-            <div class="service-footer wow fadeInUp" data-wow-delay="0.8s">
-              <p>
-                Let's make something great work together.
-                <a href="contact.html">Get Free Quote</a>
-              </p>
-            </div>
-            <!-- Service Footer End -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Our Services Section End -->
-
-    <!-- Why Choose Us Section Start -->
-    <div class="why-choose-us">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <!-- Why Choose Content Start -->
-            <div class="why-choose-content">
-              <!-- Section Title Start -->
-              <div class="section-title">
-                <h3 class="wow fadeInUp">why choose us</h3>
-                <h2 class="text-anime-style-2" data-cursor="-opaque">
-                  Why trust us <span>our finances</span>
-                </h2>
-              </div>
-              <!-- Section Title End -->
-
-              <!-- Why Choose Box List Start -->
-              <div class="why-choose-box-list">
-                <!-- Why Choose Box Start -->
-                <div class="why-choose-box wow fadeInUp" data-wow-delay="0.2s">
-                  <div class="icon-box">
-                    <img src="images/icon-why-choose-1.svg" alt="" />
-                  </div>
-
-                  <div class="why-choose-box-content">
-                    <h3>financial strategies</h3>
-                    <p>
-                      Tailored plans to meet your unique financial needs and
-                      goals.
-                    </p>
-                  </div>
-                </div>
-                <!-- Why Choose Box End -->
-
-                <!-- Why Choose Box Start -->
-                <div class="why-choose-box wow fadeInUp" data-wow-delay="0.2s">
-                  <div class="icon-box">
-                    <img src="images/icon-why-choose-2.svg" alt="" />
-                  </div>
-
-                  <div class="why-choose-box-content">
-                    <h3>tax optimization</h3>
-                    <p>
-                      Tailored plans to meet your unique financial needs and
-                      goals.
-                    </p>
-                  </div>
-                </div>
-                <!-- Why Choose Box End -->
-              </div>
-              <!-- Why Choose Box List End -->
-
-              <!-- Why Choose List Start -->
-              <div class="why-choose-list wow fadeInUp" data-wow-delay="0.4s">
-                <ul>
-                  <li>strategic financial planning</li>
-                  <li>expert investment advisory</li>
-                </ul>
-              </div>
-              <!-- Why Choose List End -->
-            </div>
-            <!-- Why Choose Content End -->
-          </div>
-
-          <div class="col-lg-6">
-            <!-- Why Choose Image Start -->
-            <div class="why-choose-image">
-              <!-- Why Choose Image 1 Start -->
-              <div class="why-choose-img-1">
-                <figure class="image-anime reveal">
-                  <img src="images/why-choose-img-1.jpg" alt="" />
-                </figure>
-              </div>
-              <!-- Why Choose Image 1 End -->
-
-              <!-- Why Choose Image 2 Start -->
-              <div class="why-choose-img-2">
-                <figure class="image-anime reveal">
-                  <img src="images/why-choose-img-2.jpg" alt="" />
-                </figure>
-              </div>
-              <!-- Why Choose Image 2 End -->
-
-              <!-- Why Choose Contact Circle Start -->
-              <div class="why-choose-contact-circle">
-                <img src="images/contact-us-img.svg" alt="" />
-              </div>
-              <!-- Why Choose Contact Circle Start -->
-            </div>
-            <!-- Why Choose Image End -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Why Choose Us Section End -->
-
-    <!-- Our Feature Section Stat -->
-    <div class="our-feature">
-      <div class="container">
-        <div class="row section-row align-items-center">
-          <div class="col-lg-6">
-            <!-- Section Title Start -->
-            <div class="section-title dark-section">
-              <h3 class="wow fadeInUp">our feature</h3>
-              <h2 class="text-anime-style-2" data-cursor="-opaque">
-                Key features of our finance <span>and consulting</span>
-              </h2>
-            </div>
-            <!-- Section Title End -->
-          </div>
-
-          <div class="col-lg-6">
-            <!-- Section Button Start -->
-            <div class="section-btn wow fadeInUp" data-wow-delay="0.2s">
-              <a href="contact.html" class="btn-default">contact now</a>
-            </div>
-            <!-- Section Button End -->
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <!-- Our Feature List Start -->
-            <div class="our-feature-list">
-              <!-- Feature Item Start -->
-              <div class="our-feature-item wow fadeInUp">
-                <div class="icon-box">
-                  <img src="images/icon-our-feature-1.svg" alt="" />
-                </div>
-                <div class="feature-item-content">
-                  <h3>financial solutions</h3>
-                  <p>
-                    Our Financial Solutions offer tailored and strategies to
-                    meet your unique goals, from and risk management.
-                  </p>
-                </div>
-              </div>
-              <!-- Feature Item End -->
-
-              <!-- Feature Item Start -->
-              <div class="our-feature-item wow fadeInUp" data-wow-delay="0.2s">
-                <div class="icon-box">
-                  <img src="images/icon-our-feature-2.svg" alt="" />
-                </div>
-                <div class="feature-item-content">
-                  <h3>wealth management</h3>
-                  <p>
-                    Our Financial Solutions offer tailored and strategies to
-                    meet your unique goals, from and risk management.
-                  </p>
-                </div>
-              </div>
-              <!-- Feature Item End -->
-
-              <!-- Feature Item Start -->
-              <div class="our-feature-item wow fadeInUp" data-wow-delay="0.4s">
-                <div class="icon-box">
-                  <img src="images/icon-our-feature-3.svg" alt="" />
-                </div>
-                <div class="feature-item-content">
-                  <h3>in-depth market analysis</h3>
-                  <p>
-                    Our Financial Solutions offer tailored and strategies to
-                    meet your unique goals, from and risk management.
-                  </p>
-                </div>
-              </div>
-              <!-- Feature Item End -->
-
-              <!-- Feature Item Start -->
-              <div class="our-feature-item wow fadeInUp" data-wow-delay="0.6s">
-                <div class="icon-box">
-                  <img src="images/icon-our-feature-4.svg" alt="" />
-                </div>
-                <div class="feature-item-content">
-                  <h3>risk management</h3>
-                  <p>
-                    Our Financial Solutions offer tailored and strategies to
-                    meet your unique goals, from and risk management.
-                  </p>
-                </div>
-              </div>
-              <!-- Feature Item End -->
-
-              <!-- Feature Item Start -->
-              <div class="our-feature-item wow fadeInUp" data-wow-delay="0.8s">
-                <div class="icon-box">
-                  <img src="images/icon-our-feature-5.svg" alt="" />
-                </div>
-                <div class="feature-item-content">
-                  <h3>tax efficiency strategies</h3>
-                  <p>
-                    Our Financial Solutions offer tailored and strategies to
-                    meet your unique goals, from and risk management.
-                  </p>
-                </div>
-              </div>
-              <!-- Feature Item End -->
-
-              <!-- Feature Item Start -->
-              <div class="our-feature-item wow fadeInUp" data-wow-delay="1s">
-                <div class="icon-box">
-                  <img src="images/icon-our-feature-6.svg" alt="" />
-                </div>
-                <div class="feature-item-content">
-                  <h3>strategic business advisory</h3>
-                  <p>
-                    Our Financial Solutions offer tailored and strategies to
-                    meet your unique goals, from and risk management.
-                  </p>
-                </div>
-              </div>
-              <!-- Feature Item End -->
-            </div>
-            <!-- Our Feature List End -->
-          </div>
-
-          <div class="col-lg-12">
-            <!-- Our Featured Footer Start -->
-            <div class="our-feature-footer wow fadeInUp" data-wow-delay="1.2s">
-              <p>
-                <span>Free</span> Let's make something great work together.
-                <a href="contact.html">Get Free Quote</a>
-              </p>
-            </div>
-            <!-- Our Featured Footer End -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Our Feature Section End -->
-
-    <!-- Some Fact Section Start -->
-    <div class="fact-counter">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <!-- Fact Counter Image Start -->
-            <div class="fact-counter-image">
-              <!-- Fact Counter img Start -->
-              <div class="fact-counter-img">
-                <figure class="image-anime reveal">
-                  <img src="images/fact-counter-img.jpg" alt="" />
-                </figure>
-              </div>
-              <!-- Fact Counter img End -->
-
-              <!-- Fact Counter Skillbar Start -->
-              <div class="fact-counter-skillbar">
-                <img src="images/fact-counter-skillbar-img.png" alt="" />
-              </div>
-              <!-- Fact Counter Skillbar End -->
-            </div>
-            <!-- Fact Counter Image End -->
-          </div>
-
-          <div class="col-lg-6">
-            <!-- Fact Counter Content Start -->
-            <div class="fact-counter-content">
-              <!-- Section Title Start -->
-              <div class="section-title">
-                <h3 class="wow fadeInUp">some facts</h3>
-                <h2 class="text-anime-style-2" data-cursor="-opaque">
-                  Key facts our <span>expertise</span>
-                </h2>
-                <p class="wow fadeInUp" data-wow-delay="0.2s">
-                  Our expertise is built on years of industry experience, proven
-                  financial strategies and a commitment to client success.
-                </p>
-              </div>
-              <!-- Section Title End -->
-
-              <!-- Fact Counter Box List Start -->
-              <div class="fact-counter-box-list">
-                <!-- Fact Counter Box Start -->
-                <div class="fact-counter-box">
-                  <div class="icon-box">
-                    <img src="images/icon-fact-counter-1.svg" alt="" />
-                  </div>
-
-                  <div class="fact-counter-box-content">
-                    <h2><span class="counter">25</span>+</h2>
-                    <p>Years of experience</p>
-                  </div>
-                </div>
-                <!-- Fact Counter Box End -->
-
-                <!-- Fact Counter Box Start -->
-                <div class="fact-counter-box">
-                  <div class="icon-box">
-                    <img src="images/icon-fact-counter-2.svg" alt="" />
-                  </div>
-
-                  <div class="fact-counter-box-content">
-                    <h2><span class="counter">80</span>%+</h2>
-                    <p>Client success rate</p>
-                  </div>
-                </div>
-                <!-- Fact Counter Box End -->
-
-                <!-- Fact Counter Box Start -->
-                <div class="fact-counter-box">
-                  <div class="icon-box">
-                    <img src="images/icon-fact-counter-3.svg" alt="" />
-                  </div>
-
-                  <div class="fact-counter-box-content">
-                    <h2><span class="counter">20</span>+</h2>
-                    <p>global research</p>
-                  </div>
-                </div>
-                <!-- Fact Counter Box End -->
-              </div>
-              <!-- Fact Counter Box List End -->
-
-              <!-- Fact Counter List Start -->
-              <div class="fact-counter-list wow fadeInUp" data-wow-delay="0.4s">
-                <ul>
-                  <li>Strategic financial planning</li>
-                  <li>Expert investment advisory</li>
-                </ul>
-              </div>
-              <!-- Fact Counter List End -->
-            </div>
-            <!-- Fact Counter Content End -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Some Fact Section End -->
-
-    <!-- What We Do Section Start -->
-    <div class="what-we-do">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <!-- What We Do Content Start -->
-            <div class="what-we-do-content">
-              <!-- Section Title Start -->
-              <div class="section-title">
-                <h3 class="wow fadeInUp">what we do</h3>
-                <h2 class="text-anime-style-2" data-cursor="-opaque">
-                  Driving financial growth <span>and success</span>
-                </h2>
-                <p class="wow fadeInUp" data-wow-delay="0.2s">
-                  We provide expert financial and consulting solutions designed
-                  to foster growth, stability, and long-term success.
-                </p>
-              </div>
-              <!-- Section Title End -->
-
-              <!-- What We Do List Start -->
-              <div class="what-we-do-list wow fadeInUp" data-wow-delay="0.4s">
-                <ul>
-                  <li>strategic financial planning</li>
-                  <li>expert investment advisory</li>
-                  <li>risk assessment & mitigation</li>
-                  <li>retirement & future planning</li>
-                </ul>
-              </div>
-              <!-- What We Do List End -->
-
-              <!-- What We Do Button Start -->
-              <div class="what-we-do-btn wow fadeInUp" data-wow-delay="0.6s">
-                <a href="contact.html" class="btn-default">contact now</a>
-              </div>
-              <!-- What We Do Button End -->
-            </div>
-            <!-- What We Do Content End -->
-          </div>
-
-          <div class="col-lg-6">
-            <!-- What We Do Images Start -->
-            <div class="what-we-do-images">
-              <!-- What We Do Image 1 Start -->
-              <div class="what-do-we-img-1">
-                <figure class="image-anime reveal">
-                  <img src="images/what-we-do-img-1.jpg" alt="" />
-                </figure>
-              </div>
-              <!-- What We Do Image 1 End -->
-
-              <!-- What We Do Image 2 Start -->
-              <div class="what-do-we-img-2">
-                <figure class="image-anime reveal">
-                  <img src="images/what-we-do-img-2.jpg" alt="" />
-                </figure>
-              </div>
-              <!-- What We Do Image 2 End -->
-
-              <!-- Experience Counter Box Start -->
-              <div class="experience-counter-box">
-                <div class="experience-counter-no">
-                  <h2><span class="counter">25</span>+</h2>
-                </div>
-                <div class="experience-counter-content">
-                  <p>Years of experience in finance</p>
-                </div>
-              </div>
-              <!-- Experience Counter Box Start End -->
-            </div>
-            <!-- What We Do Images End -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- What We Do Section End -->
-
-    <!-- How It Work Section Start -->
-    <div class="how-it-work">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <!-- How It Work Content Start -->
-            <div class="how-it-work-content">
-              <!-- Section Title Start -->
-              <div class="section-title">
-                <h3 class="wow fadeInUp">how it work</h3>
-                <h2 class="text-anime-style-2" data-cursor="-opaque">
-                  Our process for financial <span>success</span>
-                </h2>
-                <p class="wow fadeInUp" data-wow-delay="0.2s">
-                  Our process is designed to guide you every step of the way.
-                  From initial consultation to personalized strategy
-                  development.
-                </p>
-              </div>
-              <!-- Section Title End -->
-
-              <!-- How It Work Button Start -->
-              <div class="how-it-work-btn wow fadeInUp" data-wow-delay="0.4s">
-                <a href="contact.html" class="btn-default">learn more</a>
-              </div>
-              <!-- How It Work Button End -->
-            </div>
-            <!-- How It Work Content End -->
-          </div>
-
-          <div class="col-lg-6">
-            <!-- Work Steps Box Start -->
-            <div class="work-steps-box">
-              <!-- Work Steps Item Start -->
-              <div class="work-step-item wow fadeInUp">
-                <div class="work-step-item-content">
-                  <h3>step</h3>
-                  <h2>initial consultation</h2>
-                  <p>
-                    We begin with a one-on-one consultation to understand your
-                    financial goals, challenges, and priorities.
-                  </p>
-                </div>
-                <div class="work-step-item-no">
-                  <h2>01</h2>
-                </div>
-              </div>
-              <!-- Work Steps Item End -->
-
-              <!-- Work Steps Item Start -->
-              <div class="work-step-item wow fadeInUp" data-wow-delay="0.2s">
-                <div class="work-step-item-content">
-                  <h3>step</h3>
-                  <h2>success pathway</h2>
-                  <p>
-                    We begin with a one-on-one consultation to understand your
-                    financial goals, challenges, and priorities.
-                  </p>
-                </div>
-                <div class="work-step-item-no">
-                  <h2>02</h2>
-                </div>
-              </div>
-              <!-- Work Steps Item End -->
-
-              <!-- Work Steps Item Start -->
-              <div class="work-step-item wow fadeInUp" data-wow-delay="0.4s">
-                <div class="work-step-item-content">
-                  <h3>step</h3>
-                  <h2>growth strategy</h2>
-                  <p>
-                    We begin with a one-on-one consultation to understand your
-                    financial goals, challenges, and priorities.
-                  </p>
-                </div>
-                <div class="work-step-item-no">
-                  <h2>03</h2>
-                </div>
-              </div>
-              <!-- Work Steps Item End -->
-            </div>
-            <!-- Work Steps Box End -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- How It Work Section End -->
-
-    <!-- Our Pricing Section Start -->
-    <div class="our-pricing">
-      <div class="container">
-        <div class="row section-row align-items-center">
-          <div class="col-lg-5">
-            <!-- Section Title Start -->
-            <div class="section-title">
-              <h3 class="wow fadeInUp">pricing plan</h3>
-              <h2 class="text-anime-style-2" data-cursor="-opaque">
-                Flexible pricing plans for <span>you finance</span>
-              </h2>
-            </div>
-            <!-- Section Title End -->
-          </div>
-
-          <div class="col-lg-7">
-            <!-- Section Button Start -->
-            <div class="section-btn wow fadeInUp" data-wow-delay="0.2s">
-              <a href="contact.html" class="btn-default">contact now</a>
-            </div>
-            <!-- Section Button End -->
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <!-- Pricing Box Start -->
-            <div class="pricing-box wow fadeInUp">
-              <!-- Pricing Header Start -->
-              <div class="pricing-header">
-                <h3>personal plan</h3>
-                <h2><sup>$</sup>29.00<sub>/per month</sub></h2>
-              </div>
-              <!-- Pricing Header End -->
-
-              <!-- Pricing Box Body Start -->
-              <div class="pricing-body">
-                <!-- Pricing List Title Start -->
-                <div class="pricing-list-title">
-                  <h3>What's included?</h3>
-                </div>
-                <!-- Pricing List Title End -->
-
-                <!-- Pricing List Start -->
-                <div class="pricing-list">
-                  <ul>
-                    <li>comprehensive financial analysis</li>
-                    <li>tax strategy optimization</li>
-                    <li>regular progress reports</li>
-                    <li>ongoing support and guidance</li>
-                  </ul>
-                </div>
-                <!-- Pricing List End -->
-              </div>
-              <!-- Pricing Box Body End -->
-
-              <!-- Pricing Button Start -->
-              <div class="pricing-btn">
-                <a href="index-video.html#" class="btn-default btn-highlighted"
-                  >Select this package</a
-                >
-              </div>
-              <!-- Pricing Button End -->
-            </div>
-            <!-- Pricing Box End -->
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <!-- Pricing Box Start -->
-            <div
-              class="pricing-box highlighted-box wow fadeInUp"
-              data-wow-delay="0.2s"
-            >
-              <!-- Pricing Header Start -->
-              <div class="pricing-header">
-                <h3>business plan</h3>
-
-                <h2><sup>$</sup>39.00<sub>/per month</sub></h2>
-              </div>
-              <!-- Pricing Header End -->
-
-              <!-- Pricing Box Body Start -->
-              <div class="pricing-body">
-                <!-- Pricing List Title Start -->
-                <div class="pricing-list-title">
-                  <h3>What's included?</h3>
-                </div>
-                <!-- Pricing List Title End -->
-
-                <!-- Pricing List Start -->
-                <div class="pricing-list">
-                  <ul>
-                    <li>comprehensive financial analysis</li>
-                    <li>tax strategy optimization</li>
-                    <li>regular progress reports</li>
-                    <li>ongoing support and guidance</li>
-                  </ul>
-                </div>
-                <!-- Pricing List End -->
-              </div>
-              <!-- Pricing Box Body End -->
-
-              <!-- Pricing Button Start -->
-              <div class="pricing-btn">
-                <a href="index-video.html#" class="btn-default btn-highlighted"
-                  >Select this package</a
-                >
-              </div>
-              <!-- Pricing Button End -->
-            </div>
-            <!-- Pricing Box End -->
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <!-- Pricing Box Start -->
-            <div class="pricing-box wow fadeInUp" data-wow-delay="0.4s">
-              <!-- Pricing Header Start -->
-              <div class="pricing-header">
-                <h3>advance plan</h3>
-
-                <h2><sup>$</sup>49.00<sub>/per month</sub></h2>
-              </div>
-              <!-- Pricing Header End -->
-
-              <!-- Pricing Box Body Start -->
-              <div class="pricing-body">
-                <!-- Pricing List Title Start -->
-                <div class="pricing-list-title">
-                  <h3>What's included?</h3>
-                </div>
-                <!-- Pricing List Title End -->
-
-                <!-- Pricing List Start -->
-                <div class="pricing-list">
-                  <ul>
-                    <li>comprehensive financial analysis</li>
-                    <li>tax strategy optimization</li>
-                    <li>regular progress reports</li>
-                    <li>ongoing support and guidance</li>
-                  </ul>
-                </div>
-                <!-- Pricing List End -->
-              </div>
-              <!-- Pricing Box Body End -->
-
-              <!-- Pricing Button Start -->
-              <div class="pricing-btn">
-                <a href="index-video.html#" class="btn-default btn-highlighted"
-                  >Select this package</a
-                >
-              </div>
-              <!-- Pricing Button End -->
-            </div>
-            <!-- Pricing Box End -->
-          </div>
-
-          <div class="col-lg-12">
-            <!-- Pricing Benifit List Start -->
-            <div
-              class="pricing-benefit-list wow fadeInUp"
-              data-wow-delay="0.6s"
-            >
-              <ul>
-                <li>
-                  <img src="images/icon-pricing-benefit-1.svg" alt="" />Get 30
-                  day free trial
-                </li>
-                <li>
-                  <img src="images/icon-pricing-benefit-2.svg" alt="" />No any
-                  hidden fees pay
-                </li>
-                <li>
-                  <img src="images/icon-pricing-benefit-3.svg" alt="" />You can
-                  cancel anytime
-                </li>
-              </ul>
-            </div>
-            <!-- Pricing Benifit List End -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Our Pricing Section End -->
-
-    <!-- Our FAQs Section Start-->
-    <div class="our-faqs">
-      <div class="container">
-        <div class="row section-row align-items-center">
-          <div class="col-lg-6">
-            <!-- Section Title Start -->
-            <div class="section-title">
-              <h3 class="wow fadeInUp">faqs</h3>
-              <h2 class="text-anime-style-2" data-cursor="-opaque">
-                Your most frequently asked <span>questions answered</span>
-              </h2>
-            </div>
-            <!-- Section Title End -->
-          </div>
-
-          <div class="col-lg-6">
-            <!-- Section Button Start -->
-            <div class="section-btn wow fadeInUp" data-wow-delay="0.2s">
-              <a href="faqs.html" class="btn-default">view all FAQs</a>
-            </div>
-            <!-- Section Button End -->
-          </div>
-        </div>
-
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <!-- Our FAQs Image Start -->
-            <div class="our-faqs-image">
-              <!-- Our FAQs Img Start -->
-              <div class="our-faqs-img">
-                <figure class="image-anime reveal">
-                  <img src="images/faqs-img.jpg" alt="" />
-                </figure>
-              </div>
-              <!-- Our FAQs Img End -->
-
-              <!-- Client Review Box Start -->
-              <div class="client-review-box">
-                <!-- Client Review Box Content Start -->
-                <div class="client-review-box-content">
-                  <p>
-                    100+ Client
-                    <span
-                      ><i class="fa-solid fa-star"></i> 5.0 (250 Reviews)</span
-                    >
-                  </p>
-                </div>
-                <!-- Client Review Box Content End -->
-
-                <!-- Client Review Images Start -->
-                <div class="client-review-images">
-                  <!-- Client Image Start -->
-                  <div class="client-image">
-                    <figure class="image-anime">
-                      <img src="images/satisfy-client-img-1.jpg" alt="" />
-                    </figure>
-                  </div>
-                  <!-- Client Image End -->
-
-                  <!-- Client Image Start -->
-                  <div class="client-image">
-                    <figure class="image-anime">
-                      <img src="images/satisfy-client-img-2.jpg" alt="" />
-                    </figure>
-                  </div>
-                  <!-- Client Image End -->
-
-                  <!-- Client Image Start -->
-                  <div class="client-image">
-                    <figure class="image-anime">
-                      <img src="images/satisfy-client-img-3.jpg" alt="" />
-                    </figure>
-                  </div>
-                  <!-- Client Image End -->
-
-                  <!-- Client Image Start -->
-                  <div class="client-image">
-                    <figure class="image-anime">
-                      <img src="images/satisfy-client-img-4.jpg" alt="" />
-                    </figure>
-                  </div>
-                  <!-- Client Image End -->
-
-                  <!-- Client Image Start -->
-                  <div class="client-image">
-                    <figure class="image-anime">
-                      <img src="images/satisfy-client-img-5.jpg" alt="" />
-                    </figure>
-                  </div>
-                  <!-- Client Image End -->
-
-                  <!-- Add More Client Image Start -->
-                  <div class="client-image add-more">
-                    <p><span class="counter">30</span>+</p>
-                  </div>
-                  <!-- Add More Client Image End -->
-                </div>
-                <!-- Client Review Images End -->
-              </div>
-              <!-- Client Review Box End -->
-            </div>
-            <!-- Our FAQs Image End -->
-          </div>
-
-          <div class="col-lg-6">
-            <!-- Our FAQ Section Start -->
-            <div class="our-faq-section">
-              <!-- FAQ Accordion Start -->
-              <div class="faq-accordion" id="faqaccordion">
-                <!-- Accordion Item Start -->
-                <div class="accordion-item wow fadeInUp">
-                  <h2 class="accordion-header" id="heading1">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse1"
-                      aria-expanded="true"
-                      aria-controls="collapse1"
-                    >
-                      What services do you offer?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse1"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading1"
-                    data-bs-parent="#faqaccordion"
-                  >
-                    <div class="accordion-body">
-                      <p>
-                        If you're uncertain about managing investments, planning
-                        for retirement, or structuring your finances, consulting
-                        a financial professional can help. Our team assists in
-                        clarifying your goals, optimizing your strategies.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Accordion Item End -->
-
-                <!-- Accordion Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
-                  <h2 class="accordion-header" id="heading2">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse2"
-                      aria-expanded="false"
-                      aria-controls="collapse2"
-                    >
-                      How do I know if I need a financial consultant?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse2"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="heading2"
-                    data-bs-parent="#faqaccordion"
-                  >
-                    <div class="accordion-body">
-                      <p>
-                        If you're uncertain about managing investments, planning
-                        for retirement, or structuring your finances, consulting
-                        a financial professional can help. Our team assists in
-                        clarifying your goals, optimizing your strategies.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Accordion Item End -->
-
-                <!-- Accordion Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
-                  <h2 class="accordion-header" id="heading3">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse3"
-                      aria-expanded="false"
-                      aria-controls="collapse3"
-                    >
-                      What can I expect from an initial consultation?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse3"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading3"
-                    data-bs-parent="#faqaccordion"
-                  >
-                    <div class="accordion-body">
-                      <p>
-                        If you're uncertain about managing investments, planning
-                        for retirement, or structuring your finances, consulting
-                        a financial professional can help. Our team assists in
-                        clarifying your goals, optimizing your strategies.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Accordion Item End -->
-
-                <!-- Accordion Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
-                  <h2 class="accordion-header" id="heading4">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse4"
-                      aria-expanded="false"
-                      aria-controls="collapse4"
-                    >
-                      Are my consultations confidential?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse4"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading4"
-                    data-bs-parent="#faqaccordion"
-                  >
-                    <div class="accordion-body">
-                      <p>
-                        If you're uncertain about managing investments, planning
-                        for retirement, or structuring your finances, consulting
-                        a financial professional can help. Our team assists in
-                        clarifying your goals, optimizing your strategies.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Accordion Item End -->
-
-                <!-- Accordion Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
-                  <h2 class="accordion-header" id="heading5">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse5"
-                      aria-expanded="false"
-                      aria-controls="collapse5"
-                    >
-                      What kind of clients do you work with?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse5"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading5"
-                    data-bs-parent="#faqaccordion"
-                  >
-                    <div class="accordion-body">
-                      <p>
-                        If you're uncertain about managing investments, planning
-                        for retirement, or structuring your finances, consulting
-                        a financial professional can help. Our team assists in
-                        clarifying your goals, optimizing your strategies.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Accordion Item End -->
-              </div>
-              <!-- FAQ Accordion End -->
-            </div>
-            <!-- Our FAQ Section End -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Our FAQs Section End-->
-
-    <!-- Our Testimonial Section Start -->
-    <div class="our-testimonial">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5">
-            <!-- Testimonial Content Start -->
-            <div class="testimonial-content">
-              <!-- Section Title Start -->
-              <div class="section-title dark-section">
-                <h3 class="wow fadeInUp">our testimonial</h3>
-                <h2 class="text-anime-style-2" data-cursor="-opaque">
-                  1250+ customer say <span>about our finance</span>
-                </h2>
-                <p class="wow fadeInUp" data-wow-delay="0.2s">
-                  With over 1,250 satisfied clients, our finance and consulting
-                  services have earned praise for reliability, personalized
-                  guidance, and impactful results.
-                </p>
-              </div>
-              <!-- Section Title End -->
-
-              <!-- Testimonial Button Start -->
-              <div class="testimonial-btn">
-                <a href="contact.html" class="btn-default">contact now</a>
-              </div>
-              <!-- Testimonial Button End -->
-            </div>
-            <!-- Testimonial Content End -->
-          </div>
-
-          <div class="col-lg-7">
-            <!-- Testimonial Slider Box Start -->
-            <div class="testimonial-slider-box">
-              <!-- Testimonial Slider Start -->
-              <div class="testimonial-slider">
-                <div class="swiper">
-                  <div class="swiper-wrapper" data-cursor-text="Drag">
-                    <!-- Testimonial Slide Start -->
-                    <div class="swiper-slide">
-                      <!-- Testimonial Item Start -->
-                      <div class="testimonial-item">
-                        <!-- Testimonial Header Start -->
-                        <div class="testimonial-header">
-                          <!-- Customer Logo Start -->
-                          <div class="customer-logo">
-                            <img src="images/customer-logo.svg" alt="" />
-                          </div>
-                          <!-- Customer Logo End -->
-
-                          <!-- Testimonial Quotes Start -->
-                          <div class="testimonial-quotes">
-                            <img src="images/testimonial-quotes.svg" alt="" />
-                          </div>
-                          <!-- Testimonial Quotes End -->
-                        </div>
-                        <!-- Testimonial Header End -->
-
-                        <!-- Testimonial Body Start -->
-                        <div class="testimonial-body">
-                          <p>
-                            "The guidance we received has transformed our
-                            financial outlook. Our consultant was patient,
-                            knowledgeable, and crafted a plan that aligned
-                            perfectly with our goals. Thanks to their strategic
-                            advice, optimistic about our future!"
-                          </p>
-                        </div>
-                        <!-- Testimonial Body End -->
-
-                        <!-- Testimonial Author Start -->
-                        <div class="testimonial-author">
-                          <!-- Author Image Start -->
-                          <div class="author-image">
-                            <figure class="image-anime">
-                              <img src="images/author-1.jpg" alt="" />
-                            </figure>
-                          </div>
-                          <!-- Author Image End -->
-
-                          <!-- Author Content Start -->
-                          <div class="author-content">
-                            <h3>sarah t. / <span>entrepreneur</span></h3>
-                          </div>
-                          <!-- Author Content End -->
-                        </div>
-                        <!-- Testimonial Author End -->
-                      </div>
-                      <!-- Testimonial Item End -->
-                    </div>
-                    <!-- Testimonial Slide End -->
-
-                    <!-- Testimonial Slide Start -->
-                    <div class="swiper-slide">
-                      <!-- Testimonial Item Start -->
-                      <div class="testimonial-item">
-                        <!-- Testimonial Header Start -->
-                        <div class="testimonial-header">
-                          <!-- Customer Logo Start -->
-                          <div class="customer-logo">
-                            <img src="images/customer-logo.svg" alt="" />
-                          </div>
-                          <!-- Customer Logo End -->
-
-                          <!-- Testimonial Quotes Start -->
-                          <div class="testimonial-quotes">
-                            <img src="images/testimonial-quotes.svg" alt="" />
-                          </div>
-                          <!-- Testimonial Quotes End -->
-                        </div>
-                        <!-- Testimonial Header End -->
-
-                        <!-- Testimonial Body Start -->
-                        <div class="testimonial-body">
-                          <p>
-                            "The guidance we received has transformed our
-                            financial outlook. Our consultant was patient,
-                            knowledgeable, and crafted a plan that aligned
-                            perfectly with our goals. Thanks to their strategic
-                            advice, optimistic about our future!"
-                          </p>
-                        </div>
-                        <!-- Testimonial Body End -->
-
-                        <!-- Testimonial Author Start -->
-                        <div class="testimonial-author">
-                          <!-- Author Image Start -->
-                          <div class="author-image">
-                            <figure class="image-anime">
-                              <img src="images/author-2.jpg" alt="" />
-                            </figure>
-                          </div>
-                          <!-- Author Image End -->
-
-                          <!-- Author Content Start -->
-                          <div class="author-content">
-                            <h3>ellyse p. / <span>finance manager</span></h3>
-                          </div>
-                          <!-- Author Content End -->
-                        </div>
-                        <!-- Testimonial Author End -->
-                      </div>
-                      <!-- Testimonial Item End -->
-                    </div>
-                    <!-- Testimonial Slide End -->
-
-                    <!-- Testimonial Slide Start -->
-                    <div class="swiper-slide">
-                      <!-- Testimonial Item Start -->
-                      <div class="testimonial-item">
-                        <!-- Testimonial Header Start -->
-                        <div class="testimonial-header">
-                          <!-- Customer Logo Start -->
-                          <div class="customer-logo">
-                            <img src="images/customer-logo.svg" alt="" />
-                          </div>
-                          <!-- Customer Logo End -->
-
-                          <!-- Testimonial Quotes Start -->
-                          <div class="testimonial-quotes">
-                            <img src="images/testimonial-quotes.svg" alt="" />
-                          </div>
-                          <!-- Testimonial Quotes End -->
-                        </div>
-                        <!-- Testimonial Header End -->
-
-                        <!-- Testimonial Body Start -->
-                        <div class="testimonial-body">
-                          <p>
-                            "The guidance we received has transformed our
-                            financial outlook. Our consultant was patient,
-                            knowledgeable, and crafted a plan that aligned
-                            perfectly with our goals. Thanks to their strategic
-                            advice, optimistic about our future!"
-                          </p>
-                        </div>
-                        <!-- Testimonial Body End -->
-
-                        <!-- Testimonial Author Start -->
-                        <div class="testimonial-author">
-                          <!-- Author Image Start -->
-                          <div class="author-image">
-                            <figure class="image-anime">
-                              <img src="images/author-3.jpg" alt="" />
-                            </figure>
-                          </div>
-                          <!-- Author Image End -->
-
-                          <!-- Author Content Start -->
-                          <div class="author-content">
-                            <h3>robert t. / <span>accounts manager</span></h3>
-                          </div>
-                          <!-- Author Content End -->
-                        </div>
-                        <!-- Testimonial Author End -->
-                      </div>
-                      <!-- Testimonial Item End -->
-                    </div>
-                    <!-- Testimonial Slide End -->
-                  </div>
-                  <div class="testimonial-pagination"></div>
-                </div>
-              </div>
-              <!-- Testimonial Slider End -->
-
-              <!-- Customer Rating Boxes Start -->
-              <div class="customer-rating-boxes">
-                <!-- Customer Rating Box Start -->
-                <div class="customer-rating-box">
-                  <!-- Customer Rating Image Start -->
-                  <div class="customer-rating-image">
-                    <img src="images/icon-google.svg" alt="" />
-                  </div>
-                  <!-- Customer Rating Image End -->
-
-                  <!-- Customer Rating Content Start -->
-                  <div class="customer-rating-content">
-                    <p>google rating</p>
-                    <div class="customer-rating-counter">
-                      <h3><span class="counter">5.0</span></h3>
-                      <div class="customer-rating-star">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Customer Rating Content End -->
-                </div>
-                <!-- Customer Rating Box End -->
-
-                <!-- Customer Rating Box Start -->
-                <div class="customer-rating-box">
-                  <!-- Customer Rating Counter Start -->
-                  <div class="customer-rating-counter">
-                    <p><span class="counter">5.0</span> rated</p>
-                  </div>
-                  <!-- Customer Rating Counter End -->
-
-                  <!-- Customer Rating Counter Start -->
-                  <div class="customer-rating-star-box">
-                    <div class="customer-rating-star">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-
-                    <div class="star-rating-img">
-                      <img src="images/customer-rating-img.svg" alt="" />
-                    </div>
-                  </div>
-                  <!-- Customer Rating Counter End -->
-                </div>
-                <!-- Customer Rating Box End -->
-
-                <!-- Customer Rating Content Start -->
-                <div class="customer-rating-box customer-rating-content">
-                  <p>
-                    Total rating <span class="counter">5.0</span> base on 1250+
-                    review
-                  </p>
-                </div>
-                <!-- Customer Rating Content End -->
-              </div>
-              <!-- Customer Rating Boxes End -->
-            </div>
-            <!-- Testimonial Slider Box End -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Our Testimonial Section End -->
-
-    <!-- Our Blog Section Start -->
-    <div class="our-blog">
-      <div class="container">
-        <div class="row section-row">
-          <div class="col-lg-6">
-            <!-- Section Title Start -->
-            <div class="section-title">
-              <h3 class="wow fadeInUp">blog / post</h3>
-              <h2 class="text-anime-style-2" data-cursor="-opaque">
-                Finance insights, updates <span>and trends</span>
-              </h2>
-            </div>
-            <!-- Section Title End -->
-          </div>
-
-          <div class="col-lg-6">
-            <!-- Section Button Start -->
-            <div class="section-btn wow fadeInUp" data-wow-delay="0.2s">
-              <a href="blog.html" class="btn-default">view all post</a>
-            </div>
-            <!-- Section Button End -->
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <!-- Post Item Start -->
-            <div class="post-item wow fadeInUp">
-              <!-- Post Featured Image Start-->
-              <div class="post-featured-image">
-                <a href="blog-single.html" data-cursor-text="View">
-                  <figure class="image-anime">
-                    <img src="images/post-1.jpg" alt="" />
-                  </figure>
-                </a>
-              </div>
-              <!-- Post Featured Image End -->
-
-              <!-- Post Item Body Start -->
-              <div class="post-item-body">
-                <!-- Post Item Tag Start -->
-                <div class="post-item-meta">
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-calendar-days"></i> 15 sep, 2024
-                    </li>
-                  </ul>
-                </div>
-                <!-- Post Item Tag End -->
-
-                <!-- Post Item Content Start -->
-                <div class="post-item-content">
-                  <h2>
-                    <a href="blog-single.html"
-                      >10 Essential Steps to Create Foolproof Financial Plan for
-                      Long-Term Stability</a
-                    >
-                  </h2>
-                </div>
-                <!-- Post Item Content End -->
-
-                <!-- Post Item Readmore Button Start-->
-                <div class="post-item-btn">
-                  <a href="blog-single.html" class="readmore-btn">read more</a>
-                </div>
-                <!-- Post Item Readmore Button End-->
-              </div>
-              <!-- Post Item Body End -->
-            </div>
-            <!-- Post Item End -->
-          </div>
-
-          <div class="col-md-6">
-            <!-- Post Item Start -->
-            <div class="post-item wow fadeInUp" data-wow-delay="0.2s">
-              <!-- Post Featured Image Start-->
-              <div class="post-featured-image">
-                <a href="blog-single.html" data-cursor-text="View">
-                  <figure class="image-anime">
-                    <img src="images/post-2.jpg" alt="" />
-                  </figure>
-                </a>
-              </div>
-              <!-- Post Featured Image End -->
-
-              <!-- Post Item Body Start -->
-              <div class="post-item-body">
-                <!-- Post Item Tag Start -->
-                <div class="post-item-meta">
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-calendar-days"></i> 15 sep, 2024
-                    </li>
-                  </ul>
-                </div>
-                <!-- Post Item Tag End -->
-
-                <!-- Post Item Content Start -->
-                <div class="post-item-content">
-                  <h2>
-                    <a href="blog-single.html"
-                      >Top 10 Financial Mistakes Individuals and Businesses
-                      Should Avoid in 2024</a
-                    >
-                  </h2>
-                </div>
-                <!-- Post Item Content End -->
-
-                <!-- Post Item Readmore Button Start-->
-                <div class="post-item-btn">
-                  <a href="blog-single.html" class="readmore-btn">read more</a>
-                </div>
-                <!-- Post Item Readmore Button End-->
-              </div>
-              <!-- Post Item Body End -->
-            </div>
-            <!-- Post Item End -->
-          </div>
-
-          <div class="col-md-6">
-            <!-- Post Item Start -->
-            <div class="post-item wow fadeInUp" data-wow-delay="0.4s">
-              <!-- Post Featured Image Start-->
-              <div class="post-featured-image">
-                <a href="blog-single.html" data-cursor-text="View">
-                  <figure class="image-anime">
-                    <img src="images/post-3.jpg" alt="" />
-                  </figure>
-                </a>
-              </div>
-              <!-- Post Featured Image End -->
-
-              <!-- Post Item Body Start -->
-              <div class="post-item-body">
-                <!-- Post Item Tag Start -->
-                <div class="post-item-meta">
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-calendar-days"></i> 15 sep, 2024
-                    </li>
-                  </ul>
-                </div>
-                <!-- Post Item Tag End -->
-
-                <!-- Post Item Content Start -->
-                <div class="post-item-content">
-                  <h2>
-                    <a href="blog-single.html"
-                      >Mastering Budgeting Practical Steps to Ensure Your
-                      Financial Success</a
-                    >
-                  </h2>
-                </div>
-                <!-- Post Item Content End -->
-
-                <!-- Post Item Readmore Button Start-->
-                <div class="post-item-btn">
-                  <a href="blog-single.html" class="readmore-btn">read more</a>
-                </div>
-                <!-- Post Item Readmore Button End-->
-              </div>
-              <!-- Post Item Body End -->
-            </div>
-            <!-- Post Item End -->
-          </div>
-
-          <div class="col-md-6">
-            <!-- Post Item Start -->
-            <div class="post-item wow fadeInUp" data-wow-delay="0.6s">
-              <!-- Post Featured Image Start-->
-              <div class="post-featured-image">
-                <a href="blog-single.html" data-cursor-text="View">
-                  <figure class="image-anime">
-                    <img src="images/post-4.jpg" alt="" />
-                  </figure>
-                </a>
-              </div>
-              <!-- Post Featured Image End -->
-
-              <!-- Post Item Body Start -->
-              <div class="post-item-body">
-                <!-- Post Item Tag Start -->
-                <div class="post-item-meta">
-                  <ul>
-                    <li>
-                      <i class="fa-solid fa-calendar-days"></i> 15 sep, 2024
-                    </li>
-                  </ul>
-                </div>
-                <!-- Post Item Tag End -->
-
-                <!-- Post Item Content Start -->
-                <div class="post-item-content">
-                  <h2>
-                    <a href="blog-single.html"
-                      >Understanding Cash Flow Key to Healthy Busines and
-                      Financial Stability</a
-                    >
-                  </h2>
-                </div>
-                <!-- Post Item Content End -->
-
-                <!-- Post Item Readmore Button Start-->
-                <div class="post-item-btn">
-                  <a href="blog-single.html" class="readmore-btn">read more</a>
-                </div>
-                <!-- Post Item Readmore Button End-->
-              </div>
-              <!-- Post Item Body End -->
-            </div>
-            <!-- Post Item End -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Our Blog Section End  -->
-
-    <!-- Footer Section Start -->
-    <footer class="main-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <!-- Footer Newsletter Box Start -->
-            <div class="footer-newsletter-box">
-              <!-- Footer Newsletter Title Start -->
-              <div class="footer-newsletter-title">
-                <h3>Don't missed subscribed!</h3>
-              </div>
-              <!-- Footer Newsletter Title End -->
-
-              <!-- Newsletter Form start -->
-              <div class="newsletter-form">
-                <form
-                  id="newsletterForm"
-                  action="index-video.html#"
-                  method="POST"
-                >
-                  <div class="form-group">
-                    <input
-                      type="email"
-                      name="email"
-                      class="form-control"
-                      id="mail"
-                      placeholder="Enter Your Email"
-                      required=""
-                    />
-                    <button type="submit" class="newsletter-btn">
-                      <img src="images/arrow-white.svg" alt="" />
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <!-- Newsletter Form end -->
-            </div>
-            <!-- Footer Newsletter Box End -->
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <!-- Footer Links Start -->
-            <div class="footer-links">
-              <h3>company</h3>
-              <ul>
-                <li><a href="index.html">home</a></li>
-                <li><a href="about.html">about Us</a></li>
-                <li><a href="services.html">services</a></li>
-                <li><a href="blog.html">blog</a></li>
-              </ul>
-            </div>
-            <!-- Footer Links End -->
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <!-- Footer Links Start -->
-            <div class="footer-links">
-              <h3>support</h3>
-              <ul>
-                <li><a href="index-video.html#">help</a></li>
-                <li><a href="index-video.html#">Privacy Policy</a></li>
-                <li><a href="index-video.html#">Term & Condition</a></li>
-                <li><a href="contact.html">Contact us</a></li>
-              </ul>
-            </div>
-            <!-- Footer Links End -->
-          </div>
-
-          <div class="col-lg-2 col-md-4">
-            <!-- Footer Links Start -->
-            <div class="footer-links">
-              <h3>service</h3>
-              <ul>
-                <li><a href="service-single.html">Financial planning</a></li>
-                <li><a href="service-single.html">Investment management</a></li>
-                <li><a href="service-single.html">Retirement planning</a></li>
-                <li>
-                  <a href="service-single.html">Budgeting & forecasting</a>
-                </li>
-              </ul>
-            </div>
-            <!-- Footer Links End -->
-          </div>
-
-          <div class="col-lg-12">
-            <!-- About Footer Start -->
-            <div class="footer-cta-box">
-              <!-- Footer Logo Start -->
-              <div class="footer-logo">
-                <img src="images/footer-logo.svg" alt="" />
-              </div>
-              <!-- Footer Logo End -->
-
-              <!-- Footer Contact Box Start -->
-              <div class="footer-contact-box">
-                <!-- Footer Contact Item Start -->
-                <div class="footer-contact-item">
-                  <p>Need help!</p>
-                  <h3>+1 809 120 705</h3>
-                </div>
-                <!-- Footer Contact Item End -->
-
-                <!-- Footer Contact Item Start -->
-                <div class="footer-contact-item">
-                  <p>E-mail now</p>
-                  <h3>info@domain.com</h3>
-                </div>
-                <!-- Footer Contact Item End -->
-              </div>
-              <!-- Footer Contact Box End -->
-            </div>
-            <!-- About Footer End -->
-          </div>
-        </div>
-
-        <!-- Footer Copyright Section Start -->
-        <div class="footer-copyright">
-          <div class="row align-items-center">
-            <div class="col-md-5">
-              <!-- Footer Copyright Start -->
-              <div class="footer-copyright-text">
-                <p>Copyright © 2024 All Rights Reserved.</p>
-              </div>
-              <!-- Footer Copyright End -->
-            </div>
-
-            <div class="col-md-7">
-              <!-- Footer Menu Start -->
-              <div class="footer-menu">
-                <ul>
-                  <li><a href="index-video.html#">LinkedIn</a></li>
-                  <li><a href="index-video.html#">Facebook</a></li>
-                  <li><a href="index-video.html#">Instagram</a></li>
-                  <li><a href="index-video.html#">Twitter</a></li>
-                </ul>
-              </div>
-              <!-- Footer Menu End -->
-            </div>
-          </div>
-        </div>
-        <!-- Footer Copyright Section End -->
-      </div>
-    </footer>
-    <!-- Footer Section End -->
-
-    <!-- Jquery Library File -->
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <!-- Bootstrap js file -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Validator js file -->
-    <script src="js/validator.min.js"></script>
-    <!-- SlickNav js file -->
-    <script src="js/jquery.slicknav.js"></script>
-    <!-- Swiper js file -->
-    <script src="js/swiper-bundle.min.js"></script>
-    <!-- Counter js file -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <!-- Magnific js file -->
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <!-- SmoothScroll -->
-    <script src="js/SmoothScroll.js"></script>
-    <!-- Parallax js -->
-    <script src="js/parallaxie.js"></script>
-    <!-- MagicCursor js file -->
-    <script src="js/gsap.min.js"></script>
-    <script src="js/magiccursor.js"></script>
-    <!-- Text Effect js file -->
-    <script src="js/SplitText.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    <!-- YTPlayer js File -->
-    <script src="js/jquery.mb.YTPlayer.min.js"></script>
-    <!-- Wow js file -->
-    <script src="js/wow.min.js"></script>
-    <!-- Main Custom js file -->
-    <script src="js/function.js"></script>
-  </body>
 </html>
