@@ -1,676 +1,2346 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ethica Holdings | Ethical Access to DeFi Yield</title>
+    <link rel="stylesheet" href="assets/css/font.css" />
+    <link rel="stylesheet" href="assets/css/all.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ethica Holdings | Home</title>
-    <link rel="stylesheet" href="assets/css/font.css">
-    <link rel="stylesheet" href="assets/css/all.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
+      /* Modern Header Styles */
+      .modern-navbar {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        max-width: 1400px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 25px;
+        padding: 15px 30px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .modern-navbar.scrolled {
+        width: 85%;
+        max-width: 1200px;
+        top: 15px;
+        padding: 12px 25px;
+        background: rgba(242, 241, 237, 0.95);
+        backdrop-filter: blur(25px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .modern-navbar .navbar-brand {
+        transition: all 0.3s ease;
+      }
+
+      .modern-navbar.scrolled .navbar-brand img {
+        width: 120px;
+      }
+
+      /* Fix for horizontal navigation */
+      .modern-navbar .navbar-nav {
+        flex-direction: row !important;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      .modern-navbar .nav-item {
+        margin: 0;
+      }
+
+      .modern-navbar .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-weight: 500;
+        padding: 8px 16px !important;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .modern-navbar.scrolled .nav-link {
+        color: var(--dark_em) !important;
+      }
+
+      .modern-navbar .nav-link::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(224, 178, 120, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .modern-navbar .nav-link:hover::before {
+        left: 100%;
+      }
+
+      .modern-navbar .nav-link:hover {
+        color: var(--primary) !important;
+        background: rgba(224, 178, 120, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .modern-navbar .btn_primary {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--dark_primary)
+        );
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .modern-navbar .btn_primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .modern-navbar .btn_primary:hover::before {
+        left: 100%;
+      }
+
+      .modern-navbar .btn_primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(224, 178, 120, 0.4);
+      }
+
+      .modern-navbar .dropdown-toggle {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+      }
+
+      .modern-navbar.scrolled .dropdown-toggle {
+        background: rgba(38, 53, 47, 0.1);
+        border-color: rgba(38, 53, 47, 0.2);
+      }
+
+      .modern-navbar .dropdown-toggle:hover {
+        background: rgba(224, 178, 120, 0.2);
+        transform: scale(1.05);
+      }
+
+      .modern-navbar .mobile-toggle {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+      }
+
+      .modern-navbar.scrolled .mobile-toggle {
+        background: rgba(38, 53, 47, 0.1);
+        border-color: rgba(38, 53, 47, 0.2);
+      }
+
+      .modern-navbar .mobile-toggle svg {
+        fill: rgba(255, 255, 255, 0.9);
+        transition: all 0.3s ease;
+      }
+
+      .modern-navbar.scrolled .mobile-toggle svg {
+        fill: var(--dark_em);
+      }
+
+      .modern-navbar .mobile-toggle:hover {
+        background: rgba(224, 178, 120, 0.2);
+        transform: rotate(90deg);
+      }
+
+      /* Animated Logo */
+      .logo-container {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .logo-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(224, 178, 120, 0.3),
+          transparent
+        );
+        transition: left 0.8s ease;
+      }
+
+      .logo-container:hover::after {
+        left: 100%;
+      }
+
+      /* Video Hero Section */
+      .video-hero {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .video-hero video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        object-fit: cover;
+      }
+
+      .video-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+      }
+
+      .video-hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        max-width: 800px;
+        padding: 0 20px;
+      }
+
+      .video-hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 1s ease-out 0.5s forwards;
+      }
+
+      .video-hero-content p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 1s ease-out 1s forwards;
+      }
+
+      .video-hero-content .btn-group {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 1s ease-out 1.5s forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Roadmap Section */
+      .roadmap-section {
+        background: linear-gradient(135deg, #26352f 0%, #1a2420 100%);
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .roadmap-phase {
+        background: rgba(240, 241, 237, 0.05);
+        border: 1px solid rgba(224, 178, 120, 0.3);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 40px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .roadmap-phase:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary);
+        box-shadow: 0 20px 40px rgba(224, 178, 120, 0.1);
+      }
+
+      .roadmap-phase::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
+        background: linear-gradient(
+          45deg,
+          var(--primary),
+          transparent,
+          var(--primary)
+        );
+        border-radius: 20px;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .roadmap-phase:hover::before {
+        opacity: 1;
+      }
+
+      .phase-number {
+        display: inline-block;
+        background: var(--primary);
+        color: var(--dark_em);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      /* Swiss Heritage Section */
+      .swiss-heritage {
+        background: var(--light_em);
+        padding: 100px 0;
+        position: relative;
+      }
+
+      .swiss-flag {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        opacity: 0.1;
+        font-size: 200px;
+      }
+
+      /* AI Technology Section */
+      .ai-tech-section {
+        background: linear-gradient(45deg, #26352f, #1a2420);
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ai-tech-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23E0B278" opacity="0.1"/></svg>')
+          repeat;
+        animation: float 20s infinite linear;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        100% {
+          transform: translateY(-100px);
+        }
+      }
+
+      .tech-card {
+        background: rgba(240, 241, 237, 0.05);
+        border: 1px solid rgba(224, 178, 120, 0.2);
+        border-radius: 15px;
+        padding: 30px;
+        height: 100%;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tech-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(224, 178, 120, 0.1),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .tech-card:hover::before {
+        left: 100%;
+      }
+
+      .tech-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+      }
+
+      /* Enhanced Cube Swiper */
+      .enhanced-cube-section {
+        padding: 100px 0;
+        background: var(--light_em);
+      }
+
+      .cubeSwiper .swiper-slide {
+        height: 620px;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      @media (max-width: 992px) {
         .cubeSwiper .swiper-slide {
-            height: 620px;
-            border-radius: 10px;
-            position: relative;
+          height: 420px;
+        }
+      }
+
+      .cubeSwiper .swiper-slide img {
+        border-radius: 20px;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .cubeSwiper .swiper-slide:hover img {
+        transform: scale(1.05);
+      }
+
+      .cube-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: white;
+        padding: 40px 30px 30px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .cubeSwiper .swiper-slide:hover .cube-overlay {
+        transform: translateY(0);
+      }
+
+      .dropDownMenu {
+        background: #ffffffb6;
+        backdrop-filter: blur(10px);
+      }
+
+      /* Stats Counter Animation */
+      .stat-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--primary);
+      }
+
+      /* Floating Animation */
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      /* Pulse Animation */
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .modern-navbar {
+          width: 95%;
+          padding: 12px 20px;
         }
 
-        @media (max-width: 992px) {
-            .cubeSwiper .swiper-slide  {
-                height: 420px;
-            }
-        }
-        
-        .cubeSwiper .swiper-slide img {
-            border-radius: 10px;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
+        .modern-navbar.scrolled {
+          width: 90%;
+          padding: 10px 15px;
         }
 
-        .dropDownMenu {
-            background: #ffffffb6;
-            backdrop-filter: blur(10px);
+        .video-hero-content h1 {
+          font-size: 2.5rem;
         }
 
-        #h_scroll_container {
-            min-height: 100vh;
-            display: flex;
-            transform: translateX(0%);
+        .modern-navbar .navbar-nav {
+          display: none !important;
         }
-        .h_scroll_item {
-            min-width: fit-content !important;
-        }
+      }
     </style>
-</head>
-<body class="bg_body">
-    
+  </head>
+  <body class="bg_body">
     <div id="content">
-        
-        <section id="nav">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container wrapper">
-                    <a class="navbar-brand" href="#">
-                        <img src="./logo.jpeg" width="140" alt="ethica holdings">
-                    </a>
-                    <ul class="navbar-nav gap-1 d-lg-flex d-none">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Investment Criteria</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Investor Relations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Road Map</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                    <div class="d-flex align-items-center navbar_ctas">
-                        <a href="#" class="btn_primary d-sm-inline-flex d-none rounded-pill fs_7">
-                            <span>Investor Login</span>
-                        </a>
-                        <div class="dropdown d-inline-flex">
-                            <button class="btn_transparent dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="assets/img/united-kingdom.png" width="24" height="24" alt="united kingdom flag">
-                            </button>
-                            <ul class="dropdown-menu dropDownMenu dropdown-menu-end border-0 shadow-sm">
-                                <li><a class="dropdown-item d-flex align-items-center gap-1 py-2" href="index.it.html">
-                                    <img src="assets/img/italy.png" width="18" height="18" alt="italian">
-                                    <span class="fs_7">Italian</span>
-                                </a></li>
-                            </ul>
-                        </div>
-                        <button class="btn_transparent lg_hidden" data-bs-toggle="offcanvas" data-bs-target="#smallSidebar">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="24" width="24"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
-                        </button>
-                    </div>
-                </div>
-            </nav>
-    
-            <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="smallSidebar" aria-labelledby="smallSidebarLabel">
-                <div class="offcanvas-header">
-                    <a class="navbar-brand" href="#">
-                        <img src="assets/img/logo.png" width="140" alt="ethica holdings">
-                    </a>
-                    <button type="button" class="btn_transparent shadow-none ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="28" width="28"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
-                    </button>
-                </div>
-                <div class="offcanvas-body py-1">
-                    <ul class="list-unstyled">
-                        <li><a class="smallSidebarLink py-3" href="#">Home</a></li>
-                        <li><a class="smallSidebarLink py-3" href="#">About</a></li>
-                        <li><a class="smallSidebarLink py-3" href="#">Investment Criteria</a></li>
-                        <li><a class="smallSidebarLink py-3" href="#">Investor Relations</a></li>
-                        <li><a class="smallSidebarLink py-3" href="#">Road Map</a></li>
-                        <li><a class="smallSidebarLink py-3" href="#">Contact</a></li>
-                        <li class="my-3"><a href="#" class="btn_primary w-100 rounded py-3">Investor Login</a></li>
-                        <li class="d-flex align-items-center justify-content-center gap-3">
-                            <a href="#" class="smallSidebarSocialLinks">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" height="18" width="18"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
-                            </a>
-                            <a href="#" class="smallSidebarSocialLinks">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18" width="18"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-                            </a>
-                            <a href="#" class="smallSidebarSocialLinks">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="18" width="18"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+      <!-- Modern Navigation -->
+      <nav class="modern-navbar" id="modernNavbar">
+        <div class="d-flex align-items-center justify-content-between w-100">
+          <div
+            class="logo-container"
+            data-aos="fade-right"
+            data-aos-duration="800"
+          >
+            <a class="navbar-brand" href="#">
+              <img src="./assets/img/logo.png" width="140" alt="ethica holdings" />
+            </a>
+          </div>
 
-        <header>
-            <div class="container wrapper pt-5 mt-4">
-                <div class="row">
-                    <div class="col-lg-6 col-12 my-2">
-                        <h1 class="fs_heading headingTxt display-2">Ethica Holding - <span class="text_dark_primary">Ethical</span> Access to your DeFi Yeild</h1>
-                        <p class="text_dark_em paraTxt fs-5">Where AI shapes the future of capital, uniting ethics with the limitless potential of Decentralized Finance.</p>
-                        <div class="btn_cont d-flex align-items-center gap-2 my-4">
-                            <a href="#" class="btn_dark rounded-pill fs_6">Download Pitch Deck</a>
-                            <a href="#" class="btn_outline_primary rounded-pill fs_6">Schedule Meeting</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-12 my-2">
-                        <div class="headerImageCont">
-                            <div class="swiper cubeSwiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="assets/img/header_1.jpg" height="100%" width="100%" alt="" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="assets/img/header_2.png" height="100%" width="100%" alt="" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="assets/img/header_3.png" height="100%" width="100%" alt="" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="assets/img/header_4.png" height="100%" width="100%" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+          <ul
+            class="navbar-nav d-lg-flex d-none"
+            data-aos="fade-down"
+            data-aos-duration="800"
+            data-aos-delay="200"
+          >
+            <li class="nav-item" data-aos="fade-down" data-aos-delay="300">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item" data-aos="fade-down" data-aos-delay="400">
+              <a class="nav-link" href="#steps">Investment Criteria</a>
+            </li>
+            <li class="nav-item" data-aos="fade-down" data-aos-delay="500">
+              <a class="nav-link" href="#roadmap">Road Map</a>
+            </li>
+            <li class="nav-item" data-aos="fade-down" data-aos-delay="600">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
 
-        <section id="about" class="bg_dark py-5">
-            <div class="container wrapper my-5">
-                <div class="row">
-                    <div class="col-lg-4 col-12 my-3 py-3">
-                        <div class="sectionTxt text_light_em d-flex align-items-center mb-3 gap-3">
-                            <span class="fs-4 fw-bold">•</span>
-                            <span class="fs_5 text-uppercase">Beyond the noise</span>
-                        </div>
-                        <h2 class="headingTxt text_light_em fs_heading m-0 display-4">Shaping the future of businesses</h2> 
-                    </div>
-                    <div class="col-lg-8 col-12 my-3">
-                        <div class="aboutCard aboutCard_1 rounded-4 p-3 py-4">
-                            <p class="text_light_em fw-light fs_5">We do not chase ephemeral trends. Our mission is to weave a future built on trust, safeguard what truly matters, and guide capital towards deeper meaning.</p>
-                            <p class="text_light_em fw-light fs_5">Ethica Holdings was born from an unwavering belief: financial growth should never sacrifice personal values. We have forged a sanctuary for investors – whether audacious visionaries or seasoned architects – where prosperity flourishes with clarity, stability, and meticulous care.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 my-3">
-                        <div class="aboutCard aboutCard_2 rounded-4 p-3 py-4">
-                            <h3 class="text_light_em fs-2 fw-medium mb-5"><span class="underlinedEffect">56</span>&nbsp;million</h3>
-                            <div class="pt-5">
-                                <div class="my-2 mt-4 text-uppercase text_light_em fs_6">Capital Invested</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 my-3">
-                        <div class="aboutCard aboutCard_3 rounded-4 p-3 py-4">
-                            <h3 class="text_light_em fs-2 fw-medium mb-5"><span class="underlinedEffect">24</span>&nbsp;startups</h3>
-                            <div class="pt-5">
-                                <div class="my-2 mt-4 text-uppercase text_light_em fs_6">business in our portfolio</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-12 my-3">
-                        <a href="#" class="aboutCard aboutCard_4 d-block text-decoration-none rounded-4 p-3 py-4">
-                            <h3 class="text_light_em fs-2 fw-medium mb-5">Get started</h3>
-                            <div class="pt-5">
-                                <div class="my-2 mt-4 text-uppercase text_light_em fs_6">pitch your startup today</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <div
+            class="d-flex align-items-center gap-3"
+            data-aos="fade-left"
+            data-aos-duration="800"
+            data-aos-delay="400"
+          >
+            <a
+              href="#"
+              class="btn_primary d-sm-inline-flex d-none rounded-pill fs_7"
+              data-aos="zoom-in"
+              data-aos-delay="700"
+            >
+              <span>Investor Login</span>
+            </a>
 
-        <section id="bot" class="my-5 pt-4 pb-2">
-            <div class="container wrapper">
-                <div class="row my-4">
-                    <div class="col-lg-7 col-md-6 col-12 my-3">
-                       <div class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3">
-                            <span class="fs-4 fw-bold">•</span>
-                            <span class="fs_5 text-uppercase">The Algorithmic Heartbeat</span>
-                        </div>
-                        <h2 class="fs_heading m-0 display-3 headingTxt">It Doesn't Chase, It Deciphers</h2> 
-                        <p class="text_dark_em fs_5 mt-3 paraTxt">In the uninterrupted maelstrom of decentralized markets, where shifting currents and dissonant signals make investment uncertain, our solution emerges. Our investment engine does not merely react: it deciphers. </p>
-                        <p class="text_dark_em fs_5 mb-4 paraTxt2">Thousands of bots, silent sentinels, operate in symbiosis with Artificial Intelligence algorithms, orchestrating micro-operations that minimize risk while maximizing efficiency. A serene and thoughtful system, capable of guiding your capital with surgical precision, in perfect harmony with your values.</p>
-                        <div class="my-3 cta_link">
-                            <a href="#" class="btn_dark rounded-pill fs_6">Get started today!</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-6 col-12 my-3">
-                        <div class="botImgCont rounded-5">
-                            <img src="assets/img/ai-bot-trading.png" class="img-fluid" width="100%" height="100%" alt="">
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="dropdown d-inline-flex"
+              data-aos="flip-left"
+              data-aos-delay="800"
+            >
+              <button
+                class="btn_transparent dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="assets/img/united-kingdom.png"
+                  width="24"
+                  height="24"
+                  alt="united kingdom flag"
+                />
+              </button>
+              <ul
+                class="dropdown-menu dropDownMenu dropdown-menu-end border-0 shadow-sm"
+              >
+                <li>
+                  <a
+                    class="dropdown-item d-flex align-items-center gap-1 py-2"
+                    href="index.it.html"
+                  >
+                    <img
+                      src="assets/img/italy.png"
+                      width="18"
+                      height="18"
+                      alt="italian"
+                    />
+                    <span class="fs_7">Italian</span>
+                  </a>
+                </li>
+              </ul>
             </div>
-        </section>
 
-        <section id="steps" class="my-5 py-4">
-            <div class="container wrapper">
-                <div class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3">
-                    <span class="fs-4 fw-bold">•</span>
-                    <span class="fs_5 text-uppercase">Investment Criteria</span>
+            <button
+              class="btn_transparent mobile-toggle lg_hidden"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#smallSidebar"
+              data-aos="rotate"
+              data-aos-delay="900"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                height="24"
+                width="24"
+              >
+                <path
+                  d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Sidebar -->
+      <div
+        class="offcanvas offcanvas-end"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        id="smallSidebar"
+        aria-labelledby="smallSidebarLabel"
+      >
+        <div class="offcanvas-header">
+          <a class="navbar-brand" href="#">
+            <img src="assets/img/logo.png" width="140" alt="ethica holdings" />
+          </a>
+          <button
+            type="button"
+            class="btn_transparent shadow-none ms-auto"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              height="28"
+              width="28"
+            >
+              <path
+                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="offcanvas-body py-1">
+          <ul class="list-unstyled">
+            <li><a class="smallSidebarLink py-3" href="#">Home</a></li>
+            <li><a class="smallSidebarLink py-3" href="#about">About</a></li>
+            <li>
+              <a class="smallSidebarLink py-3" href="#steps"
+                >Investment Criteria</a
+              >
+            </li>
+            <li>
+              <a class="smallSidebarLink py-3" href="#roadmap">Road Map</a>
+            </li>
+            <li>
+              <a class="smallSidebarLink py-3" href="#contact">Contact</a>
+            </li>
+            <li class="my-3">
+              <a href="#" class="btn_primary w-100 rounded py-3"
+                >Investor Login</a
+              >
+            </li>
+            <li class="d-flex align-items-center justify-content-center gap-3">
+              <a href="#" class="smallSidebarSocialLinks">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                  height="18"
+                  width="18"
+                >
+                  <path
+                    d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="smallSidebarSocialLinks">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  height="18"
+                  width="18"
+                >
+                  <path
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="smallSidebarSocialLinks">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  height="18"
+                  width="18"
+                >
+                  <path
+                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Video Hero Section -->
+      <section class="video-hero">
+        <video autoplay muted loop playsinline>
+          <source src="./assets/img/video_bg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-hero-content">
+          <h1>The Dawn of Ethical Finance</h1>
+          <p>
+            Where AI meets values in the heart of Switzerland. Discover the
+            future of Decentralized Finance, guided by ethics and powered by
+            intelligence.
+          </p>
+          <div class="btn-group">
+            <a href="#about" class="btn_primary rounded-pill fs_6 me-3"
+              >Discover Our Vision</a
+            >
+            <a href="#contact" class="btn_outline_primary rounded-pill fs_6"
+              >Schedule Meeting</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Swiss Heritage Section -->
+      <section class="swiss-heritage">
+        <div class="swiss-flag">🇨🇭</div>
+        <div class="container wrapper">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-12 my-3">
+              <div
+                class="sectionTxt text_dark_em d-flex align-items-center mb-3 gap-3"
+              >
+                <span class="fs-4 fw-bold">•</span>
+                <span class="fs_5 text-uppercase">Swiss Excellence</span>
+              </div>
+              <h2 class="headingTxt text_dark_em fs_heading display-3">
+                Built on Swiss Foundations
+              </h2>
+              <p class="text_dark_em fs_5 mt-3">
+                From the financial capital of Zurich to the innovation hubs of
+                Geneva, Switzerland has always been synonymous with trust,
+                precision, and financial excellence. Ethica Holdings carries
+                forward this legacy into the digital age.
+              </p>
+              <div class="row mt-4">
+                <div class="col-6">
+                  <div class="text-center">
+                    <div class="stat-number">100%</div>
+                    <p class="text_dark_em">Swiss Regulated</p>
+                  </div>
                 </div>
-                <h2 class="headingTxt fs_heading m-0 display-3">Sowing for a Lasting Legacy</h2> 
-                <p class="paraTxt text_dark_em fs_5 mb-4 mt-1">Because every capital deserves to be employed with discernment, nourishing both reason and intuition. We do not leap at every opportunity; we ponder, we question, and we seek projects that are authentic, rooted, and worthy of trust.</p>
-                <div class="row stepsCardCont">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
-                        <div class="investmentCards p-3 py-4 rounded-4">
-                            <div class="cardIcon mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M20,11H23V13H20V11M1,11H4V13H1V11M13,1V4H11V1H13M4.92,3.5L7.05,5.64L5.63,7.05L3.5,4.93L4.92,3.5M16.95,5.63L19.07,3.5L20.5,4.93L18.37,7.05L16.95,5.63M12,6A6,6 0 0,1 18,12C18,14.22 16.79,16.16 15,17.2V19A1,1 0 0,1 14,20H10A1,1 0 0,1 9,19V17.2C7.21,16.16 6,14.22 6,12A6,6 0 0,1 12,6M14,21V22A1,1 0 0,1 13,23H11A1,1 0 0,1 10,22V21H14M11,18H13V15.87C14.73,15.43 16,13.86 16,12A4,4 0 0,0 12,8A4,4 0 0,0 8,12C8,13.86 9.27,15.43 11,15.87V18Z" /></svg>
-                            </div>
-                            <h3 class="text_dark fs_5 fw-medium">The Sprout of Vision</h3>
-                            <p class="text_dark_em fs_6">If a project lacks a clear reason for being, it is not destined to prosper. We seek ideas that simplify and improve life.</p>
-                        </div>
+                <div class="col-6">
+                  <div class="text-center">
+                    <div class="stat-number" style="animation-delay: 1s">
+                      AML/KYC
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
-                        <div class="investmentCards p-3 py-4 rounded-4">
-                            <div class="cardIcon mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M12,5A3.5,3.5 0 0,0 8.5,8.5A3.5,3.5 0 0,0 12,12A3.5,3.5 0 0,0 15.5,8.5A3.5,3.5 0 0,0 12,5M12,7A1.5,1.5 0 0,1 13.5,8.5A1.5,1.5 0 0,1 12,10A1.5,1.5 0 0,1 10.5,8.5A1.5,1.5 0 0,1 12,7M5.5,8A2.5,2.5 0 0,0 3,10.5C3,11.44 3.53,12.25 4.29,12.68C4.65,12.88 5.06,13 5.5,13C5.94,13 6.35,12.88 6.71,12.68C7.08,12.47 7.39,12.17 7.62,11.81C6.89,10.86 6.5,9.7 6.5,8.5C6.5,8.41 6.5,8.31 6.5,8.22C6.2,8.08 5.86,8 5.5,8M18.5,8C18.14,8 17.8,8.08 17.5,8.22C17.5,8.31 17.5,8.41 17.5,8.5C17.5,9.7 17.11,10.86 16.38,11.81C16.5,12 16.63,12.15 16.78,12.3C16.94,12.45 17.1,12.58 17.29,12.68C17.65,12.88 18.06,13 18.5,13C18.94,13 19.35,12.88 19.71,12.68C20.47,12.25 21,11.44 21,10.5A2.5,2.5 0 0,0 18.5,8M12,14C9.66,14 5,15.17 5,17.5V19H19V17.5C19,15.17 14.34,14 12,14M4.71,14.55C2.78,14.78 0,15.76 0,17.5V19H3V17.07C3,16.06 3.69,15.22 4.71,14.55M19.29,14.55C20.31,15.22 21,16.06 21,17.07V19H24V17.5C24,15.76 21.22,14.78 19.29,14.55M12,16C13.53,16 15.24,16.5 16.23,17H7.77C8.76,16.5 10.47,16 12,16Z" /></svg>
-                            </div>
-                            <h3 class="text_dark fs_5 fw-medium">Human Trust, Not Algorithmic</h3>
-                            <p class="text_dark_em fs_6">Behind every great idea, a team pulsates. We invest in people who are proactive, creative, and transparent about what they build.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
-                        <div class="investmentCards p-3 py-4 rounded-4">
-                            <div class="cardIcon mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M18,15H16V17H18M18,11H16V13H18M20,19H12V17H14V15H12V13H14V11H12V9H20M10,7H8V5H10M10,11H8V9H10M10,15H8V13H10M10,19H8V17H10M6,7H4V5H6M6,11H4V9H6M6,15H4V13H6M6,19H4V17H6M12,7V3H2V21H22V7H12Z" /></svg>
-                            </div>
-                            <h3 class="text_dark fs_5 fw-medium">Deep Roots, Not Just Sails</h3>
-                            <p class="text_dark_em fs_6">Projects conceived to endure. We seek solid structures, robust systems, and the patience to grow sustainably.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
-                        <div class="investmentCards p-3 py-4 rounded-4">
-                            <div class="cardIcon mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z" /></svg>
-                            </div>
-                            <h3 class="text_dark fs_5 fw-medium">The Positive Imprint</h3>
-                            <p class="text_dark_em fs_6">We seek projects that bring benefit, access, or care into the world. If we are listening, we like the idea that help can be part of something better.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
-                        <div class="investmentCards p-3 py-4 rounded-4">
-                            <div class="cardIcon mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M12 1L21 5V11C21 16.55 17.16 21.74 12 23C6.84 21.74 3 16.55 3 11V5L12 1M12 3.18L5 6.3V11.22C5 15.54 8.25 20 12 21C15.75 20 19 15.54 19 11.22V6.3L12 3.18M16 14V15.5L16 15.59C15.96 15.81 15.78 15.96 15.53 16L15.43 16H8.57L8.47 16C8.22 15.96 8.04 15.81 8 15.59L8 15.5V14H16M17 8L16 13H8L7 8L7 8L9.67 10.67L12 8.34L14.33 10.67L17 8L17 8Z" /></svg>
-                            </div>
-                            <h3 class="text_dark fs_5 fw-medium">Safety, A Non-Negotiable Dogma</h3>
-                            <p class="text_dark_em fs_6">We do not compromise on capital protection. Every protocol and solution must demonstrate absolute integrity and have passed rigorous testing.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
-                        <div class="investmentCards p-3 py-4 rounded-4">
-                            <div class="cardIcon mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="26" width="26"><path d="M13.13 22.19L11.5 18.36C13.07 17.78 14.54 17 15.9 16.09L13.13 22.19M5.64 12.5L1.81 10.87L7.91 8.1C7 9.46 6.22 10.93 5.64 12.5M19.22 4C19.5 4 19.75 4 19.96 4.05C20.13 5.44 19.94 8.3 16.66 11.58C14.96 13.29 12.93 14.6 10.65 15.47L8.5 13.37C9.42 11.06 10.73 9.03 12.42 7.34C15.18 4.58 17.64 4 19.22 4M19.22 2C17.24 2 14.24 2.69 11 5.93C8.81 8.12 7.5 10.53 6.65 12.64C6.37 13.39 6.56 14.21 7.11 14.77L9.24 16.89C9.62 17.27 10.13 17.5 10.66 17.5C10.89 17.5 11.13 17.44 11.36 17.35C13.5 16.53 15.88 15.19 18.07 13C23.73 7.34 21.61 2.39 21.61 2.39S20.7 2 19.22 2M14.54 9.46C13.76 8.68 13.76 7.41 14.54 6.63S16.59 5.85 17.37 6.63C18.14 7.41 18.15 8.68 17.37 9.46C16.59 10.24 15.32 10.24 14.54 9.46M8.88 16.53L7.47 15.12L8.88 16.53M6.24 22L9.88 18.36C9.54 18.27 9.21 18.12 8.91 17.91L4.83 22H6.24M2 22H3.41L8.18 17.24L6.76 15.83L2 20.59V22M2 19.17L6.09 15.09C5.88 14.79 5.73 14.47 5.64 14.12L2 17.76V19.17Z" /></svg>
-                            </div>
-                            <h3 class="text_dark fs_5 fw-medium">Anchored in Reality</h3>
-                            <p class="text_dark_em fs_6">If a project cannot adhere to real-world regulations, we avoid it. We prefer solid foundations for long-term growth, without concealing or circumventing rules.</p>
-                        </div>
-                    </div>
+                    <p class="text_dark_em">Compliant</p>
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
-
-        <!-- <section id="roadmap" class="bg_dark py-5">
-            <div class="container wrapper my-5">
-                <div class="sectionTxt text_light_em d-flex align-items-center mb-2 gap-3">
-                    <span class="fs-4 fw-bold">•</span>
-                    <span class="fs_5 text-uppercase">Roadmap</span>
-                </div>
-                <div class="row align-items-baseline">
-                    <div class="col-lg-7 col-md-6 col-12 my-2">
-                        <h2 class="headingTxt text_light_em fs_heading m-0 display-3">Our Course: Towards an Enlightened <span class="text_dark_primary">Financial Future</span></h2> 
-                    </div>
-                </div>
-                <div id="h_scroll_container" class="my-3">
-                    <div class="h_scroll_item">
-                        <div class="row align-items-center m-0">
-                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
-                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
-                                    <img src="assets/img/phase_1.gif" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-6 col-12 my-3">
-                                <div class="d-flex align-items-center justify-content-between gap-1">
-                                    <div>
-                                        <p class="text_light_em fs-6 mb-2">Phase 1</p>
-                                        <h3 class="text_light_em fs-2 mb-1">Genesis</h3>
-                                    </div>
-                                    <img src="assets/img/phase_1.gif" class="d-sm-none d-block" height="100" width="100" alt="">
-                                </div>
-                                <div class="heading_line mb-4"></div>
-                                <p class="text_light_em fw-light fs_6_res">The foundational phase, where vision meets its tangible validation. Here, Ethica comes to life, launching its inaugural product, establishing its Swiss stronghold, and proving its model to the first, trusting pioneers.</p>
-                                <ul class="list-unstyled my-2">
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. MVP Launch: AI-powered DeFi investment functionalities, a preview of the revolution.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Swiss Consolidation: Establishment of the Swiss entity, with a complete regulatory architecture (AML/KYC) guaranteeing transparency and security.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. The Guardians of the Future: Over 100 initial clients welcomed through an exclusive and personalized network.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. Internal Architecture: Creation of the proprietary DeFi portfolio, woven with secure and inviolable protocols.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Strategic Alliances: Commencement of partnerships with elite consultants, with a privileged focus on Swiss and Italian experts.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h_scroll_item">
-                        <div class="row align-items-center m-0">
-                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
-                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
-                                    <img src="assets/img/phase_2.gif" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-6 col-12 my-3">
-                                <div class="d-flex align-items-center justify-content-between gap-1">
-                                    <div>
-                                        <p class="text_light_em fs-6 mb-2">Phase 2</p>
-                                        <h3 class="text_light_em fs-2 mb-1">Build</h3>
-                                    </div>
-                                    <img src="assets/img/phase_2.gif" class="d-sm-none d-block" height="100" width="100" alt="">
-                                </div>
-                                <div class="heading_line mb-4"></div>
-                                <p class="text_light_em fw-light fs_6_res">Time to grow, improve, and expand into the world. A full year of development, education, and European scaling – laying the bricks of long-term infrastructure.</p>
-                                <ul class="list-unstyled my-2">
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. Mobile AI investment app: launched with smart contract integration.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Expansion into Germany & France: under MiCA compliance.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. Ethica Academy launched: education with certification.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. White-label DeFi tools: offered to banks.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Incubator program: for ethical DeFi startups.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">6. Strategic partnerships: with financial advisors and banks.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">7. 1,000+ active clients milestone.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h_scroll_item">
-                        <div class="row align-items-center m-0">
-                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
-                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
-                                    <img src="assets/img/phase_3.gif" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-6 col-12 my-3">
-                                <div class="d-flex align-items-center justify-content-between gap-1">
-                                    <div>
-                                        <p class="text_light_em fs-6 mb-2">Phase 3</p>
-                                        <h3 class="text_light_em fs-2 mb-1">Evolve</h3>
-                                    </div>
-                                    <img src="assets/img/phase_3.gif" class="d-sm-none d-block" height="100" width="100" alt="">
-                                </div>
-                                <div class="heading_line mb-4"></div>
-                                <p class="text_light_em fw-light fs_6_res">From platform to ecosystem – a global reach begins. Ethica steps beyond Europe, begins DAO governance, and expands tech into powerful new tools.</p>
-                                <ul class="list-unstyled my-2">
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. Expansion into Asia, MENA, and Latin America.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Quantum-resistant security and AI risk tools: integrated.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. Launch of DAO governance model.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. Cross-chain DeFi platform: activated.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Fortune 500 partnerships: begin.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">6. Growth targets: unicorn-stage valuation and full ecosystem deployment.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h_scroll_item">
-                        <div class="row align-items-center m-0">
-                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
-                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
-                                    <img src="assets/img/phase_4.gif" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-6 col-12 my-3">
-                                <div class="d-flex align-items-center justify-content-between gap-1">
-                                    <div>
-                                        <p class="text_light_em fs-6 mb-2">Phase 4</p>
-                                        <h3 class="text_light_em fs-2 mb-1">Lead</h3>
-                                    </div>
-                                    <img src="assets/img/phase_4.gif" class="d-sm-none d-block" height="100" width="100" alt="">
-                                </div>
-                                <div class="heading_line mb-4"></div>
-                                <p class="text_light_em fw-light fs_6_res">Establishing leadership – ethically, technologically, globally. Now leading Europe’s ethical DeFi space, Ethica focuses on deeper innovation and institutional solutions.</p>
-                                <ul class="list-unstyled my-2">
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. Market leader in EU: for ethical DeFi.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Quantum computing: integrated into investment algorithms.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. Cross-chain automated yield optimization: live.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. Institutional-grade custody and DeFi solutions: launched.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Expansion into Africa and Southeast Asia.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">6. IPO or strategic acquisition planning.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">7. Full ESG & sustainable finance model: deployed.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h_scroll_item">
-                        <div class="row align-items-center m-0">
-                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
-                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
-                                    <img src="assets/img/phase_5.gif" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-6 col-12 my-3">
-                                <div class="d-flex align-items-center justify-content-between gap-1">
-                                    <div>
-                                        <p class="text_light_em fs-6 mb-2">Phase 5</p>
-                                        <h3 class="text_light_em fs-2 mb-1">Connect</h3>
-                                    </div>
-                                    <img src="assets/img/phase_5.gif" class="d-sm-none d-block" height="100" width="100" alt="">
-                                </div>
-                                <div class="heading_line mb-4"></div>
-                                <p class="text_light_em fw-light fs_6_res">Bridging systems, governments, and the human side of AI. From central banks to next-gen AI advisors, this is where Ethica becomes an industry pillar.</p>
-                                <ul class="list-unstyled my-2">
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. Launch of Ethica Global Network: (regional HQs).</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Partnerships with central banks: for CBDC integration.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. Blockchain-based identity system: introduced.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. Next-gen AI financial assistant (human-collaborative): goes live.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Venture Capital arm: launched for early-stage investing.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">6. B-Corp certification: for social impact.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h_scroll_item">
-                        <div class="row align-items-center m-0">
-                            <div class="col-lg-5 col-md-6 col-12 my-3 d-sm-block d-none">
-                                <div class="swiper_img_cont rounded-4 position-relative overflow-hidden">
-                                    <img src="assets/img/phase_6.gif" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7 col-md-6 col-12 my-3">
-                                <div class="d-flex align-items-center justify-content-between gap-1">
-                                    <div>
-                                        <p class="text_light_em fs-6 mb-2">Phase 6</p>
-                                        <h3 class="text_light_em fs-2 mb-1">Flourish</h3>
-                                    </div>
-                                    <img src="assets/img/phase_6.gif" class="d-sm-none d-block" height="100" width="100" alt="">
-                                </div>
-                                <div class="heading_line mb-4"></div>
-                                <p class="text_light_em fw-light fs_6_res">Vision realized. Now building a legacy that lasts. Ethica achieves its €100M goal, goes fully decentralized, and begins exploring the next frontier — space, education, and global impact.</p>
-                                <ul class="list-unstyled my-2">
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">1. €100M+ revenue target: reached.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">2. Full DAO governance: in place.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">3. Launch of sustainable finance platform.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">4. Educational institutions: opened in multiple countries.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">5. Space-based financial research: begins.</li>
-                                    <li class="my-2 d-flex align-items-center gap-1 text_light_em fs_6_res fw-light">6. Global impact report: published.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-6 col-12 my-3">
+              <div class="position-relative">
+                <img
+                  src="./assets/img/swiss_financial_landscape.webp"
+                  class="img-fluid rounded-4"
+                  alt="Swiss Financial Landscape"
+                />
+              </div>
             </div>
-        </section> -->
+          </div>
+        </div>
+      </section>
 
-        <section id="company" class="my-5 py-4">
-            <div class="container wrapper">
-                <div class="row companyCardCont">
-                    <div class="col-lg-4 col-12 my-3 py-3">
-                        <div class="sectionTxt text_dark_em d-flex align-items-center mb-3 gap-3">
-                            <span class="fs-4 fw-bold">•</span>
-                            <span class="fs_5 text-uppercase">Industries</span>
-                        </div>
-                        <h2 class="headingTxt text_dark_em fs_heading m-0 display-4">Top industries we invest in</h2> 
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
-                        <div class="industriesCard rounded-4 p-3 py-4">
-                            <img src="assets/img/slide_5.png" class="industriesCardImg" alt="">
-                            <div class="position-relative h-100 d-flex justify-content-between flex-column">
-                                <div>
-                                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">We invest in</div>
-                                    <h3 class="text_dark_em fs-4 fw-medium mb-5">Venture Capital Companies</h3>
-                                </div>
-                                <div class="text-end m-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32"><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
-                        <div class="industriesCard rounded-4 p-3 py-4">
-                            <img src="assets/img/slide_5.png" class="industriesCardImg" alt="">
-                            <div class="position-relative h-100 d-flex justify-content-between flex-column">
-                                <div>
-                                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">We invest in</div>
-                                    <h3 class="text_dark_em fs-4 fw-medium mb-5">Family Offices</h3>
-                                </div>
-                                <div class="text-end m-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32"><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
-                        <div class="industriesCard rounded-4 p-3 py-4">
-                            <img src="assets/img/slide_5.png" class="industriesCardImg" alt="">
-                            <div class="position-relative h-100 d-flex justify-content-between flex-column">
-                                <div>
-                                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">We invest in</div>
-                                    <h3 class="text_dark_em fs-4 fw-medium mb-5">Wealth Management Firms</h3>
-                                </div>
-                                <div class="text-end m-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32"><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
-                        <div class="industriesCard rounded-4 p-3 py-4">
-                            <img src="assets/img/slide_5.png" class="industriesCardImg" alt="">
-                            <div class="position-relative h-100 d-flex justify-content-between flex-column">
-                                <div>
-                                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">We invest in</div>
-                                    <h3 class="text_dark_em fs-4 fw-medium mb-5">DeFi & Web3 Startups</h3>
-                                </div>
-                                <div class="text-end m-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32"><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
-                        <div class="industriesCard rounded-4 p-3 py-4">
-                            <img src="assets/img/slide_5.png" class="industriesCardImg" alt="">
-                            <div class="position-relative h-100 d-flex justify-content-between flex-column">
-                                <div>
-                                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">We invest in</div>
-                                    <h3 class="text_dark_em fs-4 fw-medium mb-5">Regulated Crypto Custody Platforms</h3>
-                                </div>
-                                <div class="text-end m-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32"><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <section id="about" class="bg_dark py-5">
+        <div class="container wrapper my-5">
+          <div class="row">
+            <div class="col-lg-4 col-12 my-3 py-3">
+              <div
+                class="sectionTxt text_light_em d-flex align-items-center mb-3 gap-3"
+              >
+                <span class="fs-4 fw-bold">•</span>
+                <span class="fs_5 text-uppercase">Beyond the noise</span>
+              </div>
+              <h2 class="headingTxt text_light_em fs_heading m-0 display-4">
+                Shaping the future of businesses
+              </h2>
             </div>
-        </section>
-
-        <section id="contact" class="my-5 py-3">
-            <div class="container wrapper">
-                <div class="row">
-                    <div class="col-lg-5 col-md-6 col-12 my-3">
-                        <div class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3">
-                            <span class="fs-4 fw-bold">•</span>
-                            <span class="fs_5 text-uppercase">Contact</span>
-                        </div>
-                        <h2 class="headingTxt text_dark_em fs_heading m-0 display-4">Ready to work together? Get in touch with us</h2> 
-                        <div class="my-3 cta_cont">
-                            <a href="tel:+412911231234" class="btn_primary cta_btn rounded-pill fs_6">+41 (291) 123 1234</a>
-                            <a href="mailto:info@ethica.holdings" class="btn_outline_primary cta_btn rounded-pill fs_6">Email us</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-md-6 col-12 my-3 px-lg-5">
-                        <form class="contactForm my-4">
-                            <div class="mb-4 contactFormItem">
-                                <input type="text" name="name" id="name" class="form-control shadow-none inputField" placeholder="Your Name">
-                            </div>
-                            <div class="mb-4 contactFormItem">
-                                <input type="text" name="name" id="name" class="form-control shadow-none inputField" placeholder="Your Work Email">
-                            </div>
-                            <div class="mb-4 contactFormItem">
-                                <input type="text" name="name" id="name" class="form-control shadow-none inputField" placeholder="Your Company Name">
-                            </div>
-                            <div class="mb-4 contactFormItem">
-                                <textarea name="name" id="name" class="form-control shadow-none inputField" placeholder="Your Message"></textarea>
-                            </div>
-                            <div class="mb-4 contactFormItem pt-2">
-                                <button class="btn_dark w-100 rounded py-3">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div class="col-lg-8 col-12 my-3">
+              <div class="aboutCard aboutCard_1 rounded-4 p-3 py-4">
+                <p class="text_light_em fw-light fs_5">
+                  We do not chase ephemeral trends. Our mission is to weave a
+                  future built on trust, safeguard what truly matters, and guide
+                  capital towards deeper meaning.
+                </p>
+                <p class="text_light_em fw-light fs_5">
+                  Ethica Holdings was born from an unwavering belief: financial
+                  growth should never sacrifice personal values. We have forged
+                  a sanctuary for investors – whether audacious visionaries or
+                  seasoned architects – where prosperity flourishes with
+                  clarity, stability, and meticulous care.
+                </p>
+              </div>
             </div>
-        </section>
-
-        <section id="footer" class="pt-5 pb-3 bg_dark">
-            <div class="container wrapper">
-                <div class="row my-4 justify-content-between">
-                    <div class="col-lg-5 col-md-6 col-sm-6 col-12 mb-3">
-                        <a href="#" class="sectionTxt d-inline-flex mb-4">
-                            <img src="assets/img/logo_invert.png" width="140" alt="">
-                        </a>
-                        <h2 class="headingTxt text_light_em fs_heading display-6">Shape your <span class="text_dark_primary">business future</span> with us today!</h2> 
-                        <p class="paraTxt text_light_emphasis fw-light mb-4">Let's get your business started with us and shape your future with our strategies and roadmaps. And see the difference in just one year!</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
-                        <h4 class="sectionTitle text_light_em fw-medium fs-5 mb-4">Main links</h4>
-                        <ul class="footerLinksCont list-unstyled my-2">
-                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Home</a></li>
-                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">About us</a></li>
-                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Investment Criteria</a></li>
-                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Investors Relations</a></li>
-                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Road Map</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
-                        <h4 class="sectionTitle2 text_light_em fw-medium fs-5 mb-4">Quick links</h4>
-                        <ul class="footerLinksCont2 list-unstyled my-2">
-                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Investor Login</a></li>
-                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Download Pitch Deck</a></li>
-                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Schedule a Meeting</a></li>
-                            <li class="mb-3 footerLinks"><a href="#" class="d-inline-flex align-items-center footer_links">Contact</a></li>
-                        </ul>
-                    </div>
+            <div class="col-lg-4 col-md-6 col-12 my-3">
+              <div class="aboutCard aboutCard_2 rounded-4 p-3 py-4">
+                <h3 class="text_light_em fs-2 fw-medium mb-5">
+                  <span class="underlinedEffect">56</span>&nbsp;million
+                </h3>
+                <div class="pt-5">
+                  <div class="my-2 mt-4 text-uppercase text_light_em fs_6">
+                    Capital Invested
+                  </div>
                 </div>
-                <hr class="border-light">
-                <p class="copyrightTxt text_light_emphasis fw-light fs_6 text-center my-1">Copyright &copy; 2025. All rights reserved</p>
-                <p class="companyTxt fw-light fs_6 text-center my-1"><a href="https://heckto.com" target="_blank" class="text-decoration-none text_light_emphasis">Powered by Heckto</a></p>
+              </div>
             </div>
-        </section>
+            <div class="col-lg-4 col-md-6 col-12 my-3">
+              <div class="aboutCard aboutCard_3 rounded-4 p-3 py-4">
+                <h3 class="text_light_em fs-2 fw-medium mb-5">
+                  <span class="underlinedEffect">24</span>&nbsp;startups
+                </h3>
+                <div class="pt-5">
+                  <div class="my-2 mt-4 text-uppercase text_light_em fs_6">
+                    business in our portfolio
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-12 my-3">
+              <a
+                href="#"
+                class="aboutCard aboutCard_4 d-block text-decoration-none rounded-4 p-3 py-4"
+              >
+                <h3 class="text_light_em fs-2 fw-medium mb-5">Get started</h3>
+                <div class="pt-5">
+                  <div class="my-2 mt-4 text-uppercase text_light_em fs_6">
+                    pitch your startup today
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- AI Technology Section -->
+      <section class="ai-tech-section">
+        <div class="container wrapper">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <div
+                class="sectionTxt text_light_em d-flex align-items-center justify-content-center mb-3 gap-3"
+              >
+                <span class="fs-4 fw-bold">•</span>
+                <span class="fs_5 text-uppercase">AI-Powered Intelligence</span>
+              </div>
+              <h2 class="headingTxt text_light_em fs_heading display-3">
+                Thousands of Bots, One Vision
+              </h2>
+              <p
+                class="text_light_em fs_5 mt-3 mx-auto"
+                style="max-width: 600px"
+              >
+                Our network of AI-powered trading bots operates 24/7, making
+                micro-decisions that align with your values while maximizing
+                returns in the DeFi ecosystem.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="col-lg-4 col-md-6 col-12 my-3"
+              data-aos="fade-up"
+              data-aos-delay="100"
+              data-aos-duration="800"
+            >
+              <div class="tech-card">
+                <div class="mb-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    height="40"
+                    width="40"
+                    fill="#E0B278"
+                  >
+                    <path
+                      d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"
+                    />
+                  </svg>
+                </div>
+                <h4 class="text_light_em fs-4 fw-medium mb-3">
+                  Precision Trading
+                </h4>
+                <p class="text_light_em">
+                  Advanced algorithms execute thousands of micro-transactions
+                  daily, optimizing yield while minimizing risk exposure.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6 col-12 my-3"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="800"
+            >
+              <div class="tech-card">
+                <div class="mb-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    height="40"
+                    width="40"
+                    fill="#E0B278"
+                  >
+                    <path
+                      d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V14H16V22H8V14H9.2V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.4,8.7 10.4,10V14H13.6V10C13.6,8.7 12.8,8.2 12,8.2Z"
+                    />
+                  </svg>
+                </div>
+                <h4 class="text_light_em fs-4 fw-medium mb-3">
+                  Quantum Security
+                </h4>
+                <p class="text_light_em">
+                  Military-grade encryption and quantum-resistant protocols
+                  protect your investments from emerging threats.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6 col-12 my-3"
+              data-aos="fade-up"
+              data-aos-delay="300"
+              data-aos-duration="800"
+            >
+              <div class="tech-card">
+                <div class="mb-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    height="40"
+                    width="40"
+                    fill="#E0B278"
+                  >
+                    <path
+                      d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19L19,19V9Z"
+                    />
+                  </svg>
+                </div>
+                <h4 class="text_light_em fs-4 fw-medium mb-3">
+                  Ethical Framework
+                </h4>
+                <p class="text_light_em">
+                  Every investment decision is filtered through our proprietary
+                  ethical AI framework, ensuring alignment with your values.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="bot" class="my-5 pt-4 pb-2">
+        <div class="container wrapper">
+          <div class="row my-4">
+            <div class="col-lg-7 col-md-6 col-12 my-3">
+              <div
+                class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3"
+              >
+                <span class="fs-4 fw-bold">•</span>
+                <span class="fs_5 text-uppercase"
+                  >The Algorithmic Heartbeat</span
+                >
+              </div>
+              <h2 class="fs_heading m-0 display-3 headingTxt">
+                It Doesn't Chase, It Deciphers
+              </h2>
+              <p class="text_dark_em fs_5 mt-3 paraTxt">
+                In the uninterrupted maelstrom of decentralized markets, where
+                shifting currents and dissonant signals make investment
+                uncertain, our solution emerges. Our investment engine does not
+                merely react: it deciphers.
+              </p>
+              <p class="text_dark_em fs_5 mb-4 paraTxt2">
+                Thousands of bots, silent sentinels, operate in symbiosis with
+                Artificial Intelligence algorithms, orchestrating
+                micro-operations that minimize risk while maximizing efficiency.
+                A serene and thoughtful system, capable of guiding your capital
+                with surgical precision, in perfect harmony with your values.
+              </p>
+              <div class="my-3 cta_link">
+                <a href="#" class="btn_dark rounded-pill fs_6"
+                  >Get started today!</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-6 col-12 my-3">
+              <div class="botImgCont rounded-5">
+                <img
+                  src="assets/img/ai-bot-trading.png"
+                  class="img-fluid"
+                  width="100%"
+                  height="100%"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="steps" class="my-5 py-4">
+        <div class="container wrapper">
+          <div
+            class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3"
+          >
+            <span class="fs-4 fw-bold">•</span>
+            <span class="fs_5 text-uppercase">Investment Criteria</span>
+          </div>
+          <h2 class="headingTxt fs_heading m-0 display-3">
+            Sowing for a Lasting Legacy
+          </h2>
+          <p class="paraTxt text_dark_em fs_5 mb-4 mt-1">
+            Because every capital deserves to be employed with discernment,
+            nourishing both reason and intuition. We do not leap at every
+            opportunity; we ponder, we question, and we seek projects that are
+            authentic, rooted, and worthy of trust.
+          </p>
+          <div class="row stepsCardCont">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+              <div class="investmentCards p-3 py-4 rounded-4">
+                <div class="cardIcon mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    height="26"
+                    width="26"
+                  >
+                    <path
+                      d="M20,11H23V13H20V11M1,11H4V13H1V11M13,1V4H11V1H13M4.92,3.5L7.05,5.64L5.63,7.05L3.5,4.93L4.92,3.5M16.95,5.63L19.07,3.5L20.5,4.93L18.37,7.05L16.95,5.63M12,6A6,6 0 0,1 18,12C18,14.22 16.79,16.16 15,17.2V19A1,1 0 0,1 14,20H10A1,1 0 0,1 9,19V17.2C7.21,16.16 6,14.22 6,12A6,6 0 0,1 12,6M14,21V22A1,1 0 0,1 13,23H11A1,1 0 0,1 10,22V21H14M11,18H13V15.87C14.73,15.43 16,13.86 16,12A4,4 0 0,0 12,8A4,4 0 0,0 8,12C8,13.86 9.27,15.43 11,15.87V18Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text_dark fs_5 fw-medium">The Sprout of Vision</h3>
+                <p class="text_dark_em fs_6">
+                  If a project lacks a clear reason for being, it is not
+                  destined to prosper. We seek ideas that simplify and improve
+                  life.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+              <div class="investmentCards p-3 py-4 rounded-4">
+                <div class="cardIcon mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    height="26"
+                    width="26"
+                  >
+                    <path
+                      d="M12,5A3.5,3.5 0 0,0 8.5,8.5A3.5,3.5 0 0,0 12,12A3.5,3.5 0 0,0 15.5,8.5A3.5,3.5 0 0,0 12,5M12,7A1.5,1.5 0 0,1 13.5,8.5A1.5,1.5 0 0,1 12,10A1.5,1.5 0 0,1 10.5,8.5A1.5,1.5 0 0,1 12,7M5.5,8A2.5,2.5 0 0,0 3,10.5C3,11.44 3.53,12.25 4.29,12.68C4.65,12.88 5.06,13 5.5,13C5.94,13 6.35,12.88 6.71,12.68C7.08,12.47 7.39,12.17 7.62,11.81C6.89,10.86 6.5,9.7 6.5,8.5C6.5,8.41 6.5,8.31 6.5,8.22C6.2,8.08 5.86,8 5.5,8M18.5,8C18.14,8 17.8,8.08 17.5,8.22C17.5,8.31 17.5,8.41 17.5,8.5C17.5,9.7 17.11,10.86 16.38,11.81C16.5,12 16.63,12.15 16.78,12.3C16.94,12.45 17.1,12.58 17.29,12.68C17.65,12.88 18.06,13 18.5,13C18.94,13 19.35,12.88 19.71,12.68C20.47,12.25 21,11.44 21,10.5A2.5,2.5 0 0,0 18.5,8M12,14C9.66,14 5,15.17 5,17.5V19H19V17.5C19,15.17 14.34,14 12,14M4.71,14.55C2.78,14.78 0,15.76 0,17.5V19H3V17.07C3,16.06 3.69,15.22 4.71,14.55M19.29,14.55C20.31,15.22 21,16.06 21,17.07V19H24V17.5C24,15.76 21.22,14.78 19.29,14.55M12,16C13.53,16 15.24,16.5 16.23,17H7.77C8.76,16.5 10.47,16 12,16Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text_dark fs_5 fw-medium">
+                  Human Trust, Not Algorithmic
+                </h3>
+                <p class="text_dark_em fs_6">
+                  Behind every great idea, a team pulsates. We invest in people
+                  who are proactive, creative, and transparent about what they
+                  build.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+              <div class="investmentCards p-3 py-4 rounded-4">
+                <div class="cardIcon mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    height="26"
+                    width="26"
+                  >
+                    <path
+                      d="M18,15H16V17H18M18,11H16V13H18M20,19H12V17H14V15H12V13H14V11H12V9H20M10,7H8V5H10M10,11H8V9H10M10,15H8V13H10M10,19H8V17H10M6,7H4V5H6M6,11H4V9H6M6,15H4V13H6M6,19H4V17H6M12,7V3H2V21H22V7H12Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text_dark fs_5 fw-medium">
+                  Deep Roots, Not Just Sails
+                </h3>
+                <p class="text_dark_em fs_6">
+                  Projects conceived to endure. We seek solid structures, robust
+                  systems, and the patience to grow sustainably.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+              <div class="investmentCards p-3 py-4 rounded-4">
+                <div class="cardIcon mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    height="26"
+                    width="26"
+                  >
+                    <path
+                      d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text_dark fs_5 fw-medium">The Positive Imprint</h3>
+                <p class="text_dark_em fs_6">
+                  We seek projects that bring benefit, access, or care into the
+                  world. If we are listening, we like the idea that help can be
+                  part of something better.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+              <div class="investmentCards p-3 py-4 rounded-4">
+                <div class="cardIcon mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    height="26"
+                    width="26"
+                  >
+                    <path
+                      d="M12 1L21 5V11C21 16.55 17.16 21.74 12 23C6.84 21.74 3 16.55 3 11V5L12 1M12 3.18L5 6.3V11.22C5 15.54 8.25 20 12 21C15.75 20 19 15.54 19 11.22V6.3L12 3.18M16 14V15.5L16 15.59C15.96 15.81 15.78 15.96 15.53 16L15.43 16H8.57L8.47 16C8.22 15.96 8.04 15.81 8 15.59L8 15.5V14H16M17 8L16 13H8L7 8L7 8L9.67 10.67L12 8.34L14.33 10.67L17 8L17 8Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text_dark fs_5 fw-medium">
+                  Safety, A Non-Negotiable Dogma
+                </h3>
+                <p class="text_dark_em fs_6">
+                  We do not compromise on capital protection. Every protocol and
+                  solution must demonstrate absolute integrity and have passed
+                  rigorous testing.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
+              <div class="investmentCards p-3 py-4 rounded-4">
+                <div class="cardIcon mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    height="26"
+                    width="26"
+                  >
+                    <path
+                      d="M19.22 4C19.5 4 19.75 4 19.96 4.05C20.13 5.44 19.94 8.3 16.66 11.58C14.96 13.29 12.93 14.6 10.65 15.47L8.5 13.37C9.42 11.06 10.73 9.03 12.42 7.34C15.18 4.58 17.64 4 19.22 4M19.22 2C17.24 2 14.24 2.69 11 5.93C8.81 8.12 7.5 10.53 6.65 12.64C6.37 13.39 6.56 14.21 7.11 14.77L9.24 16.89C9.62 17.27 10.13 17.5 10.66 17.5C10.89 17.5 11.13 17.44 11.36 17.35C13.5 16.53 15.88 15.19 18.07 13C23.73 7.34 21.61 2.39 21.61 2.39S20.7 2 19.22 2M14.54 9.46C13.76 8.68 13.76 7.41 14.54 6.63S16.59 5.85 17.37 6.63C18.14 7.41 18.15 8.68 17.37 9.46C16.59 10.24 15.32 10.24 14.54 9.46M8.88 16.53L7.47 15.12L8.88 16.53M6.24 22L9.88 18.36C9.54 18.27 9.21 18.12 8.91 17.91L4.83 22H6.24M2 22H3.41L8.18 17.24L6.76 15.83L2 20.59V22M2 19.17L6.09 15.09C5.88 14.79 5.73 14.47 5.64 14.12L2 17.76V19.17Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text_dark fs_5 fw-medium">Anchored in Reality</h3>
+                <p class="text_dark_em fs_6">
+                  If a project cannot adhere to real-world regulations, we avoid
+                  it. We prefer solid foundations for long-term growth, without
+                  concealing or circumventing rules.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Roadmap Section -->
+      <section id="roadmap" class="roadmap-section">
+        <div class="container wrapper">
+          <div class="text-center mb-5">
+            <div
+              class="sectionTxt text_light_em d-flex align-items-center justify-content-center mb-3 gap-3"
+            >
+              <span class="fs-4 fw-bold">•</span>
+              <span class="fs_5 text-uppercase">Our Journey</span>
+            </div>
+            <h2 class="headingTxt text_light_em fs_heading display-3">
+              Five Phases to Financial Evolution
+            </h2>
+            <p class="text_light_em fs_5 mt-3 mx-auto" style="max-width: 600px">
+              From Genesis to Fioritura, our roadmap charts a course toward a
+              more ethical and intelligent financial future.
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-12 my-3">
+              <div class="roadmap-phase">
+                <div class="phase-number">1</div>
+                <h3 class="text_light_em fs-3 fw-medium mb-3">
+                  GENESI - Genesis
+                </h3>
+                <p class="text_light_em mb-3">Giving life to the vision</p>
+                <ul class="text_light_em">
+                  <li>Launch MVP: AI-powered platform for DeFi investments</li>
+                  <li>Swiss incorporation with full AML/KYC compliance</li>
+                  <li>First 100 clients through exclusive network</li>
+                  <li>First 100 clients through exclusive network</li>
+                  <li>Creation of proprietary DeFi portfolio</li>
+                  <li>Strategic partnerships with Swiss and Italian experts</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12 my-3">
+              <div class="roadmap-phase">
+                <div class="phase-number">2</div>
+                <h3 class="text_light_em fs-3 fw-medium mb-3">
+                  COSTRUZIONE - Construction
+                </h3>
+                <p class="text_light_em mb-3">Expansion and consolidation</p>
+                <ul class="text_light_em">
+                  <li>Launch AI mobile app for smart investments</li>
+                  <li>Expansion to Germany and France (MiCA compliant)</li>
+                  <li>Ethica Academy: certified DeFi & AI training</li>
+                  <li>White-label DeFi solutions for banks</li>
+                  <li>Incubator program for ethical startups</li>
+                  <li>1,000+ active clients milestone</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12 my-3">
+              <div class="roadmap-phase">
+                <div class="phase-number">3</div>
+                <h3 class="text_light_em fs-3 fw-medium mb-3">
+                  EVOLUZIONE - Evolution
+                </h3>
+                <p class="text_light_em mb-3">
+                  From platform to global ecosystem
+                </p>
+                <ul class="text_light_em">
+                  <li>Expansion to Asia, MENA, and Latin America</li>
+                  <li>Advanced AI integration with quantum security</li>
+                  <li>DAO governance launch</li>
+                  <li>Cross-chain DeFi platform activation</li>
+                  <li>Fortune 500 collaborations</li>
+                  <li>Unicorn valuation achieved</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12 my-3">
+              <div class="roadmap-phase">
+                <div class="phase-number">4</div>
+                <h3 class="text_light_em fs-3 fw-medium mb-3">
+                  GUIDA - Leadership
+                </h3>
+                <p class="text_light_em mb-3">
+                  Ethical and technological leadership
+                </p>
+                <ul class="text_light_em">
+                  <li>European leader in ethical DeFi</li>
+                  <li>AI algorithms with quantum computing</li>
+                  <li>Automated cross-chain yield optimization</li>
+                  <li>DeFi services for institutions</li>
+                  <li>Africa and Southeast Asia expansion</li>
+                  <li>IPO or strategic acquisition process</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12 my-3">
+              <div class="roadmap-phase">
+                <div class="phase-number">5</div>
+                <h3 class="text_light_em fs-3 fw-medium mb-3">
+                  CONNESSIONE - Connection
+                </h3>
+                <p class="text_light_em mb-3">
+                  Connecting systems, people, and future
+                </p>
+                <ul class="text_light_em">
+                  <li>Ethica Global Network with regional HQs</li>
+                  <li>Central bank partnerships for CBDC integration</li>
+                  <li>Blockchain digital identity system</li>
+                  <li>Next-gen AI Financial Assistant</li>
+                  <li>Venture Capital arm for early-stage investments</li>
+                  <li>B-Corp certification for social impact</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-12 my-3">
+              <div class="roadmap-phase">
+                <div class="phase-number">∞</div>
+                <h3 class="text_light_em fs-3 fw-medium mb-3">
+                  FIORITURA - Flourishing
+                </h3>
+                <p class="text_light_em mb-3">The vision realized</p>
+                <ul class="text_light_em">
+                  <li>€100M+ revenue achieved</li>
+                  <li>Fully decentralized governance</li>
+                  <li>Sustainable finance platform active</li>
+                  <li>Educational institutions in multiple countries</li>
+                  <li>Space financial research initiation</li>
+                  <li>First global impact report published</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Enhanced Cube Swiper Section -->
+      <section class="enhanced-cube-section">
+        <div class="container wrapper">
+          <div class="text-center mb-5">
+            <div
+              class="sectionTxt text_dark_em d-flex align-items-center justify-content-center mb-3 gap-3"
+            >
+              <span class="fs-4 fw-bold">•</span>
+              <span class="fs_5 text-uppercase">Our Vision in Motion</span>
+            </div>
+            <h2 class="headingTxt text_dark_em fs_heading display-3">
+              Experience the Future
+            </h2>
+            <p class="text_dark_em fs_5 mt-3 mx-auto" style="max-width: 600px">
+              Discover how we're reshaping the landscape of ethical finance
+              through innovative technology and Swiss precision.
+            </p>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-12">
+              <div class="swiper cubeSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/img/header_1.jpg"
+                      height="100%"
+                      width="100%"
+                      alt="Swiss Financial Innovation"
+                    />
+                    <div class="cube-overlay">
+                      <h4 class="fs-4 fw-medium mb-2">
+                        Swiss Financial Innovation
+                      </h4>
+                      <p>
+                        Combining traditional Swiss banking excellence with
+                        cutting-edge DeFi technology.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/img/header_2.png"
+                      height="100%"
+                      width="100%"
+                      alt="AI-Powered Trading"
+                    />
+                    <div class="cube-overlay">
+                      <h4 class="fs-4 fw-medium mb-2">AI-Powered Trading</h4>
+                      <p>
+                        Thousands of intelligent bots working 24/7 to optimize
+                        your DeFi investments.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/img/header_3.png"
+                      height="100%"
+                      width="100%"
+                      alt="Ethical Investment Framework"
+                    />
+                    <div class="cube-overlay">
+                      <h4 class="fs-4 fw-medium mb-2">
+                        Ethical Investment Framework
+                      </h4>
+                      <p>
+                        Every investment decision aligned with your values and
+                        ethical principles.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/img/header_4.png"
+                      height="100%"
+                      width="100%"
+                      alt="Global Impact"
+                    />
+                    <div class="cube-overlay">
+                      <h4 class="fs-4 fw-medium mb-2">Global Impact</h4>
+                      <p>
+                        Building a sustainable financial future that benefits
+                        investors and society alike.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="company" class="my-5 py-4">
+        <div class="container wrapper">
+          <div class="row companyCardCont">
+            <div class="col-lg-4 col-12 my-3 py-3">
+              <div
+                class="sectionTxt text_dark_em d-flex align-items-center mb-3 gap-3"
+              >
+                <span class="fs-4 fw-bold">•</span>
+                <span class="fs_5 text-uppercase">Industries</span>
+              </div>
+              <h2 class="headingTxt text_dark_em fs_heading m-0 display-4">
+                Top industries we invest in
+              </h2>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
+              <div class="industriesCard rounded-4 p-3 py-4">
+                <img
+                  src="assets/img/slide_5.png"
+                  class="industriesCardImg"
+                  alt=""
+                />
+                <div
+                  class="position-relative h-100 d-flex justify-content-between flex-column"
+                >
+                  <div>
+                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">
+                      We invest in
+                    </div>
+                    <h3 class="text_dark_em fs-4 fw-medium mb-5">
+                      Venture Capital Companies
+                    </h3>
+                  </div>
+                  <div class="text-end m-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      height="32"
+                      width="32"
+                    >
+                      <path
+                        d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
+              <div class="industriesCard rounded-4 p-3 py-4">
+                <img
+                  src="assets/img/slide_5.png"
+                  class="industriesCardImg"
+                  alt=""
+                />
+                <div
+                  class="position-relative h-100 d-flex justify-content-between flex-column"
+                >
+                  <div>
+                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">
+                      We invest in
+                    </div>
+                    <h3 class="text_dark_em fs-4 fw-medium mb-5">
+                      Family Offices
+                    </h3>
+                  </div>
+                  <div class="text-end m-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      height="32"
+                      width="32"
+                    >
+                      <path
+                        d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
+              <div class="industriesCard rounded-4 p-3 py-4">
+                <img
+                  src="assets/img/slide_5.png"
+                  class="industriesCardImg"
+                  alt=""
+                />
+                <div
+                  class="position-relative h-100 d-flex justify-content-between flex-column"
+                >
+                  <div>
+                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">
+                      We invest in
+                    </div>
+                    <h3 class="text_dark_em fs-4 fw-medium mb-5">
+                      Wealth Management Firms
+                    </h3>
+                  </div>
+                  <div class="text-end m-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      height="32"
+                      width="32"
+                    >
+                      <path
+                        d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
+              <div class="industriesCard rounded-4 p-3 py-4">
+                <img
+                  src="assets/img/slide_5.png"
+                  class="industriesCardImg"
+                  alt=""
+                />
+                <div
+                  class="position-relative h-100 d-flex justify-content-between flex-column"
+                >
+                  <div>
+                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">
+                      We invest in
+                    </div>
+                    <h3 class="text_dark_em fs-4 fw-medium mb-5">
+                      DeFi & Web3 Startups
+                    </h3>
+                  </div>
+                  <div class="text-end m-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      height="32"
+                      width="32"
+                    >
+                      <path
+                        d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
+              <div class="industriesCard rounded-4 p-3 py-4">
+                <img
+                  src="assets/img/slide_5.png"
+                  class="industriesCardImg"
+                  alt=""
+                />
+                <div
+                  class="position-relative h-100 d-flex justify-content-between flex-column"
+                >
+                  <div>
+                    <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">
+                      We invest in
+                    </div>
+                    <h3 class="text_dark_em fs-4 fw-medium mb-5">
+                      Regulated Crypto Custody Platforms
+                    </h3>
+                  </div>
+                  <div class="text-end m-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      height="32"
+                      width="32"
+                    >
+                      <path
+                        d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="my-5 py-3">
+        <div class="container wrapper">
+          <div class="row">
+            <div class="col-lg-5 col-md-6 col-12 my-3">
+              <div
+                class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3"
+              >
+                <span class="fs-4 fw-bold">•</span>
+                <span class="fs_5 text-uppercase">Contact</span>
+              </div>
+              <h2 class="headingTxt text_dark_em fs_heading m-0 display-4">
+                Ready to work together? Get in touch with us
+              </h2>
+              <div class="my-3 cta_cont">
+                <a
+                  href="tel:+412911231234"
+                  class="btn_primary cta_btn rounded-pill fs_6"
+                  >+41 (291) 123 1234</a
+                >
+                <a
+                  href="mailto:info@ethica.holdings"
+                  class="btn_outline_primary cta_btn rounded-pill fs_6"
+                  >Email us</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-6 col-12 my-3 px-lg-5">
+              <form class="contactForm my-4">
+                <div class="mb-4 contactFormItem">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="form-control shadow-none inputField"
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div class="mb-4 contactFormItem">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form-control shadow-none inputField"
+                    placeholder="Your Work Email"
+                  />
+                </div>
+                <div class="mb-4 contactFormItem">
+                  <input
+                    type="text"
+                    name="company"
+                    id="company"
+                    class="form-control shadow-none inputField"
+                    placeholder="Your Company Name"
+                  />
+                </div>
+                <div class="mb-4 contactFormItem">
+                  <textarea
+                    name="message"
+                    id="message"
+                    class="form-control shadow-none inputField"
+                    placeholder="Your Message"
+                    rows="4"
+                  ></textarea>
+                </div>
+                <div class="mb-4 contactFormItem pt-2">
+                  <button type="submit" class="btn_dark w-100 rounded py-3">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="footer" class="pt-5 pb-3 bg_dark">
+        <div class="container wrapper">
+          <div class="row my-4 justify-content-between">
+            <div class="col-lg-5 col-md-6 col-sm-6 col-12 mb-3">
+              <a href="#" class="sectionTxt d-inline-flex mb-4">
+                <img src="assets/img/logo_invert.png" width="140" alt="" />
+              </a>
+              <h2 class="headingTxt text_light_em fs_heading display-6">
+                Shape your
+                <span class="text_dark_primary">business future</span> with us
+                today!
+              </h2>
+              <p class="paraTxt text_light_emphasis fw-light mb-4">
+                Let's get your business started with us and shape your future
+                with our strategies and roadmaps. And see the difference in just
+                one year!
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+              <h4 class="sectionTitle text_light_em fw-medium fs-5 mb-4">
+                Main links
+              </h4>
+              <ul class="footerLinksCont list-unstyled my-2">
+                <li class="mb-3 footerLinks">
+                  <a
+                    href="#"
+                    class="d-inline-flex align-items-center footer_links"
+                    >Home</a
+                  >
+                </li>
+                <li class="mb-3 footerLinks">
+                  <a
+                    href="#about"
+                    class="d-inline-flex align-items-center footer_links"
+                    >About us</a
+                  >
+                </li>
+                <li class="mb-3 footerLinks">
+                  <a
+                    href="#steps"
+                    class="d-inline-flex align-items-center footer_links"
+                    >Investment Criteria</a
+                  >
+                </li>
+                <li class="mb-3 footerLinks">
+                  <a
+                    href="#roadmap"
+                    class="d-inline-flex align-items-center footer_links"
+                    >Road Map</a
+                  >
+                </li>
+                <li class="mb-3 footerLinks">
+                  <a
+                    href="#contact"
+                    class="d-inline-flex align-items-center footer_links"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+              <h4 class="sectionTitle2 text_light_em fw-medium fs-5 mb-4">
+                Quick links
+              </h4>
+              <ul class="footerLinksCont2 list-unstyled my-2">
+                <li class="mb-3 footerLinks">
+                  <a
+                    href="#"
+                    class="d-inline-flex align-items-center footer_links"
+                    >Investor Login</a
+                  >
+                </li>
+                <li class="mb-3 footerLinks">
+                  <a
+                    href="#"
+                    class="d-inline-flex align-items-center footer_links"
+                    >Download Pitch Deck</a
+                  >
+                </li>
+                <li class="mb-3 footerLinks">
+                  <a
+                    href="#"
+                    class="d-inline-flex align-items-center footer_links"
+                    >Schedule a Meeting</a
+                  >
+                </li>
+                <li class="mb-3 footerLinks">
+                  <a
+                    href="#contact"
+                    class="d-inline-flex align-items-center footer_links"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <hr class="border-light" />
+          <p
+            class="copyrightTxt text_light_emphasis fw-light fs_6 text-center my-1"
+          >
+            Copyright &copy; 2025 Ethica Holdings. All rights reserved
+          </p>
+          <p class="companyTxt fw-light fs_6 text-center my-1">
+            <a
+              href="https://heckto.com"
+              target="_blank"
+              class="text-decoration-none text_light_emphasis"
+              >Powered by Heckto</a
+            >
+          </p>
+        </div>
+      </section>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="assets/js/gsap.js"></script>
-    <script>
-        var swiper = new Swiper(".cubeSwiper", {
-            effect: "cube",
-            grabCursor: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            cubeEffect: {
-                shadow: true,
-                slideShadows: true,
-                shadowOffset: 20,
-                shadowScale: 0.94,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-        });
-    </script>
-</body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        offset: 100,
+      });
+
+      // Modern Navbar Scroll Effect
+      const navbar = document.getElementById("modernNavbar");
+      const videoSection = document.querySelector(".video-hero");
+
+      function handleNavbarScroll() {
+        const videoHeight = videoSection.offsetHeight;
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > videoHeight - 100) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      }
+
+      // Throttled scroll event for better performance
+      let ticking = false;
+      function updateNavbar() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            handleNavbarScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener("scroll", updateNavbar);
+
+      // Initialize navbar state
+      handleNavbarScroll();
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Enhanced animations for video hero
+      gsap.from(".video-hero-content h1", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.5,
+        ease: "back.out(1.7)",
+      });
+
+      gsap.from(".video-hero-content p", {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        delay: 1,
+        ease: "back.out(1.7)",
+      });
+
+      gsap.from(".video-hero-content .btn-group", {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        delay: 1.5,
+        ease: "back.out(1.7)",
+      });
+
+      // Swiss Heritage Section
+      var swiss_tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".swiss-heritage",
+          start: "top 20%",
+        },
+      });
+
+      swiss_tl.from(".swiss-heritage .sectionTxt", {
+        opacity: 0,
+        y: -40,
+        duration: 0.4,
+        ease: "back.out(1.7)",
+      });
+
+      swiss_tl.from(".swiss-heritage .headingTxt", {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      });
+
+      swiss_tl.from(".swiss-heritage .stat-number", {
+        opacity: 0,
+        scale: 0,
+        stagger: 0.2,
+        duration: 0.6,
+        ease: "back.out(1.7)",
+      });
+
+      // AI Tech Section
+      var ai_tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".ai-tech-section",
+          start: "top 20%",
+        },
+      });
+
+      ai_tl.from(".ai-tech-section .sectionTxt", {
+        opacity: 0,
+        y: -40,
+        duration: 0.4,
+        ease: "back.out(1.7)",
+      });
+
+      ai_tl.from(".ai-tech-section .headingTxt", {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      });
+
+      // About section
+      var about_tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top 20%",
+        },
+      });
+
+      about_tl.from("#about .sectionTxt", {
+        opacity: 0,
+        y: -40,
+        duration: 0.4,
+        ease: "back.out(1.7)",
+      });
+
+      about_tl.from("#about .headingTxt", {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      });
+
+      about_tl.from("#about .aboutCard_1", {
+        opacity: 0,
+        y: 100,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      });
+
+      about_tl.from("#about .aboutCard_2", {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        ease: "back.out(0.75)",
+      });
+
+      about_tl.from("#about .aboutCard_3", {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        ease: "back.out(0.75)",
+      });
+
+      about_tl.from("#about .aboutCard_4", {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        ease: "back.out(0.75)",
+      });
+
+      // Bot section
+      var bot_tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#bot",
+          start: "top 20%",
+        },
+      });
+
+      bot_tl.from("#bot .sectionTxt", {
+        opacity: 0,
+        y: -40,
+        duration: 0.4,
+        ease: "back.out(1.7)",
+      });
+
+      bot_tl.from("#bot .headingTxt", {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      });
+
+      bot_tl.from("#bot .paraTxt", {
+        opacity: 0,
+        x: -50,
+        duration: 0.4,
+      });
+
+      bot_tl.from("#bot .botImgCont", {
+        opacity: 0,
+        y: 100,
+        duration: 0.5,
+      });
+
+      bot_tl.from("#bot .paraTxt2", {
+        opacity: 0,
+        x: -50,
+        duration: 0.4,
+      });
+
+      bot_tl.from("#bot .cta_link", {
+        opacity: 0,
+        y: 50,
+        duration: 0.4,
+      });
+
+      // Steps section
+      var steps_tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#steps",
+          start: "top 20%",
+        },
+      });
+
+      steps_tl.from("#steps .sectionTxt", {
+        opacity: 0,
+        y: -40,
+        duration: 0.4,
+        ease: "back.out(1.7)",
+      });
+
+      steps_tl.from("#steps .headingTxt", {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      });
+
+      steps_tl.from("#steps .paraTxt", {
+        opacity: 0,
+        x: -50,
+        duration: 0.4,
+      });
+
+      steps_tl.from("#steps .stepsCardCont .stepsCard", {
+        opacity: 0,
+        y: 50,
+        stagger: 0.25,
+        duration: 0.75,
+      });
+
+ 
+
+      // Enhanced Cube Swiper section
+      var cube_tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".enhanced-cube-section",
+          start: "top 20%",
+        },
+      });
+
+      cube_tl.from(".enhanced-cube-section .sectionTxt", {
+        opacity: 0,
+        y: -40,
+        duration: 0.4,
+        ease: "back.out(1.7)",
+      });
+
+      cube_tl.from(".enhanced-cube-section .headingTxt", {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      });
+
+      cube_tl.from(".enhanced-cube-section .cubeSwiper", {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+      });
+
+      // Company section
+      var company_tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#company",
+          start: "top 20%",
+        },
+      });
+
+      company_tl.from("#company .sectionTxt", {
+        opacity: 0,
+        y: -40,
+        duration: 0.4,
+        ease: "back.out(1.7)",
+      });
+
+      company_tl.from("#company .headingTxt", {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      });
+
+      company_tl.from("#company .companyCardCont .companyCard", {
+        opacity: 0,
+        y: 50,
+        stagger: 0.25,
+        duration: 0.75,
+      });
+
+      // Contact section
+      var contact_tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 20%",
+        },
+      });
+
+      contact_tl.from("#contact .sectionTxt", {
+        opacity: 0,
+        y: -40,
+        duration: 0.4,
+        ease: "back.out(1.7)",
+      });
+
+      contact_tl.from("#contact .headingTxt", {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      });
+
+      contact_tl.from("#contact .cta_cont", {
+        opacity: 0,
+        y: 50,
+        stagger: 0.25,
+        duration: 0.75,
+      });
+
+      contact_tl.from(
+        "#contact .contactForm .contactFormItem",
+        {
+          opacity: 0,
+          y: 50,
+          stagger: 0.25,
+          duration: 0.75,
+        },
+        0.75
+      );
+
+      // Footer section
+      var footer_tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#footer",
+          start: "top 50%",
+        },
+      });
+
+      footer_tl.from("#footer .sectionTxt", {
+        opacity: 0,
+        y: -40,
+        duration: 0.4,
+        ease: "back.out(1.7)",
+      });
+
+      footer_tl.from("#footer .headingTxt", {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      });
+
+      footer_tl.from("#footer .paraTxt", {
+        opacity: 0,
+        x: -50,
+        duration: 0.4,
+      });
+
+      footer_tl.from("#footer .sectionTitle", {
+        opacity: 0,
+        y: 40,
+        duration: 0.3,
+      });
+
+      footer_tl.from("#footer .footerLinksCont .footerLinks", {
+        opacity: 0,
+        x: 40,
+        stagger: 0.25,
+        duration: 0.6,
+      });
+
+      footer_tl.from("#footer .sectionTitle2", {
+        opacity: 0,
+        y: 40,
+        duration: 0.3,
+      });
+
+      footer_tl.from("#footer .footerLinksCont2 .footerLinks", {
+        opacity: 0,
+        x: 40,
+        stagger: 0.25,
+        duration: 0.6,
+      });
+
+      footer_tl.from("#footer .copyrightTxt", {
+        opacity: 0,
+        y: 40,
+        duration: 0.3,
+      });
+
+      footer_tl.from("#footer .companyTxt", {
+        opacity: 0,
+        y: 40,
+        duration: 0.3,
+      });
+
+      // Initialize Swiper
+      var swiper = new Swiper(".cubeSwiper", {
+        effect: "cube",
+        grabCursor: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        cubeEffect: {
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Counter animation for stats
+      function animateCounter(element, target) {
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          element.textContent =
+            Math.floor(current) + (target === 100 ? "%" : "");
+        }, 20);
+      }
+
+      // Trigger counter animation when in view
+      ScrollTrigger.create({
+        trigger: ".swiss-heritage",
+        start: "top 50%",
+        onEnter: () => {
+          const counters = document.querySelectorAll(".stat-number");
+          counters.forEach((counter) => {
+            const text = counter.textContent;
+            if (text.includes("%")) {
+              animateCounter(counter, 100);
+            }
+          });
+        },
+      });
+    </script>
+  </body>
 </html>
