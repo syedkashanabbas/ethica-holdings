@@ -1,59 +1,58 @@
-* {
-    font-family: Inter, "Inter Placeholder", sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap');
+/* Load Nexa font weights */
 
-.fs_heading, 
-.fs_heading * {
-    font-family: Inter, "Inter Placeholder", sans-serif !important;
+@font-face {
+    font-family: 'Nexa';
+    src: url('../fonts/nexa/Nexa-Black.otf') format('opentype');
     font-weight: 900;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'StyreneB';
-    src: url('../fonts/Styrene/StyreneB-Black.otf') format('opentype');
-    font-weight: 900;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'StyreneB';
-    src: url('../fonts/Styrene/StyreneB-Bold.otf') format('opentype');
+    font-family: 'Nexa';
+    src: url('../fonts/nexa/Nexa-Bold.otf') format('opentype');
     font-weight: 700;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'StyreneB';
-    src: url('../fonts/Styrene/StyreneB-Medium.otf') format('opentype');
+    font-family: 'Nexa';
+    src: url('../fonts/nexa/Nexa-Medium.otf') format('opentype');
     font-weight: 500;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'StyreneB';
-    src: url('../fonts/Styrene/StyreneB-Regular.otf') format('opentype');
+    font-family: 'Nexa';
+    src: url('../fonts/nexa/Nexa-Regular.otf') format('opentype');
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'StyreneB';
-    src: url('../fonts/Styrene/StyreneB-Light.otf') format('opentype');
+    font-family: 'Nexa';
+    src: url('../fonts/nexa/Nexa-Light.otf') format('opentype');
     font-weight: 300;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'StyreneB';
-    src: url('../fonts/Styrene/StyreneB-Thin.otf') format('opentype');
+    font-family: 'Nexa';
+    src: url('../fonts/nexa/Nexa-Thin.otf') format('opentype');
     font-weight: 100;
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'DalaMoa';
-    src: url('../fonts/dala-moa-medium.otf') format('opentype');
-    font-weight: 500;
-    font-display: swap;
+/* Apply Nexa everywhere */
+/* Default body font */
+* {
+    font-family: 'Nexa', sans-serif;
+}
+
+/* Elegant bold headings */
+.fs_heading,
+.fs_heading * {
+    font-family: 'Bodoni Moda', serif !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }

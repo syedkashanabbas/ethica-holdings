@@ -791,7 +791,7 @@
           </div>
         </div>
       </section>
-
+  
       <!-- Swiss Heritage Section -->
       <section class="swiss-heritage">
         <div class="swiss-flag">🇨🇭</div>
@@ -842,6 +842,97 @@
           </div>
         </div>
       </section>
+<style>
+/* 3D Section Styling */
+#three-d-section {
+  width: 100%;
+  position: relative;
+  background: transparent;
+}
+
+#three-d-section spline-viewer {
+  overflow: hidden;
+  display: block;
+  height: 600px;
+}
+
+/* Top Left Heading */
+.section-heading {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 2.9rem;
+  font-weight: 700;
+  color: white;
+  padding: 10px 20px;
+  z-index: 10;
+}
+
+/* Scroll Button Style */
+.scroll-btn {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e0b278;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.scroll-btn:hover {
+  background: #cfa263;
+}
+
+.scroll-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  #three-d-section spline-viewer {
+    height: 400px;
+  }
+  .section-heading {
+    font-size: 1.4rem;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #three-d-section spline-viewer {
+    height: 300px;
+  }
+}
+</style>
+
+<section id="three-d-section">
+  <div class="spline-wrapper" data-aos="fade-up" data-aos-duration="1000">
+
+    <!-- Heading -->
+    <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
+      We are Everywhere </div>
+
+    <!-- 3D Model -->
+    <spline-viewer url="https://prod.spline.design/1rNS3J909-jMjCtH/scene.splinecode"></spline-viewer>
+
+    <!-- Scroll Button -->
+    <a href="#about" class="scroll-btn" title="Scroll Down">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 16.5l-8-8h16l-8 8z" />
+      </svg>
+    </a>
+
+  </div>
+</section>
+
 
       <section id="about" class="bg_dark py-5">
         <div class="container wrapper my-5">
@@ -1728,7 +1819,7 @@
           </div>
         </div>
       </section>
-
+ 
       <section id="footer" class="pt-5 pb-3 bg_dark">
         <div class="container wrapper">
           <div class="row my-4 justify-content-between">
@@ -2351,5 +2442,6 @@
         },
       });
     </script>
+     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script>
   </body>
 </html>
