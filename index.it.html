@@ -857,101 +857,7 @@
         </div>
       </section>
 
-      <style>
-/* 3D Section Styling */
-#three-d-section {
-  width: 100%;
-  position: relative;
-  background: transparent;
-}
-
-#three-d-section spline-viewer {
-  overflow: hidden;
-  display: block;
-  height: 600px;
-}
-
-/* Top Left Heading */
-.section-heading {
-  position: absolute;
-  top: 30px;
-  left: 40px;
-  font-size: 2.9rem;
-  font-weight: 700;
-  color: white;
-  padding: 10px 20px;
-  z-index: 10;
-}
-
-/* Scroll Button Style */
-.scroll-btn {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #e0b278;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
-  z-index: 10;
-}
-
-.scroll-btn:hover {
-  background: #cfa263;
-}
-
-.scroll-btn svg {
-  width: 20px;
-  height: 20px;
-  fill: white;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  #three-d-section spline-viewer {
-    height: 400px;
-  }
-  .section-heading {
-    font-size: 1.4rem;
-    padding: 8px 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  #three-d-section spline-viewer {
-    height: 300px;
-  }
-}
-      </style>
-    <section id="three-d-section">
-      <div class="spline-wrapper" data-aos="fade-up" data-aos-duration="1000">
-
-        <!-- Heading -->
-        <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
-        <!-- Siamo ovunque -->
-        
-        </div>
-
-        <!-- 3D Model -->
-        <div class="">
-
-        <spline-viewer url="https://prod.spline.design/J42O-tELX4DU9t7Y/scene.splinecode"></spline-viewer>
-
-        </div>
-        
-        <!-- Scroll Button -->
-        <!-- <a href="#about" class="scroll-btn" title="Scroll Down">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 16.5l-8-8h16l-8 8z" />
-          </svg>
-        </a> -->
-
-      </div>
-    </section>
+  
 
       <section id="about" class="bg_dark py-5">
         <div class="container wrapper my-5">
@@ -1130,6 +1036,122 @@
           </div>
         </div>
       </section>
+ 
+
+<style>
+  /* 3D Section Styling */
+  #three-d-section {
+    width: 100%;
+    position: relative;
+  }
+
+  .spline-wrapper {
+    position: relative;
+  }
+
+  /* Glass wrapper */
+  .spline-glass {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    z-index: 1;
+  }
+
+  /* Overlay (Hidden initially) */
+  .spline-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  /* Show overlay when .glass is added */
+  .spline-glass.glass .spline-overlay {
+    opacity: 1;
+  }
+
+  /* Spline itself */
+  .spline-glass spline-viewer {
+    display: block;
+    height: 600px;
+    transition: filter 1s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Heading */
+  .section-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    font-weight: 900;
+    color: black;
+    text-align: center;
+    z-index: 3; /* Above overlay */
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .section-heading.animate {
+    animation: fadeUp 1s ease forwards;
+  }
+
+  /* Animation for heading */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -40%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    #three-d-section spline-viewer {
+      height: 400px;
+    }
+    .section-heading {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #three-d-section spline-viewer {
+      height: 300px;
+    }
+    .section-heading {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<section id="three-d-section">
+  <div class="spline-wrapper">
+    <div class="spline-glass">
+      <div class="spline-overlay"></div>
+      <div class="headingTxt section-heading">
+         Vivi il Futuro
+      </div>
+      <spline-viewer 
+        id="my-spline" 
+        url="https://prod.spline.design/J42O-tELX4DU9t7Y/scene.splinecode">
+      </spline-viewer>
+    </div>
+  </div>
+</section>
+
+
 
       <section id="bot" class="my-5 pt-4 pb-2">
         <div class="container wrapper">
@@ -2432,6 +2454,6 @@
     </script>
 
      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script>
-
+    <script src="./assets/js/3d.js"></script>
   </body>
 </html>

@@ -1097,66 +1097,122 @@
           </div>
         </div>
       </section>
+<style>
+  /* 3D Section Styling */
+  #three-d-section {
+    width: 100%;
+    position: relative;
+  }
 
-      <style>
-      /* 3D Section Styling */
-      #three-d-section {
-        width: 100%;
-        position: relative;
-        background: transparent;
-      }
+  .spline-wrapper {
+    position: relative;
+  }
 
-      #three-d-section spline-viewer {
-        overflow: hidden;
-        display: block;
-        height: 600px;
-      }
+  /* Glass wrapper */
+  .spline-glass {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    z-index: 1;
+  }
 
-      /* Top Left Heading */
-.section-heading {
-  position: absolute;
-  top: 30px;
-  left: 40px;
-  font-size: 2.9rem;
-  font-weight: 700;
-  color: white;
-  padding: 10px 20px;
-  z-index: 10;
-  opacity: 0; /* Start hidden */
-  transform: translateY(30px); /* Start slightly below */
-  pointer-events: none; /* Optional */
-}
+  /* Overlay (Hidden initially) */
+  .spline-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
 
-      /* Mobile Responsive */
-      @media (max-width: 768px) {
-        #three-d-section spline-viewer {
-          height: 400px;
-        }
-        .section-heading {
-          font-size: 1.4rem;
-          padding: 8px 14px;
-        }
-      }
+  /* Show overlay when .glass is added */
+  .spline-glass.glass .spline-overlay {
+    opacity: 1;
+  }
 
-      @media (max-width: 480px) {
-        #three-d-section spline-viewer {
-          height: 300px;
-        }
-      }
-      </style>
+  /* Spline itself */
+  .spline-glass spline-viewer {
+    display: block;
+    height: 600px;
+    transition: filter 1s ease;
+    position: relative;
+    z-index: 1;
+  }
 
-  <section id="three-d-section">
+  /* Heading */
+  .section-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    font-weight: 900;
+    color: black;
+    text-align: center;
+    z-index: 3; /* Above overlay */
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .section-heading.animate {
+    animation: fadeUp 1s ease forwards;
+  }
+
+  /* Animation for heading */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -40%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    #three-d-section spline-viewer {
+      height: 400px;
+    }
+    .section-heading {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #three-d-section spline-viewer {
+      height: 300px;
+    }
+    .section-heading {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<section id="three-d-section">
   <div class="spline-wrapper">
-    <!-- Heading -->
-    <div class="section-heading">Experience the Future</div>
-
-    <!-- 3D Model -->
-    <spline-viewer 
-      id="my-spline" 
-      url="https://prod.spline.design/J42O-tELX4DU9t7Y/scene.splinecode">
-    </spline-viewer>
+    <div class="spline-glass">
+      <div class="spline-overlay"></div>
+      <div class="headingTxt section-heading">
+         Experience the Future
+      </div>
+      <spline-viewer 
+        id="my-spline" 
+        url="https://prod.spline.design/J42O-tELX4DU9t7Y/scene.splinecode">
+      </spline-viewer>
+    </div>
   </div>
 </section>
+
+
+
+
 
       <section id="bot" class="mb-3 pt-4">
         <div class="container wrapper">
@@ -2434,21 +2490,7 @@
         },
       });
 
-        const splineViewer = document.getElementById('my-spline');
-
-      // Wait until Spline loads its scene
-      splineViewer.addEventListener('load', () => {
-        console.log("Spline loaded!");
-        setTimeout(() => {
-          gsap.to(".section-heading", {
-            duration: 1.2,
-            opacity: 1,
-            y: 0,
-            ease: "power3.out"
-          });
-        }, 7000); // 7 seconds delay
-      });
-
+      
 
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -2505,6 +2547,7 @@
     fadeEffect: { crossFade: true },
   });
     </script>
-     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script>
+    <script src="./assets/js/3d.js"></script>
   </body>
 </html>
