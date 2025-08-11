@@ -824,13 +824,33 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 col-12 my-3">
+               <div class="col-lg-6 col-12 my-3">
               <div class="position-relative">
-                <img
-                  src="./assets/img/swiss_financial_landscape.webp"
-                  class="img-fluid rounded-4"
-                  alt="Panorama finanziario svizzero"
-                />
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/img/swiss_financial_landscape.jpg"
+                        class="img-fluid rounded-4"
+                        alt="Swiss Financial Landscape"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/img/swiss_financial_landscape_2.jpg"
+                        class="img-fluid rounded-4"
+                        alt="Swiss Mountains"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/img/swiss_financial_landscape_3.jpg"
+                        class="img-fluid rounded-4"
+                        alt="Swiss Cityscape"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -916,7 +936,7 @@
      Siamo ovunque</div>
 
     <!-- 3D Model -->
-    <spline-viewer url="https://prod.spline.design/1rNS3J909-jMjCtH/scene.splinecode"></spline-viewer>
+    <spline-viewer url="https://prod.spline.design/h3EoQareEsDpQNwH/scene.splinecode"></spline-viewer>
 
     <!-- Scroll Button -->
     <a href="#about" class="scroll-btn" title="Scroll Down">
@@ -2394,6 +2414,16 @@
           });
         },
       });
+
+    var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+  });
     </script>
 
      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script>
