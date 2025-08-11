@@ -863,99 +863,49 @@
           </div>
         </div>
       </section>
-      <style>
-      /* 3D Section Styling */
-      #three-d-section {
-        width: 100%;
-        position: relative;
-        background: transparent;
-      }
+      
 
-      #three-d-section spline-viewer {
-        overflow: hidden;
-        display: block;
-        height: 600px;
-      }
+<section id="bot" class="mb-3 pt-4">
+  <div class="container wrapper">
+    <div class="row my-4">
+      <!-- Spline viewer moved to the left -->
+      <div class="col-lg-5 col-md-6 col-12 my-3">
+        <div class="botImgCont rounded-5">
+          <spline-viewer class="keyboard3d-spline-viewer"
+            url="https://prod.spline.design/VORIT20cLBTRxxNN/scene.splinecode">
+          </spline-viewer>
+        </div>
+      </div>
 
-      /* Top Left Heading */
-      .section-heading {
-        position: absolute;
-        top: 30px;
-        left: 40px;
-        font-size: 2.9rem;
-        font-weight: 700;
-        color: white;
-        padding: 10px 20px;
-        z-index: 10;
-      }
-
-      /* Scroll Button Style */
-      .scroll-btn {
-        position: absolute;
-        bottom: 25px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #e0b278;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.3s ease;
-        z-index: 10;
-      }
-
-      .scroll-btn:hover {
-        background: #cfa263;
-      }
-
-      .scroll-btn svg {
-        width: 20px;
-        height: 20px;
-        fill: white;
-      }
-
-      /* Mobile Responsive */
-      @media (max-width: 768px) {
-        #three-d-section spline-viewer {
-          height: 400px;
-        }
-        .section-heading {
-          font-size: 1.4rem;
-          padding: 8px 14px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        #three-d-section spline-viewer {
-          height: 300px;
-        }
-      }
-      </style>
-
-<section id="three-d-section">
-  <div class="spline-wrapper" data-aos="fade-up" data-aos-duration="1000">
-
-    <!-- Heading -->
-    <div class="section-heading" data-aos="fade-down" data-aos-duration="800">
-      <!-- We are Everywhere  -->
-    
+      <!-- Text content moved to the right -->
+      <div class="col-lg-7 col-md-6 col-12 my-3">
+      <h2 class="fs_heading m-0 display-3 headingTxt">
+  Beyond Reaction — Into Real Understanding
+      </h2>
+<p class="text_dark_em fs_5 mt-3 paraTxt">
+  In the vast, restless sea of decentralized markets, where volatility
+  blurs clarity, our technology stands as a lighthouse. It doesn’t just
+  chase trends — it reads the hidden language of the market.
+</p>
+<p class="text_dark_em fs_5 mb-4 paraTxt2">
+  Our intelligent network of autonomous bots works in harmony with
+  advanced AI models, dissecting millions of micro-signals in real time.
+  The result? Swift, precise decisions that guard your capital and
+  amplify opportunity — all while staying true to your strategic vision.
+</p>
+<div class="my-3 cta_link">
+  <a href="#" class="btn_dark rounded-pill fs_6">
+    Start your journey now
+  </a>
+</div>
+ 
+      </div>
     </div>
-
-
-    <!-- 3D Model -->
-    <!-- <spline-viewer url="https://prod.spline.design/1rNS3J909-jMjCtH/scene.splinecode"></spline-viewer> -->
-<spline-viewer url="https://prod.spline.design/dZqFwBAMGbCzkaQv/scene.splinecode"></spline-viewer>
-    <!-- Scroll Button -->
-    <!-- <a href="#about" class="scroll-btn" title="Scroll Down">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M12 16.5l-8-8h16l-8 8z" />
-      </svg>
-    </a> -->
-
   </div>
 </section>
+
+
+
 
 
       <section id="about" class="bg_dark py-5">
@@ -1029,6 +979,7 @@
         </div>
       </section>
 
+      
       <!-- AI Technology Section -->
       <section class="ai-tech-section">
         <div class="container wrapper">
@@ -1146,6 +1097,66 @@
           </div>
         </div>
       </section>
+
+      <style>
+      /* 3D Section Styling */
+      #three-d-section {
+        width: 100%;
+        position: relative;
+        background: transparent;
+      }
+
+      #three-d-section spline-viewer {
+        overflow: hidden;
+        display: block;
+        height: 600px;
+      }
+
+      /* Top Left Heading */
+.section-heading {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 2.9rem;
+  font-weight: 700;
+  color: white;
+  padding: 10px 20px;
+  z-index: 10;
+  opacity: 0; /* Start hidden */
+  transform: translateY(30px); /* Start slightly below */
+  pointer-events: none; /* Optional */
+}
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        #three-d-section spline-viewer {
+          height: 400px;
+        }
+        .section-heading {
+          font-size: 1.4rem;
+          padding: 8px 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #three-d-section spline-viewer {
+          height: 300px;
+        }
+      }
+      </style>
+
+  <section id="three-d-section">
+  <div class="spline-wrapper">
+    <!-- Heading -->
+    <div class="section-heading">Experience the Future</div>
+
+    <!-- 3D Model -->
+    <spline-viewer 
+      id="my-spline" 
+      url="https://prod.spline.design/J42O-tELX4DU9t7Y/scene.splinecode">
+    </spline-viewer>
+  </div>
+</section>
 
       <section id="bot" class="mb-3 pt-4">
         <div class="container wrapper">
@@ -1491,6 +1502,7 @@
           </div>
         </div>
       </section>
+      
 
       <!-- Enhanced Cube Swiper Section -->
       <section class="enhanced-cube-section">
@@ -2421,6 +2433,22 @@
           el: ".swiper-pagination",
         },
       });
+
+        const splineViewer = document.getElementById('my-spline');
+
+      // Wait until Spline loads its scene
+      splineViewer.addEventListener('load', () => {
+        console.log("Spline loaded!");
+        setTimeout(() => {
+          gsap.to(".section-heading", {
+            duration: 1.2,
+            opacity: 1,
+            y: 0,
+            ease: "power3.out"
+          });
+        }, 7000); // 7 seconds delay
+      });
+
 
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
