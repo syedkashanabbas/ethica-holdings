@@ -279,3 +279,7 @@ html {
 .footer_links:hover {
     color: #F2F1ED;
 }
+
+#bot{
+    background-color : var(--light);
+}
