@@ -1584,6 +1584,62 @@
         </div>
       </section>
 
+<style>
+.circle-hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: black;
+}
+
+.circle-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60vmin;
+  height: 60vmin;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  will-change: transform, width, height;
+}
+
+.circle-bg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;   /* full screen width */
+  height: 100vh;  /* full screen height */
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* sharp quality */
+}
+
+.circle-content {
+  color: white;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+
+</style>
+ <section class="circle-hero" id="circleHero">
+  <div class="circle-bg">
+    <video autoplay muted loop playsinline>
+      <source src="./assets/img/video_bg.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="circle-content">
+    <h1>Splash Hero</h1>
+    <p>Scroll to expand the circle video</p>
+  </div>
+</section>
+
       <section id="company" class="my-5 py-4">
         <div class="container wrapper">
           <div class="row companyCardCont">
@@ -1981,7 +2037,7 @@
     ></script>
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+<script src="./circle.js"></script>
     <script>
       // Initialize AOS
       AOS.init({
