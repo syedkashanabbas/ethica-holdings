@@ -1548,6 +1548,62 @@ La nostra rete intelligente di bot autonomi lavora in sinergia con modelli di in
           </div>
         </div>
       </section>
+      <style>
+.circle-hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: black;
+}
+
+.circle-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60vmin;
+  height: 60vmin;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  will-change: transform, width, height;
+}
+
+.circle-bg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;   /* full screen width */
+  height: 100vh;  /* full screen height */
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* sharp quality */
+    backface-visibility: hidden;
+}
+
+.circle-content {
+  color: white;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+
+</style>
+ <section class="circle-hero" id="circleHero">
+  <div class="circle-bg">
+    <video autoplay muted loop playsinline>
+      <source src="./assets/img/video_bg.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="circle-content">
+    <h1>Ethica Holdings</h1>
+    <p>Scroll to expand the circle video</p>
+  </div>
+</section>
 
 
       <section id="company" class="my-5 py-4">
@@ -2432,7 +2488,7 @@ footer_tl.from("#footer .companyTxt", {
     fadeEffect: { crossFade: true },
   });
     </script>
-
+<script src="./assets/js/circle.js"></script>
      <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script> -->
     <script src="./assets/js/3d.js"></script>
   </body>
