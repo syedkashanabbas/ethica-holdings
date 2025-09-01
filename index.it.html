@@ -576,7 +576,7 @@
             data-aos-duration="800"
           >
             <a class="navbar-brand" href="#">
-              <img src="./assets/img/logo.png" width="140" alt="ethica holdings" />
+              <img src="./assets/img/light-logo.png" width="140" alt="ethica holdings" />
             </a>
           </div>
 
@@ -685,7 +685,7 @@
       >
         <div class="offcanvas-header">
           <a class="navbar-brand" href="#">
-            <img src="assets/img/logo.png" width="140" alt="ethica holdings" />
+            <img src="assets/img/light-logo.png" width="140" alt="ethica holdings" />
           </a>
           <button
             type="button"
@@ -1112,65 +1112,6 @@ La nostra rete intelligente di bot autonomi lavora in sinergia con modelli di in
     }
   }
 </style>
-
-<!-- <section id="three-d-section">
-  <div class="spline-wrapper">
-    <div class="spline-glass">
-      <div class="spline-overlay"></div>
-      <div class="headingTxt section-heading">
-         Vivi il Futuro
-      </div>
-      <spline-viewer 
-        id="my-spline" 
-        url="https://prod.spline.design/J42O-tELX4DU9t7Y/scene.splinecode">
-      </spline-viewer>
-    </div>
-  </div>
-</section> -->
-
-
-
-      <!-- <section id="bot" class=" pt-4 pb-2">
-        <div class="container wrapper">
-          <div class="row my-4">
-            <div class="col-lg-7 col-md-6 col-12 my-3">
-              <div
-                class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3"
-              >
-                <span class="fs-4 fw-bold">•</span>
-                <span class="fs_5 text-uppercase"
-                  >Il battito cardiaco algoritmico</span
-                >
-              </div>
-              <h2 class="fs_heading m-0 display-3 headingTxt">
-                Non insegue, decifra
-              </h2>
-              <p class="text_dark_em fs_5 mt-3 paraTxt">
-                Nel vortice ininterrotto dei mercati decentralizzati, dove correnti mutevoli e segnali dissonanti rendono incerti gli investimenti, emerge la nostra soluzione. Il nostro motore di investimento non si limita a reagire: it decifra.
-              </p>
-              <p class="text_dark_em fs_5 mb-4 paraTxt2">
-                Migliaia di bot, sentinelle silenziose, operano in simbiosi con algoritmi di Intelligenza Artificiale, orchestrando micro-operazioni che minimizzano il rischio e massimizzano l'efficienza. Un sistema sereno e ponderato, capace di guidare il tuo capitale con precisione chirurgica, in perfetta armonia con i tuoi valori.
-              </p>
-              <div class="my-3 cta_link">
-                <a href="#" class="btn_dark rounded-pill fs_6"
-                  >Inizia oggi!</a
-                >
-              </div>
-            </div>
-            <div class="col-lg-5 col-md-6 col-12 my-3">
-              <div class="botImgCont rounded-5">
-                <img
-                  src="assets/img/ai-bot-trading.png"
-                  class="img-fluid"
-                  width="100%"
-                  height="100%"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
 
       <section id="steps" class="my-5 py-4">
         <div class="container wrapper">
@@ -2005,7 +1946,7 @@ La nostra rete intelligente di bot autonomi lavora in sinergia con modelli di in
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script>
+     <script>
       // Initialize AOS
       AOS.init({
         duration: 800,
@@ -2017,17 +1958,19 @@ La nostra rete intelligente di bot autonomi lavora in sinergia con modelli di in
       // Modern Navbar Scroll Effect
       const navbar = document.getElementById("modernNavbar");
       const videoSection = document.querySelector(".video-hero");
-
+      const logoImg = navbar.querySelector(".navbar-brand img");
       function handleNavbarScroll() {
-        const videoHeight = videoSection.offsetHeight;
-        const scrollPosition = window.scrollY;
+  const videoHeight = videoSection.offsetHeight;
+  const scrollPosition = window.scrollY;
 
-        if (scrollPosition > videoHeight - 100) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      }
+  if (scrollPosition > videoHeight - 100) {
+    navbar.classList.add("scrolled");
+    logoImg.setAttribute("src", "./assets/img/logo.png"); // dark logo
+  } else {
+    navbar.classList.remove("scrolled");
+    logoImg.setAttribute("src", "./assets/img/light-logo.png"); // light logo
+  }
+}
 
       // Throttled scroll event for better performance
       let ticking = false;
@@ -2049,29 +1992,18 @@ La nostra rete intelligente di bot autonomi lavora in sinergia con modelli di in
       gsap.registerPlugin(ScrollTrigger);
 
       // Enhanced animations for video hero
-      gsap.from(".video-hero-content h1", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        delay: 0.5,
-        ease: "back.out(1.7)",
-      });
+    gsap.from(".video-hero-content > *", {
+  scrollTrigger: {
+    trigger: ".video-hero-content",
+    start: "top 70%", // jab viewport me aaye
+  },
+  opacity: 0,
+  y: 30,
+  duration: 0.3,
+  ease: "power1.out",
+  stagger: 0.15, // ek ke baad ek snap
+});
 
-      gsap.from(".video-hero-content p", {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        delay: 1,
-        ease: "back.out(1.7)",
-      });
-
-      gsap.from(".video-hero-content .btn-group", {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        delay: 1.5,
-        ease: "back.out(1.7)",
-      });
 
       // Swiss Heritage Section
       var swiss_tl = gsap.timeline({
@@ -2193,20 +2125,20 @@ La nostra rete intelligente di bot autonomi lavora in sinergia con modelli di in
       bot_tl.from("#bot .headingTxt", {
         opacity: 0,
         x: -100,
-        duration: 0.5,
+        duration: 0.1,
         ease: "back.out(1.7)",
       });
 
       bot_tl.from("#bot .paraTxt", {
         opacity: 0,
         x: -50,
-        duration: 0.4,
+        duration: 0.2,
       });
 
       bot_tl.from("#bot .botImgCont", {
         opacity: 0,
         y: 100,
-        duration: 0.5,
+        duration: 0.3,
       });
 
       bot_tl.from("#bot .paraTxt2", {
@@ -2222,70 +2154,69 @@ La nostra rete intelligente di bot autonomi lavora in sinergia con modelli di in
       });
 
       // Steps section
-      var steps_tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#steps",
-          start: "top 20%",
-        },
-      });
+  var steps_tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#steps",
+    start: "top 30%", // thoda late trigger se bhi tez feel hoti hai
+  },
+});
 
-      steps_tl.from("#steps .sectionTxt", {
-        opacity: 0,
-        y: -40,
-        duration: 0.4,
-        ease: "back.out(1.7)",
-      });
+steps_tl.from("#steps .sectionTxt", {
+  opacity: 0,
+  y: -20,
+  duration: 0.25,
+  ease: "power1.out",
+});
 
-      steps_tl.from("#steps .headingTxt", {
-        opacity: 0,
-        x: -100,
-        duration: 0.5,
-        ease: "back.out(1.7)",
-      });
+steps_tl.from("#steps .headingTxt", {
+  opacity: 0,
+  x: -60,
+  duration: 0.3,
+  ease: "power1.out",
+});
 
-      steps_tl.from("#steps .paraTxt", {
-        opacity: 0,
-        x: -50,
-        duration: 0.4,
-      });
+steps_tl.from("#steps .paraTxt", {
+  opacity: 0,
+  x: -30,
+  duration: 0.25,
+});
 
-      steps_tl.from("#steps .stepsCardCont .stepsCard", {
-        opacity: 0,
-        y: 50,
-        stagger: 0.25,
-        duration: 0.75,
-      });
-
- 
+steps_tl.from("#steps .stepsCardCont .stepsCard", {
+  opacity: 0,
+  y: 30,
+  stagger: 0.15,
+  duration: 0.4,
+  ease: "power1.out",
+});
 
       // Enhanced Cube Swiper section
-      var cube_tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".enhanced-cube-section",
-          start: "top 20%",
-        },
-      });
+    var cube_tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".enhanced-cube-section",
+    start: "top 20%",
+  },
+});
 
-      cube_tl.from(".enhanced-cube-section .sectionTxt", {
-        opacity: 0,
-        y: -40,
-        duration: 0.4,
-        ease: "back.out(1.7)",
-      });
+cube_tl.from(".enhanced-cube-section .sectionTxt", {
+  opacity: 0,
+  y: -30,
+  duration: 0.3,
+  ease: "power1.out",
+});
 
-      cube_tl.from(".enhanced-cube-section .headingTxt", {
-        opacity: 0,
-        x: -100,
-        duration: 0.5,
-        ease: "back.out(1.7)",
-      });
+cube_tl.from(".enhanced-cube-section .headingTxt", {
+  opacity: 0,
+  x: -60,
+  duration: 0.35,
+  ease: "power1.out",
+}, "-=0.2"); // ← sectionTxt khatam hone se 0.2s pehle heading start
 
-      cube_tl.from(".enhanced-cube-section .cubeSwiper", {
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.8,
-        ease: "back.out(1.7)",
-      });
+cube_tl.from(".enhanced-cube-section .cubeSwiper", {
+  opacity: 0,
+  scale: 0.9,
+  duration: 0.5,
+  ease: "power1.out",
+});
 
       // Company section
       var company_tl = gsap.timeline({
@@ -2357,70 +2288,72 @@ La nostra rete intelligente di bot autonomi lavora in sinergia con modelli di in
       );
 
       // Footer section
-      var footer_tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#footer",
-          start: "top 50%",
-        },
-      });
+  var footer_tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#footer",
+    start: "top 60%", // thoda late trigger so it fires snappier
+  },
+});
 
-      footer_tl.from("#footer .sectionTxt", {
-        opacity: 0,
-        y: -40,
-        duration: 0.4,
-        ease: "back.out(1.7)",
-      });
+footer_tl.from("#footer .sectionTxt", {
+  opacity: 0,
+  y: -20,
+  duration: 0.25,
+  ease: "power1.out",
+});
 
-      footer_tl.from("#footer .headingTxt", {
-        opacity: 0,
-        x: -100,
-        duration: 0.5,
-        ease: "back.out(1.7)",
-      });
+footer_tl.from("#footer .headingTxt", {
+  opacity: 0,
+  x: -60,
+  duration: 0.3,
+  ease: "power1.out",
+});
 
-      footer_tl.from("#footer .paraTxt", {
-        opacity: 0,
-        x: -50,
-        duration: 0.4,
-      });
+footer_tl.from("#footer .paraTxt", {
+  opacity: 0,
+  x: -30,
+  duration: 0.25,
+});
 
-      footer_tl.from("#footer .sectionTitle", {
-        opacity: 0,
-        y: 40,
-        duration: 0.3,
-      });
+footer_tl.from("#footer .sectionTitle", {
+  opacity: 0,
+  y: 20,
+  duration: 0.2,
+});
 
-      footer_tl.from("#footer .footerLinksCont .footerLinks", {
-        opacity: 0,
-        x: 40,
-        stagger: 0.25,
-        duration: 0.6,
-      });
+footer_tl.from("#footer .footerLinksCont .footerLinks", {
+  opacity: 0,
+  x: 20,
+  stagger: 0.15,
+  duration: 0.35,
+  ease: "power1.out",
+});
 
-      footer_tl.from("#footer .sectionTitle2", {
-        opacity: 0,
-        y: 40,
-        duration: 0.3,
-      });
+footer_tl.from("#footer .sectionTitle2", {
+  opacity: 0,
+  y: 20,
+  duration: 0.2,
+});
 
-      footer_tl.from("#footer .footerLinksCont2 .footerLinks", {
-        opacity: 0,
-        x: 40,
-        stagger: 0.25,
-        duration: 0.6,
-      });
+footer_tl.from("#footer .footerLinksCont2 .footerLinks", {
+  opacity: 0,
+  x: 20,
+  stagger: 0.15,
+  duration: 0.35,
+  ease: "power1.out",
+});
 
-      footer_tl.from("#footer .copyrightTxt", {
-        opacity: 0,
-        y: 40,
-        duration: 0.3,
-      });
+footer_tl.from("#footer .copyrightTxt", {
+  opacity: 0,
+  y: 20,
+  duration: 0.2,
+});
 
-      footer_tl.from("#footer .companyTxt", {
-        opacity: 0,
-        y: 40,
-        duration: 0.3,
-      });
+footer_tl.from("#footer .companyTxt", {
+  opacity: 0,
+  y: 20,
+  duration: 0.2,
+});
 
       // Initialize Swiper
       var swiper = new Swiper(".cubeSwiper", {
@@ -2441,6 +2374,8 @@ La nostra rete intelligente di bot autonomi lavora in sinergia con modelli di in
           el: ".swiper-pagination",
         },
       });
+
+      
 
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -2486,10 +2421,11 @@ La nostra rete intelligente di bot autonomi lavora in sinergia con modelli di in
         },
       });
 
+
     var swiper = new Swiper(".mySwiper", {
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 2500,
       disableOnInteraction: false,
     },
     effect: "fade",
