@@ -876,41 +876,38 @@
   <div class="container wrapper">
     <div class="row my-4">
       <!-- Spline viewer moved to the left -->
-      <div class="col-lg-5 col-md-6 col-12 my-3">
+      <div class="col-lg-5 col-md-6 col-12 my-3" data-aos="fade-up" data-aos-duration="600">
         <div class="botImgCont rounded-5">
-          <!-- <spline-viewer class="keyboard3d-spline-viewer"
-            url="https://prod.spline.design/VORIT20cLBTRxxNN/scene.splinecode">
-          </spline-viewer> -->
           <img src="./assets/img/collage-image.png" alt="">
         </div>
       </div>
 
       <!-- Text content moved to the right -->
-      <div class="col-lg-7 col-md-6 col-12 my-3">
-      <h2 class="fs_heading m-0 display-3 headingTxt">
-  Beyond Reaction — Into Real Understanding
-      </h2>
-<p class="text_dark_em fs_5 mt-3 paraTxt">
-  In the vast, restless sea of decentralized markets, where volatility
-  blurs clarity, our technology stands as a lighthouse. It doesn’t just
-  chase trends — it reads the hidden language of the market.
-</p>
-<p class="text_dark_em fs_5 mb-4 paraTxt2">
-  Our intelligent network of autonomous bots works in harmony with
-  advanced AI models, dissecting millions of micro-signals in real time.
-  The result? Swift, precise decisions that guard your capital and
-  amplify opportunity — all while staying true to your strategic vision.
-</p>
-<div class="my-3 cta_link">
-  <a href="#" class="btn_dark rounded-pill fs_6">
-    Start your journey now
-  </a>
-</div>
- 
+      <div class="col-lg-7 col-md-6 col-12 my-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+        <h2 class="fs_heading m-0 display-3 headingTxt" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+          Beyond Reaction — Into Real Understanding
+        </h2>
+        <p class="text_dark_em fs_5 mt-3 paraTxt" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+          In the vast, restless sea of decentralized markets, where volatility
+          blurs clarity, our technology stands as a lighthouse. It doesn’t just
+          chase trends — it reads the hidden language of the market.
+        </p>
+        <p class="text_dark_em fs_5 mb-4 paraTxt2" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
+          Our intelligent network of autonomous bots works in harmony with
+          advanced AI models, dissecting millions of micro-signals in real time.
+          The result? Swift, precise decisions that guard your capital and
+          amplify opportunity — all while staying true to your strategic vision.
+        </p>
+        <div class="my-3 cta_link" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+          <a href="#" class="btn_dark rounded-pill fs_6">
+            Start your journey now
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
    <section class="ai-tech-section">
         <div class="container wrapper">
@@ -2203,50 +2200,7 @@
       });
 
       // Bot section
-      var bot_tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#bot",
-          start: "top 20%",
-        },
-      });
-
-      bot_tl.from("#bot .sectionTxt", {
-        opacity: 0,
-        y: -40,
-        duration: 0.4,
-        ease: "back.out(1.7)",
-      });
-
-      bot_tl.from("#bot .headingTxt", {
-        opacity: 0,
-        x: -100,
-        duration: 0.1,
-        ease: "back.out(1.7)",
-      });
-
-      bot_tl.from("#bot .paraTxt", {
-        opacity: 0,
-        x: -50,
-        duration: 0.2,
-      });
-
-      bot_tl.from("#bot .botImgCont", {
-        opacity: 0,
-        y: 100,
-        duration: 0.3,
-      });
-
-      bot_tl.from("#bot .paraTxt2", {
-        opacity: 0,
-        x: -50,
-        duration: 0.4,
-      });
-
-      bot_tl.from("#bot .cta_link", {
-        opacity: 0,
-        y: 50,
-        duration: 0.4,
-      });
+    
 
       // Steps section
   var steps_tl = gsap.timeline({
