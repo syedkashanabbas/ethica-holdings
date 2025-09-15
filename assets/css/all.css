@@ -110,7 +110,7 @@ html {
 
 /* bg  */
 .bg_body {
-    background: var(--light_em);
+    background: white;
 }
 
 .bg_dark_em {
