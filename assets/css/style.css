@@ -90,21 +90,27 @@ header::after {
 
 /* bot  */
 .botImgCont {
-    height: 500px;
-    width: auto;
-    position: relative;
-    overflow: hidden;
+  height: 500px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .botImgCont img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  animation: spin 10s linear infinite; /* speed adjust */
 }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 
 /* idustry  */
 .industriesCard {
