@@ -121,6 +121,7 @@ header::after {
     transition: 0.25s;
 }
 
+/* image inside */
 .industriesCardImg {
     position: absolute;
     top: 0;
@@ -133,6 +134,7 @@ header::after {
     transition: 0.25s;
 }
 
+/* hover effects */
 .industriesCard:hover * {
     color: var(--light_em) !important;
     fill: var(--light_em) !important;
@@ -140,6 +142,33 @@ header::after {
 
 .industriesCard:hover .industriesCardImg {
     opacity: 1;
+}
+
+/* === blur overlay + Coming Soon === */
+.industriesCard::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.4); /* thoda dark tint */
+    z-index: 1;
+}
+
+.industriesCard::after {
+    content: "Coming Soon";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    padding: 8px 18px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 2;
 }
 
 /* roadmap  */
