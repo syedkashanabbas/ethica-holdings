@@ -2,11 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="description" content="Ethica Holdings pioneers the future of ethical finance in the United Kingdom — where artificial intelligence meets transparency, responsibility, and sustainability. Discover Swiss precision, UK regulatory excellence, and AI-driven financial innovation built on ethics and trust.">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ethica Holdings | Ethical Access to DeFi Yield</title>
     <link rel="stylesheet" href="assets/css/font.css" />
     <link rel="stylesheet" href="assets/css/all.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet"  href="assets/css/changes.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -27,544 +29,34 @@
     />
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <style>
-      /* Modern Header Styles */
-      .modern-navbar {
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 95%;
-        max-width: 1400px;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 25px;
-        padding: 15px 30px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      }
-
-      .modern-navbar.scrolled {
-        width: 85%;
-        max-width: 1200px;
-        top: 15px;
-        padding: 12px 25px;
-        background: rgba(242, 241, 237, 0.95);
-        backdrop-filter: blur(25px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-      }
-
-      .modern-navbar .navbar-brand {
-        transition: all 0.3s ease;
-      }
-
-      .modern-navbar.scrolled .navbar-brand img {
-        height: 55px; /* smaller when scrolled */
-        width: auto;
-      }
-
-      /* Fix for horizontal navigation */
-      .modern-navbar .navbar-nav {
-        flex-direction: row !important;
-        gap: 0.5rem;
-        align-items: center;
-      }
-
-      .modern-navbar .nav-item {
-        margin: 0;
-      }
-
-      .modern-navbar .nav-link {
-        color: rgba(255, 255, 255, 0.9) !important;
-        font-weight: 500;
-        padding: 8px 16px !important;
-        border-radius: 15px;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-
-      .modern-navbar.scrolled .nav-link {
-        color: var(--dark_em) !important;
-      }
-
-      .modern-navbar .nav-link::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(224, 178, 120, 0.2),
-          transparent
-        );
-        transition: left 0.5s ease;
-      }
-
-      .modern-navbar .nav-link:hover::before {
-        left: 100%;
-      }
-
-      .modern-navbar .nav-link:hover {
-        color: var(--primary) !important;
-        background: rgba(224, 178, 120, 0.1);
-        transform: translateY(-2px);
-      }
-
-      .modern-navbar .btn_primary {
-        background: linear-gradient(
-          135deg,
-          var(--primary),
-          var(--dark_primary)
-        );
-        border: none;
-        padding: 10px 20px;
-        border-radius: 20px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .modern-navbar .btn_primary::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        transition: left 0.5s ease;
-      }
-
-      .modern-navbar .btn_primary:hover::before {
-        left: 100%;
-      }
-
-      .modern-navbar .btn_primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(224, 178, 120, 0.4);
-      }
-
-      .modern-navbar .dropdown-toggle {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        padding: 8px 12px;
-        transition: all 0.3s ease;
-      }
-
-      .modern-navbar.scrolled .dropdown-toggle {
-        background: rgba(38, 53, 47, 0.1);
-        border-color: rgba(38, 53, 47, 0.2);
-      }
-
-      .modern-navbar .dropdown-toggle:hover {
-        background: rgba(224, 178, 120, 0.2);
-        transform: scale(1.05);
-      }
-
-      .modern-navbar .mobile-toggle {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        padding: 8px 12px;
-        transition: all 0.3s ease;
-      }
-
-      .modern-navbar.scrolled .mobile-toggle {
-        background: rgba(38, 53, 47, 0.1);
-        border-color: rgba(38, 53, 47, 0.2);
-      }
-
-      .modern-navbar .mobile-toggle svg {
-        fill: rgba(255, 255, 255, 0.9);
-        transition: all 0.3s ease;
-      }
-
-      .modern-navbar.scrolled .mobile-toggle svg {
-        fill: var(--dark_em);
-      }
-
-      .modern-navbar .mobile-toggle:hover {
-        background: rgba(224, 178, 120, 0.2);
-        transform: rotate(90deg);
-      }
-
-      /* Animated Logo */
-      .logo-container {
-        position: relative;
-        overflow: hidden;
-        height: 55px; /* fixed height */
-      }
-
-      .logo-container::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(224, 178, 120, 0.3),
-          transparent
-        );
-        transition: left 0.8s ease;
-      }
-
-      .logo-container:hover::after {
-        left: 100%;
-      }
-      .logo-container img {
-        height: 100%; /* fits within the 45px height */
-        width: auto; /* keeps aspect ratio */
-        object-fit: contain; /* ensures it doesn’t get stretched */
-        display: block;
-      }
-
-      /* Video Hero Section */
-      .video-hero {
-        position: relative;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .video-hero video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        object-fit: cover;
-      }
-
-      .video-hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 1;
-      }
-
-      .video-hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        color: white;
-        max-width: 800px;
-        padding: 0 20px;
-      }
-
-      .video-hero-content h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        opacity: 0;
-        transform: translateY(50px);
-        animation: fadeInUp 1s ease-out 0.5s forwards;
-      }
-
-      .video-hero-content p {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 1s ease-out 1s forwards;
-      }
-
-      .video-hero-content .btn-group {
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 1s ease-out 1.5s forwards;
-      }
-
-      @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Roadmap Section */
-      .roadmap-section {
-        background: linear-gradient(135deg, #26352f 0%, #1a2420 100%);
-        padding: 100px 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .roadmap-phase {
-        background: rgba(240, 241, 237, 0.05);
-        border: 1px solid rgba(224, 178, 120, 0.3);
-        border-radius: 20px;
-        padding: 40px;
-        margin-bottom: 40px;
-        position: relative;
-        transition: all 0.3s ease;
-      }
-
-      .roadmap-phase:hover {
-        transform: translateY(-10px);
-        border-color: var(--primary);
-        box-shadow: 0 20px 40px rgba(224, 178, 120, 0.1);
-      }
-
-      .roadmap-phase::before {
-        content: "";
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        right: -1px;
-        bottom: -1px;
-        background: linear-gradient(
-          45deg,
-          var(--primary),
-          transparent,
-          var(--primary)
-        );
-        border-radius: 20px;
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .roadmap-phase:hover::before {
-        opacity: 1;
-      }
-
-      .phase-number {
-        display: inline-block;
-        background: var(--primary);
-        color: var(--dark_em);
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-      }
-
-      /* Swiss Heritage Section */
-      .swiss-heritage {
-        background: var(--light_em);
-        padding: 100px 0;
-        position: relative;
-      }
-
-      .swiss-flag {
-        position: absolute;
-        top: 50px;
-        right: 50px;
-        opacity: 0.1;
-        font-size: 200px;
-      }
-
-      /* AI Technology Section */
-      .ai-tech-section {
-        background: linear-gradient(45deg, #26352f, #1a2420);
-        padding: 100px 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .ai-tech-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23E0B278" opacity="0.1"/></svg>')
-          repeat;
-        animation: float 20s infinite linear;
-      }
-
-      @keyframes float {
-        0% {
-          transform: translateY(0px);
-        }
-        100% {
-          transform: translateY(-100px);
-        }
-      }
-
-      .tech-card {
-        background: rgba(240, 241, 237, 0.05);
-        border: 1px solid rgba(224, 178, 120, 0.2);
-        border-radius: 15px;
-        padding: 30px;
-        height: 100%;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .tech-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(224, 178, 120, 0.1),
-          transparent
-        );
-        transition: left 0.5s ease;
-      }
-
-      .tech-card:hover::before {
-        left: 100%;
-      }
-
-      .tech-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--primary);
-      }
-
-      /* Enhanced Cube Swiper */
-      .enhanced-cube-section {
-        padding: 100px 0;
-        background: var(--light_em);
-      }
-
-      .cubeSwiper .swiper-slide {
-        height: 620px;
-        border-radius: 20px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      @media (max-width: 992px) {
-        .cubeSwiper .swiper-slide {
-          height: 420px;
-        }
-      }
-
-      .cubeSwiper .swiper-slide img {
-        border-radius: 20px;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .cubeSwiper .swiper-slide:hover img {
-        transform: scale(1.05);
-      }
-
-      .cube-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-        color: white;
-        padding: 40px 30px 30px;
-        transform: translateY(100%);
-        transition: transform 0.3s ease;
-      }
-
-      .cubeSwiper .swiper-slide:hover .cube-overlay {
-        transform: translateY(0);
-      }
-
-      .dropDownMenu {
-        background: #ffffffb6;
-        backdrop-filter: blur(10px);
-      }
-
-      /* Stats Counter Animation */
-      .stat-number {
-        font-size: 3rem;
-        font-weight: bold;
-        color: var(--primary);
-      }
-
-      /* Floating Animation */
-      .floating {
-        animation: floating 3s ease-in-out infinite;
-      }
-
-      @keyframes floating {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-      }
-
-      /* Pulse Animation */
-      .pulse {
-        animation: pulse 2s infinite;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.05);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      /* Mobile Responsive */
-      @media (max-width: 768px) {
-        .modern-navbar {
-          width: 95%;
-          padding: 12px 20px;
-        }
-
-        .modern-navbar.scrolled {
-          width: 90%;
-          padding: 10px 15px;
-        }
-
-        .video-hero-content h1 {
-          font-size: 2.5rem;
-        }
-
-        .modern-navbar .navbar-nav {
-          display: none !important;
-        }
-      }
-    </style>
-  </head>
-  <body class="bg_body">
+    <!-- Favicon / Logo -->
+        <link rel="icon" type="image/png" href="https://ethica.holdings/assets/img/logo.png" />
+        
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ethica Holdings",
+  "url": "https://ethica.holdings/",
+  "logo": "https://ethica.holdings/img/logo.png",
+  "description": "Ethica Holdings pioneers the future of ethical finance in the United Kingdom — where artificial intelligence meets transparency, responsibility, and sustainability. Built on Swiss excellence and UK regulatory compliance.",
+  "foundingDate": "2025",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "London, United Kingdom"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1 King William Street",
+    "addressLocality": "London",
+    "postalCode": "EC4N 7AR",
+    "addressCountry": "GB"
+  }
+}
+</script>
+
+</head>
+<body class="bg_body">
     <div id="content">
       <!-- Modern Navigation -->
       <nav class="modern-navbar" id="modernNavbar">
@@ -575,11 +67,7 @@
             data-aos-duration="800"
           >
             <a class="navbar-brand" href="#">
-              <img
-                src="./assets/img/light-logo.png"
-                width="140"
-                alt="ethica holdings"
-              />
+              <img src="./assets/img/light-logo.png" width="140" alt="ethica holdings" />
             </a>
           </div>
 
@@ -590,16 +78,16 @@
             data-aos-delay="200"
           >
             <li class="nav-item" data-aos="fade-down" data-aos-delay="300">
-              <a class="nav-link" href="#about">Di</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item" data-aos="fade-down" data-aos-delay="400">
-              <a class="nav-link" href="#steps">Criteri di investimento</a>
+              <a class="nav-link" href="#steps"> Criteria</a>
             </li>
             <li class="nav-item" data-aos="fade-down" data-aos-delay="500">
-              <a class="nav-link" href="#roadmap">Carta stradale</a>
+              <a class="nav-link" href="#roadmap">Road Map</a>
             </li>
             <li class="nav-item" data-aos="fade-down" data-aos-delay="600">
-              <a class="nav-link" href="#contact">Contatto</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
 
@@ -610,13 +98,13 @@
             data-aos-delay="400"
           >
             <a
+              href="https://investor.ethica.holdings/"
               target="_blank"
-              href="https://ethica.dbpos.xyz/"
               class="btn_primary d-sm-inline-flex d-none rounded-pill fs_7"
               data-aos="zoom-in"
               data-aos-delay="700"
             >
-              <span>Accesso investitori</span>
+              <span>Login</span>
             </a>
 
             <div
@@ -649,7 +137,7 @@
                       src="assets/img/united-kingdom.png"
                       width="18"
                       height="18"
-                      alt="united kingdom"
+                      alt="uk-flag"
                     />
                     <span class="fs_7">English</span>
                   </a>
@@ -689,11 +177,7 @@
       >
         <div class="offcanvas-header">
           <a class="navbar-brand" href="#">
-            <img
-              src="assets/img/light-logo.png"
-              width="140"
-              alt="ethica holdings"
-            />
+            <img src="assets/img/light-logo.png" width="140" alt="ethica holdings" />
           </a>
           <button
             type="button"
@@ -715,27 +199,22 @@
         </div>
         <div class="offcanvas-body py-1">
           <ul class="list-unstyled">
-            <li><a class="smallSidebarLink py-3" href="#">Casa</a></li>
-            <li><a class="smallSidebarLink py-3" href="#about">Di</a></li>
+            <li><a class="smallSidebarLink py-3" href="#">Home</a></li>
+            <li><a class="smallSidebarLink py-3" href="#about">About</a></li>
             <li>
               <a class="smallSidebarLink py-3" href="#steps"
-                >Criteri di investimento</a
+                > Criteria</a
               >
             </li>
             <li>
-              <a class="smallSidebarLink py-3" href="#roadmap"
-                >Carta stradale</a
-              >
+              <a class="smallSidebarLink py-3" href="#roadmap">Road Map</a>
             </li>
             <li>
-              <a class="smallSidebarLink py-3" href="#contact">Contatto</a>
+              <a class="smallSidebarLink py-3" href="#contact">Contact</a>
             </li>
             <li class="my-3">
-              <a
-                target="_blank"
-                href="https://ethica.dbpos.xyz/"
-                class="btn_primary w-100 rounded py-3"
-                >Accesso investitori</a
+              <a href="https://investor.ethica.holdings/" target="_blank" class="btn_primary w-100 rounded py-3"
+                > Login</a
               >
             </li>
             <li class="d-flex align-items-center justify-content-center gap-3">
@@ -782,166 +261,130 @@
 
       <!-- Video Hero Section -->
       <section class="video-hero">
-        <video autoplay muted loop playsinline>
-          <source
-            src="./assets/img/video_bg.mp4"
-            playsinline
-            preload="auto"
-            type="video/mp4"
-          />
+      <video autoplay muted loop playsinline>
+          <source src="./assets/img/video_bg.mp4"  playsinline preload="auto" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div class="video-hero-content">
-          <h1>L'alba della finanza etica</h1>
+          <h1>The Dawn of Ethical Finance</h1>
           <p>
-            Dove l’intelligenza artificiale incontra i principi di
-            responsabilità e trasparenza nel cuore del Regno Unito. Un approccio
-            innovativo alla finanza, fondato su etica, tecnologia e
-            sostenibilità.
+           Where artificial intelligence meets the principles of responsibility and transparency at the heart of the United Kingdom. An innovative approach to finance, built on ethics, technology, and sustainability. 
           </p>
+      <div class="btn-group d-flex flex-column flex-sm-row justify-content-center align-items-center text-center">
+      <a href="#about" class="btn_primary rounded-pill fs_6 me-sm-3 mb-2 mb-sm-0 text-nowrap">
+        Discover Our Vision
+      </a>
+      <a href="#contact" class="btn_outline_primary rounded-pill fs_6 text-nowrap">
+        Schedule Meeting
+      </a>
+    </div>
+
+        </div>
+      </section>
+  
+   
+ <section class="swiss-heritage py-5">
+  <div class="container wrapper">
+    <div class="row align-items-center gy-4">
+
+      <!-- Left Content -->
+      <div class="col-lg-6 col-md-12 col-sm-12 my-3">
+        <div class="sectionTxt text_dark_em d-flex align-items-center mb-3 gap-3 flex-wrap">
+          <span class="fs-4 fw-bold">•</span>
+          <span class="fs_5 text-uppercase">Swiss Excellence</span>
+        </div>
+
+        <h2 class="headingTxt text_dark_em fs_heading display-4 display-md-5 text-break">
+          Built on Solid British Foundations
+        </h2>
+
+        <p class="text_dark_em fs_5 mt-3">
+          From the heart of the United Kingdom—an environment renowned for regulatory stability and high standards of governance—we promote a financial approach that integrates technological innovation and ethics. Our organization is founded on principles of transparency, responsibility, and compliance with current regulations, bringing these values into the digital age.
+        </p>
+
+        <div class="row mt-4 gy-3">
+          <div class="col-12 col-sm-6">
+            <div class="text-center px-2">
+              <div class="stat-number">100%</div>
+              <p class="text_dark_em">
+                UK Regulatory Compliance <br>
+                We operate in full compliance with the United Kingdom’s financial and regulatory framework. Full AML/KYC Compliance
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="text-center px-2">
+              <div class="stat-number" style="animation-delay: 1s">
+                AML/KYC
+              </div>
+              <p class="text_dark_em">
+                We fully comply with UK financial regulations, ensuring AML/KYC adherence through internationally aligned Anti-Money Laundering and Know Your Customer procedures.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content (Swiper) -->
+      <div class="col-lg-6 col-md-12 col-sm-12 my-3">
+        <div class="position-relative">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/img/swiss_financial_landscape.jpg" class="img-fluid rounded-4 w-100" alt="Swiss Financial Landscape" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/swiss_financial_landscape_2.png" class="img-fluid rounded-4 w-100" alt="Swiss Mountains" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/swiss_financial_landscape_3.jpg" class="img-fluid rounded-4 w-100" alt="Swiss Cityscape" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
       
+<section id="bot" class="mb-3 pt-4">
+  <div class="container wrapper">
+    <div class="row my-4 align-items-center gy-4">
 
-            <div class="btn-group d-flex flex-column flex-sm-row justify-content-center align-items-center text-center">
-            <a href="#about" class="btn_primary rounded-pill fs_6 me-sm-3 mb-2 mb-sm-0 text-nowrap">
-            Scopri la nostra visione
-            </a>
-            <a href="#contact" class="btn_outline_primary rounded-pill fs_6 text-nowrap">
-              Pianifica un incontro
-            </a>
-          </div>
+      <!-- Image -->
+      <div class="col-lg-5 col-md-6 col-sm-12 col-12 my-3" data-aos="fade-up" data-aos-duration="600">
+        <div class="botImgCont rounded-5 text-center text-md-start">
+          <img src="./assets/img/atom.png" alt="" class="img-fluid w-100 h-auto">
         </div>
-      </section>
+      </div>
 
-      <!-- Swiss Heritage Section -->
-      <section class="swiss-heritage">
-        <!-- <div class="swiss-flag">🇨🇭</div> -->
-        <div class="container wrapper">
-          <div class="row align-items-center">
-            <div class="col-lg-6 col-12 my-3">
-              <div
-                class="sectionTxt text_dark_em d-flex align-items-center mb-3 gap-3"
-              >
-                <span class="fs-4 fw-bold">•</span>
-                <span class="fs_5 text-uppercase">Eccellenza United Kingdom</span>
-              </div>
-              <h2 class="headingTxt text_dark_em fs_heading display-3">
-                Costruito su solide basi britanniche
-              </h2>
-              <p class="text_dark_em fs_5 mt-3">
-                Dal cuore del Regno Unito, un contesto riconosciuto per
-                stabilità normativa e standard elevati di governance,
-                promuoviamo un approccio finanziario che integra innovazione
-                tecnologica ed etica. La nostra realtà si fonda su principi di
-                trasparenza, responsabilità e conformità alle regolamentazioni
-                vigenti, portando questi valori nell’era digitale.
-              </p>
-              <div class="row mt-4">
-                <div class="col-6">
-                  <div class="text-center">
-                    <div class="stat-number">100%</div>
-                    <p class="text_dark_em">
-                      Compliance Regolatoria UK
-
-                      <br />
-                      Operiamo nel pieno rispetto delle normative finanziarie e
-                      regolamentari del Regno Unito.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="text-center">
-                    <div class="stat-number" style="animation-delay: 1s">
-                      AML/KYC
-                    </div>
-                    <p class="text_dark_em">
-                      Conformità Totale
-                      <br />
-                      Applichiamo procedure di antiriciclaggio (AML) e di
-                      verifica dell’identità (KYC) in linea con gli standard
-                      internazionali e le disposizioni delle autorità
-                      competenti.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-12 my-3">
-              <div class="position-relative">
-                <div class="swiper mySwiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img
-                        src="./assets/img/swiss_financial_landscape.jpg"
-                        class="img-fluid rounded-4"
-                        alt="Swiss Financial Landscape"
-                      />
-                    </div>
-                    <div class="swiper-slide">
-                      <img
-                        src="./assets/img/swiss_financial_landscape_2.png"
-                        class="img-fluid rounded-4"
-                        alt="Swiss Mountains"
-                      />
-                    </div>
-                    <div class="swiper-slide">
-                      <img
-                        src="./assets/img/swiss_financial_landscape_3.jpg"
-                        class="img-fluid rounded-4"
-                        alt="Swiss Cityscape"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <!-- Text -->
+      <div class="col-lg-7 col-md-6 col-sm-12 col-12 my-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+        <h2 class="fs_heading m-0 display-4 display-md-5 headingTxt text-break" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+          Beyond Reaction: Towards True Understanding
+        </h2>
+        <p class="text_dark_em fs_5 mt-3 paraTxt" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+          In the dynamic global financial landscape, where complexity and change are constant, artificial intelligence serves as an essential tool for analysis and support.
+          Our technology does not simply interpret data—it helps make it clearer, enabling informed decisions aligned with the highest standards of responsibility.
+        </p>
+        <p class="text_dark_em fs_5 mb-4 paraTxt2" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
+          Through advanced AI models developed in the United Kingdom, we promote an approach rooted in transparency, ethics, and methodological rigor, providing a reliable framework for understanding markets and their dynamics.
+        </p>
+        <div class="my-3 cta_link" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+          <a href="#" class="btn_dark rounded-pill fs_6">
+            Start your journey now
+          </a>
         </div>
-      </section>
+      </div>
 
-      <section id="bot" class="mb-3 pt-4">
-        <div class="container wrapper">
-          <div class="row my-4">
-            <!-- Spline viewer moved to the left -->
-            <div class="col-lg-5 col-md-6 col-12 my-3">
-              <div class="botImgCont rounded-5">
-                <!-- <spline-viewer class="keyboard3d-spline-viewer"
-            url="https://prod.spline.design/VORIT20cLBTRxxNN/scene.splinecode">
-          </spline-viewer> -->
-                <img src="./assets/img/collage-image.png" alt="" />
-              </div>
-            </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Text content moved to the right -->
-            <div class="col-lg-7 col-md-6 col-12 my-3">
-              <h2 class="fs_heading m-0 display-3 headingTxt">
-                Oltre la reazione: verso la vera comprensione del Corpo
-              </h2>
-              <p class="text_dark_em fs_5 mt-3 paraTxt">
-                Nel dinamico panorama finanziario globale, dove complessità e
-                cambiamento sono costanti, l’intelligenza artificiale
-                rappresenta uno strumento essenziale di analisi e supporto. La
-                nostra tecnologia non si limita a interpretare i dati, ma
-                contribuisce a renderli più chiari, favorendo decisioni
-                consapevoli e allineate ai più alti standard di responsabilità.
-              </p>
-              <p class="text_dark_em fs_5 mb-4 paraTxt2">
-                Attraverso modelli avanzati di AI sviluppati nel Regno Unito,
-                promuoviamo un approccio fondato su trasparenza, etica e rigore
-                metodologico, offrendo un quadro affidabile per la comprensione
-                dei mercati e delle loro dinamiche.
-              </p>
-              <div class="my-3 cta_link">
-                <a href="#" class="btn_dark rounded-pill fs_6">
-                  Inzia subito il tuo viaggio
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- AI Technology Section -->
-      <section class="ai-tech-section">
+   <section class="ai-tech-section">
         <div class="container wrapper">
           <div class="row">
             <div class="col-12 text-center mb-5">
@@ -949,22 +392,17 @@
                 class="sectionTxt text_light_em d-flex align-items-center justify-content-center mb-3 gap-3"
               >
                 <span class="fs-4 fw-bold">•</span>
-                <span class="fs_5 text-uppercase"
-                  >Intelligenza Artificiale</span
-                >
+                <span class="fs_5 text-uppercase">AI-Powered Intelligence</span>
               </div>
               <h2 class="headingTxt text_light_em fs_heading display-3">
-                Intelligenza Artificiale, una Visione Etica
+                Artificial Intelligence, an Ethical Vision
               </h2>
               <p
                 class="text_light_em fs_5 mt-3 mx-auto"
                 style="max-width: 600px"
               >
-                Nel Regno Unito promuoviamo l’integrazione dell’intelligenza
-                artificiale con principi etici e trasparenti. La nostra missione
-                è fornire strumenti di analisi e comprensione che chiariscano un
-                panorama finanziario in continua evoluzione, mantenendo sempre
-                responsabilità e rigore al centro.
+               In the United Kingdom, we promote the integration of artificial intelligence with ethical and transparent principles. Our mission is to provide tools for analysis and understanding that clarify an ever-evolving financial landscape, always keeping responsibility and rigor at the center.
+
               </p>
             </div>
           </div>
@@ -990,14 +428,10 @@
                   </svg>
                 </div>
                 <h4 class="text_light_em fs-4 fw-medium mb-3">
-                  Analisi Avanzata
+                  Advanced Analysis
                 </h4>
                 <p class="text_light_em">
-                  Attraverso modelli di IA di nuova generazione elaboriamo
-                  grandi volumi di dati in tempo reale, trasformandoli in
-                  informazioni chiare e strutturate. L’obiettivo è favorire una
-                  comprensione più profonda delle dinamiche di mercato, libera
-                  da speculazioni e complessità opache.
+                  Through next-generation AI models, we process large volumes of data in real time, transforming them into clear, structured insights. The goal is to foster a deeper understanding of market dynamics, free from speculation and opaque complexity.
                 </p>
               </div>
             </div>
@@ -1023,14 +457,10 @@
                   </svg>
                 </div>
                 <h4 class="text_light_em fs-4 fw-medium mb-3">
-                  Sicurezza Digitale
+                  Digital Security
                 </h4>
                 <p class="text_light_em">
-                  Adottiamo protocolli crittografici e standard di sicurezza di
-                  livello internazionale per proteggere dati, informazioni e
-                  processi. La resilienza tecnologica è la pietra angolare del
-                  nostro approccio, in piena conformità con le normative e le
-                  best practice del Regno Unito.
+                  We employ cryptographic protocols and international-level security standards to safeguard data, information, and processes. Technological resilience is the cornerstone of our approach, fully aligned with UK regulations and best practices.
                 </p>
               </div>
             </div>
@@ -1043,137 +473,126 @@
             >
               <div class="tech-card">
                 <div class="mb-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    height="40"
-                    width="40"
-                    fill="#E0B278"
-                  >
-                    <path
-                      d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19L19,19V9Z"
-                    />
-                  </svg>
+                <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      height="40"
+      width="40"
+      fill="#E0B278"
+    >
+      <path
+        d="M12 2L1 7v2h22V7L12 2zm0 3.3L19.6 7H4.4L12 5.3zM3 10v10h2v-8h2v8h2v-8h2v8h2v-8h2v8h2v-8h2v8h2V10H3z"
+      />
+    </svg>
                 </div>
                 <h4 class="text_light_em fs-4 fw-medium mb-3">
-                  L’Etica come Fondamento
+                  Ethics as a Foundation
                 </h4>
                 <p class="text_light_em">
-                  Ogni sviluppo tecnologico viene valutato attraverso un
-                  framework proprietario basato su principi di trasparenza,
-                  responsabilità e allineamento etico. Questo garantisce che
-                  l’intelligenza artificiale rimanga uno strumento al servizio
-                  delle persone, e non un fine a sé stante.
+                Every technological development is assessed through a proprietary framework based on principles of transparency, responsibility, and ethical alignment. This ensures that artificial intelligence remains a tool at the service of people, rather than an end in itself.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
+<style>
+  /* 3D Section Styling */
+  #three-d-section {
+    width: 100%;
+    position: relative;
+  }
 
-      <style>
-        /* 3D Section Styling */
-        #three-d-section {
-          width: 100%;
-          position: relative;
-        }
+  .spline-wrapper {
+    position: relative;
+  }
 
-        .spline-wrapper {
-          position: relative;
-        }
+  /* Glass wrapper */
+  .spline-glass {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    z-index: 1;
+  }
 
-        /* Glass wrapper */
-        .spline-glass {
-          position: relative;
-          overflow: hidden;
-          border-radius: 12px;
-          z-index: 1;
-        }
+  /* Overlay (Hidden initially) */
+  .spline-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
 
-        /* Overlay (Hidden initially) */
-        .spline-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(255, 255, 255, 0.85);
-          backdrop-filter: blur(10px);
-          z-index: 2;
-          opacity: 0;
-          transition: opacity 1s ease;
-        }
+  /* Show overlay when .glass is added */
+  .spline-glass.glass .spline-overlay {
+    opacity: 1;
+  }
 
-        /* Show overlay when .glass is added */
-        .spline-glass.glass .spline-overlay {
-          opacity: 1;
-        }
-        .about-section {
-          background: linear-gradient(135deg, #26352f 0%, #1a2420 100%);
-          padding: 100px 0;
-          position: relative;
-          overflow: hidden;
-        }
+  /* Spline itself */
+  .spline-glass spline-viewer {
+    display: block;
+    height: 600px;
+    transition: filter 1s ease;
+    position: relative;
+    z-index: 1;
+  }
 
-        /* Spline itself */
-        .spline-glass spline-viewer {
-          display: block;
-          height: 600px;
-          transition: filter 1s ease;
-          position: relative;
-          z-index: 1;
-        }
+  /* Heading */
+  .section-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    font-weight: 900;
+    color: black;
+    text-align: center;
+    z-index: 3; /* Above overlay */
+    opacity: 0;
+    pointer-events: none;
+  }
 
-        /* Heading */
-        .section-heading {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 5rem;
-          font-weight: 900;
-          color: black;
-          text-align: center;
-          z-index: 3; /* Above overlay */
-          opacity: 0;
-          pointer-events: none;
-        }
+  .section-heading.animate {
+    animation: fadeUp 1s ease forwards;
+  }
 
-        .section-heading.animate {
-          animation: fadeUp 1s ease forwards;
-        }
+  /* Animation for heading */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -40%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
 
-        /* Animation for heading */
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translate(-50%, -40%);
-          }
-          to {
-            opacity: 1;
-            transform: translate(-50%, -50%);
-          }
-        }
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    #three-d-section spline-viewer {
+      height: 400px;
+    }
+    .section-heading {
+      font-size: 2rem;
+    }
+  }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-          #three-d-section spline-viewer {
-            height: 400px;
-          }
-          .section-heading {
-            font-size: 2rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          #three-d-section spline-viewer {
-            height: 300px;
-          }
-          .section-heading {
-            font-size: 1.5rem;
-          }
-        }
-      </style>
+  @media (max-width: 480px) {
+    #three-d-section spline-viewer {
+      height: 300px;
+    }
+    .section-heading {
+      font-size: 1.5rem;
+    }
+  }
+</style>
 
       <section id="steps" class="my-5 py-4">
         <div class="container wrapper">
@@ -1181,17 +600,13 @@
             class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3"
           >
             <span class="fs-4 fw-bold">•</span>
-            <span class="fs_5 text-uppercase">Criteri di investimento</span>
+            <span class="fs_5 text-uppercase">Investment Criteria</span>
           </div>
           <h2 class="headingTxt fs_heading m-0 display-3">
-            Costruire basi per un futuro sostenibile
+            Building Foundations for a Sustainable Future
           </h2>
           <p class="paraTxt text_dark_em fs_5 mb-4 mt-1">
-            Ogni scelta merita discernimento e responsabilità. Per questo
-            valutiamo con attenzione progetti e iniziative, privilegiando
-            autenticità, trasparenza e impatto positivo. Il nostro approccio si
-            fonda su etica, conformità normativa e attenzione alla sostenibilità
-            nel contesto del Regno Unito.
+           Every choice deserves discernment and responsibility. That’s why we carefully evaluate projects and initiatives, prioritizing authenticity, transparency, and positive impact. Our approach is rooted in ethics, regulatory compliance, and a commitment to sustainability within the UK context.
           </p>
           <div class="row stepsCardCont">
             <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
@@ -1208,17 +623,13 @@
                     />
                   </svg>
                 </div>
-                <h3 class="text_dark fs_5 fw-medium">
-                  Il germoglio della visione
-                </h3>
+                <h3 class="text_dark fs_5 fw-medium">The Seed of Vision</h3>
                 <p class="text_dark_em fs_6">
-                  Sosteniamo idee con una chiara finalità e un reale valore
-                  aggiunto. Promuoviamo soluzioni che semplificano i processi,
-                  migliorano la vita quotidiana e creano valore condiviso.
+                  We support ideas with a clear purpose and genuine added value. We promote solutions that simplify processes, improve daily life, and create shared value.
+
                 </p>
               </div>
             </div>
-
             <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
               <div class="investmentCards p-3 py-4 rounded-4">
                 <div class="cardIcon mb-2">
@@ -1234,16 +645,14 @@
                   </svg>
                 </div>
                 <h3 class="text_dark fs_5 fw-medium">
-                  Fiducia umana, non algoritmica
+                  Human Trust, Not Algorithmic
                 </h3>
                 <p class="text_dark_em fs_6">
-                  Al centro di ogni progetto ci sono le persone. Riconosciamo
-                  l’importanza di team proattivi, creativi e trasparenti, capaci
-                  di trasformare idee in risultati concreti e responsabili.
+                  People are at the heart of every project. We recognize the importance of proactive, creative, and transparent teams capable of transforming ideas into concrete and responsible outcomes.
+
                 </p>
               </div>
             </div>
-
             <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
               <div class="investmentCards p-3 py-4 rounded-4">
                 <div class="cardIcon mb-2">
@@ -1259,16 +668,13 @@
                   </svg>
                 </div>
                 <h3 class="text_dark fs_5 fw-medium">
-                  Radici profonde, non solo vele
+                  Deep Roots, Not Just Sails
                 </h3>
                 <p class="text_dark_em fs_6">
-                  Valorizziamo iniziative pensate per durare nel tempo.
-                  Strutture solide, processi robusti e visione a lungo termine
-                  sono le basi per una crescita stabile e sostenibile.
+                 We value initiatives designed to stand the test of time. Solid structures, robust processes, and long-term vision are the foundations of stable and sustainable growth.
                 </p>
               </div>
             </div>
-
             <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
               <div class="investmentCards p-3 py-4 rounded-4">
                 <div class="cardIcon mb-2">
@@ -1283,15 +689,12 @@
                     />
                   </svg>
                 </div>
-                <h3 class="text_dark fs_5 fw-medium">L’impronta positiva</h3>
+                <h3 class="text_dark fs_5 fw-medium">A Positive Footprint</h3>
                 <p class="text_dark_em fs_6">
-                  Ricerchiamo progetti che abbiano un impatto sociale o
-                  ambientale concreto, contribuendo a un futuro più inclusivo e
-                  responsabile.
+                We seek projects that deliver tangible social or environmental impact, contributing to a more inclusive and responsible future.
                 </p>
               </div>
             </div>
-
             <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
               <div class="investmentCards p-3 py-4 rounded-4">
                 <div class="cardIcon mb-2">
@@ -1307,16 +710,13 @@
                   </svg>
                 </div>
                 <h3 class="text_dark fs_5 fw-medium">
-                  La sicurezza, un principio non negoziabile
+                 Security, a Non-Negotiable Principle
                 </h3>
                 <p class="text_dark_em fs_6">
-                  La sicurezza è al centro del nostro operato. Ogni tecnologia e
-                  ogni processo devono rispettare rigorosi standard di
-                  integrità, qualità e affidabilità.
+                 Security lies at the core of our work. Every technology and process must adhere to rigorous standards of integrity, quality, and reliability.
                 </p>
               </div>
             </div>
-
             <div class="col-lg-4 col-md-6 col-sm-6 col-12 my-3 stepsCard">
               <div class="investmentCards p-3 py-4 rounded-4">
                 <div class="cardIcon mb-2">
@@ -1331,12 +731,9 @@
                     />
                   </svg>
                 </div>
-                <h3 class="text_dark fs_5 fw-medium">Ancorato alla realtà</h3>
+                <h3 class="text_dark fs_5 fw-medium">Anchored in Reality</h3>
                 <p class="text_dark_em fs_6">
-                  Conformità e trasparenza sono pilastri fondamentali. Operiamo
-                  nel rispetto delle normative vigenti del Regno Unito,
-                  preferendo basi solide e verificabili a scorciatoie che
-                  possano compromettere fiducia e sostenibilità.
+           Compliance and transparency are fundamental pillars. We operate in full alignment with current UK regulations, favoring solid and verifiable foundations over shortcuts that could compromise trust and sustainability.
                 </p>
               </div>
             </div>
@@ -1344,6 +741,7 @@
         </div>
       </section>
 
+      
       <!-- Roadmap Section -->
       <section id="roadmap" class="roadmap-section">
         <div class="container wrapper">
@@ -1352,14 +750,14 @@
               class="sectionTxt text_light_em d-flex align-items-center justify-content-center mb-3 gap-3"
             >
               <span class="fs-4 fw-bold">•</span>
-              <span class="fs_5 text-uppercase">Il nostro viaggio</span>
+              <span class="fs_5 text-uppercase">Our Journey</span>
             </div>
             <h2 class="headingTxt text_light_em fs_heading display-3">
-              Cinque fasi dell'evoluzione finanziaria
+              Five Phases to Financial Evolution
             </h2>
             <p class="text_light_em fs_5 mt-3 mx-auto" style="max-width: 600px">
-              Da Genesis a Fioritura, la nostra tabella di marcia traccia la
-              rotta verso un futuro finanziario più etico e intelligente.
+              From Genesis to Fioritura, our roadmap charts a course toward a
+              more ethical and intelligent financial future.
             </p>
           </div>
 
@@ -1368,21 +766,16 @@
               <div class="roadmap-phase">
                 <div class="phase-number">1</div>
                 <h3 class="text_light_em fs-3 fw-medium mb-3">
-                  GENESI - Genesi
+                  GENESI - Genesis
                 </h3>
-                <p class="text_light_em mb-3">Dare vita alla visione</p>
+                <p class="text_light_em mb-3">Giving life to the vision</p>
                 <ul class="text_light_em">
-                  <li>
-                    Launch MVP: piattaforma basata sull'intelligenza artificiale
-                    per investimenti DeFi
-                  </li>
-                  <li>Costituzione United Kingdom con piena conformità AML/KYC</li>
-                  <li>I primi 100 clienti attraverso una rete esclusiva</li>
-                  <li>I primi 100 clienti attraverso una rete esclusiva</li>
-                  <li>Creazione di un portafoglio DeFi proprietario</li>
-                  <li>
-                    Partnership strategiche con esperti svizzeri e italiani
-                  </li>
+                  <li>Launch MVP: AI-powered platform for DeFi investments</li>
+                  <li>UK incorporation with full AML/KYC compliance</li>
+                  <li>First 100 clients through exclusive network</li>
+                  <li>First 100 clients through exclusive network</li>
+                  <li>Creation of proprietary DeFi portfolio</li>
+                  <li>Strategic partnerships with UK and Italian experts</li>
                 </ul>
               </div>
             </div>
@@ -1393,14 +786,14 @@
                 <h3 class="text_light_em fs-3 fw-medium mb-3">
                   COSTRUZIONE - Construction
                 </h3>
-                <p class="text_light_em mb-3">Espansione e consolidamento</p>
+                <p class="text_light_em mb-3">Expansion and consolidation</p>
                 <ul class="text_light_em">
-                  <li>Lancia l'app mobile AI per investimenti intelligenti</li>
-                  <li>Espansione in Germania e Francia (conforme al MiCA)</li>
-                  <li>Ethica Academy: formazione certificata DeFi e AI</li>
-                  <li>Soluzioni DeFi white-label per le banche</li>
-                  <li>Programma di incubazione per startup etiche</li>
-                  <li>Traguardo di oltre 1.000 clienti attivi</li>
+                  <li>Launch AI mobile app for smart investments</li>
+                  <li>Expansion to Germany and France (MiCA compliant)</li>
+                  <li>Ethica Academy: certified DeFi & AI training</li>
+                  <li>White-label DeFi solutions for banks</li>
+                  <li>Incubator program for ethical startups</li>
+                  <li>1,000+ active clients milestone</li>
                 </ul>
               </div>
             </div>
@@ -1412,18 +805,15 @@
                   EVOLUZIONE - Evolution
                 </h3>
                 <p class="text_light_em mb-3">
-                  Da piattaforma a ecosistema globale
+                  From platform to global ecosystem
                 </p>
                 <ul class="text_light_em">
-                  <li>Espansione in Asia, MENA e America Latina</li>
-                  <li>
-                    Integrazione avanzata dell'intelligenza artificiale con la
-                    sicurezza quantistica
-                  </li>
-                  <li>Lancio della governance DAO</li>
-                  <li>Attivazione della piattaforma DeFi cross-chain</li>
-                  <li>Collaborazioni Fortune 500</li>
-                  <li>Valutazione unicorno raggiunta</li>
+                  <li>Expansion to Asia, MENA, and Latin America</li>
+                  <li>Advanced AI integration with quantum security</li>
+                  <li>DAO governance launch</li>
+                  <li>Cross-chain DeFi platform activation</li>
+                  <li>Fortune 500 collaborations</li>
+                  <li>Unicorn valuation achieved</li>
                 </ul>
               </div>
             </div>
@@ -1434,17 +824,16 @@
                 <h3 class="text_light_em fs-3 fw-medium mb-3">
                   GUIDA - Leadership
                 </h3>
-                <p class="text_light_em mb-3">Leadership etica e tecnologica</p>
+                <p class="text_light_em mb-3">
+                  Ethical and technological leadership
+                </p>
                 <ul class="text_light_em">
-                  <li>Leader europeo nella DeFi etica</li>
-                  <li>
-                    Algoritmi di intelligenza artificiale con calcolo
-                    quantistico
-                  </li>
-                  <li>Ottimizzazione automatizzata della resa cross-chain</li>
-                  <li>Servizi DeFi per le istituzioni</li>
-                  <li>Espansione in Africa e nel Sud-est asiatico</li>
-                  <li>IPO o processo di acquisizione strategica</li>
+                  <li>European leader in ethical DeFi</li>
+                  <li>AI algorithms with quantum computing</li>
+                  <li>Automated cross-chain yield optimization</li>
+                  <li>DeFi services for institutions</li>
+                  <li>Africa and Southeast Asia expansion</li>
+                  <li>IPO or strategic acquisition process</li>
                 </ul>
               </div>
             </div>
@@ -1456,21 +845,15 @@
                   CONNESSIONE - Connection
                 </h3>
                 <p class="text_light_em mb-3">
-                  Collegare sistemi, persone e futuro
+                  Connecting systems, people, and future
                 </p>
                 <ul class="text_light_em">
-                  <li>Ethica Global Network con sedi regionali</li>
-                  <li>
-                    Partnership tra banche centrali per l'integrazione delle
-                    CBDC
-                  </li>
-                  <li>Sistema di identità digitale blockchain</li>
-                  <li>Assistente finanziario AI di nuova generazione</li>
-                  <li>
-                    Braccio di capitale di rischio per investimenti in fase
-                    iniziale
-                  </li>
-                  <li>Certificazione B-Corp per l'impatto sociale</li>
+                  <li>Ethica Global Network with regional HQs</li>
+                  <li>Central bank partnerships for CBDC integration</li>
+                  <li>Blockchain digital identity system</li>
+                  <li>Next-gen AI Financial Assistant</li>
+                  <li>Venture Capital arm for early-stage investments</li>
+                  <li>B-Corp certification for social impact</li>
                 </ul>
               </div>
             </div>
@@ -1479,23 +862,22 @@
               <div class="roadmap-phase">
                 <div class="phase-number">∞</div>
                 <h3 class="text_light_em fs-3 fw-medium mb-3">
-                  FIORITURA - Fioritura
+                  FIORITURA - Flourishing
                 </h3>
-                <p class="text_light_em mb-3">La visione realizzata</p>
+                <p class="text_light_em mb-3">The vision realized</p>
                 <ul class="text_light_em">
                   <li>€100M+ revenue achieved</li>
-                  <li>Governance completamente decentralizzata</li>
-                  <li>Piattaforma di finanza sostenibile attiva</li>
-                  <li>Istituzioni educative in più paesi</li>
-                  <li>Avvio della ricerca finanziaria spaziale</li>
-                  <li>Pubblicato il primo rapporto sull'impatto globale</li>
+                  <li>Fully decentralized governance</li>
+                  <li>Sustainable finance platform active</li>
+                  <li>Educational institutions in multiple countries</li>
+                  <li>Space financial research initiation</li>
+                  <li>First global impact report published</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       <!-- Enhanced Cube Swiper Section -->
       <section class="enhanced-cube-section">
         <div class="container wrapper">
@@ -1504,18 +886,13 @@
               class="sectionTxt text_dark_em d-flex align-items-center justify-content-center mb-3 gap-3"
             >
               <span class="fs-4 fw-bold">•</span>
-              <span class="fs_5 text-uppercase"
-                >La nostra visione in movimento</span
-              >
+              <span class="fs_5 text-uppercase">Our Vision in Motion</span>
             </div>
             <h2 class="headingTxt text_dark_em fs_heading display-3">
-              Vivi il futuro
+              Live the Future
             </h2>
             <p class="text_dark_em fs_5 mt-3 mx-auto" style="max-width: 600px">
-              Scopri come stiamo contribuendo a ridefinire il panorama della
-              finanza etica nel Regno Unito, attraverso tecnologie innovative,
-              principi di trasparenza e un approccio fondato sulla
-              responsabilità.
+              Discover how we are helping to redefine the landscape of ethical finance in the United Kingdom through innovative technologies, principles of transparency, and a responsibility-driven approach.
             </p>
           </div>
 
@@ -1528,15 +905,15 @@
                       src="assets/img/header_1.jpg"
                       height="100%"
                       width="100%"
-                      alt="Innovazione finanziaria United Kingdom"
+                      alt="Swiss Financial Innovation"
                     />
                     <div class="cube-overlay">
                       <h4 class="fs-4 fw-medium mb-2">
-                        Innovazione finanziaria United Kingdom
+                        UK Financial Innovation
                       </h4>
                       <p>
-                        Unisce l'eccellenza bancaria tradizionale United Kingdom alla
-                        tecnologia DeFi all'avanguardia.
+                        Combining traditional UK banking excellence with
+                        cutting-edge DeFi technology.
                       </p>
                     </div>
                   </div>
@@ -1545,15 +922,13 @@
                       src="assets/img/header_2.png"
                       height="100%"
                       width="100%"
-                      alt="Trading basato sull'intelligenza artificiale"
+                      alt="AI-Powered Trading"
                     />
                     <div class="cube-overlay">
-                      <h4 class="fs-4 fw-medium mb-2">
-                        Trading basato sull'intelligenza artificiale
-                      </h4>
+                      <h4 class="fs-4 fw-medium mb-2">AI-Powered Trading</h4>
                       <p>
-                        Migliaia di bot intelligenti lavorano 24 ore su 24, 7
-                        giorni su 7 per ottimizzare i tuoi investimenti DeFi.
+                        Thousands of intelligent bots working 24/7 to optimize
+                        your DeFi investments.
                       </p>
                     </div>
                   </div>
@@ -1562,15 +937,15 @@
                       src="assets/img/header_3.png"
                       height="100%"
                       width="100%"
-                      alt="Quadro di investimento etico"
+                      alt="Ethical Investment Framework"
                     />
                     <div class="cube-overlay">
                       <h4 class="fs-4 fw-medium mb-2">
-                        Quadro di investimento etico
+                        Ethical Investment Framework
                       </h4>
                       <p>
-                        Ogni decisione di investimento è in linea con i tuoi
-                        valori e principi etici.
+                        Every investment decision aligned with your values and
+                        ethical principles.
                       </p>
                     </div>
                   </div>
@@ -1579,13 +954,13 @@
                       src="assets/img/header_4.png"
                       height="100%"
                       width="100%"
-                      alt="Impatto globale"
+                      alt="Global Impact"
                     />
                     <div class="cube-overlay">
-                      <h4 class="fs-4 fw-medium mb-2">Impatto globale</h4>
+                      <h4 class="fs-4 fw-medium mb-2">Global Impact</h4>
                       <p>
-                        Costruire un futuro finanziario sostenibile che
-                        avvantaggi sia gli investitori che la società.
+                        Building a sustainable financial future that benefits
+                        investors and society alike.
                       </p>
                     </div>
                   </div>
@@ -1595,129 +970,126 @@
           </div>
         </div>
       </section>
-
-      <section id="about" class="about-section py-5">
-        <div class="container wrapper my-5">
-          <div class="row">
-            <div class="col-lg-4 col-12 my-3 py-3">
-              <div
-                class="sectionTxt text_light_em d-flex align-items-center mb-3 gap-3"
-              >
-                <span class="fs-4 fw-bold">•</span>
-                <span class="fs_5 text-uppercase">Oltre il rumore</span>
-              </div>
-              <h2 class="headingTxt text_light_em fs_heading m-0 display-4">
-                Dare forma al futuro delle imprese
-              </h2>
-            </div>
-            <div class="col-lg-8 col-12 my-3">
-              <div class="aboutCard aboutCard_1 rounded-4 p-3 py-4">
-                <p class="text_light_em fw-light fs_5">
-                  Non seguiamo mode passeggere. La nostra visione è costruire un
-                  futuro fondato sulla fiducia, sulla trasparenza e su valori
-                  duraturi. Crediamo che ogni percorso di crescita debba
-                  poggiare su basi solide, con chiarezza e responsabilità.
-                </p>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-12 my-3">
-              <div class="aboutCard aboutCard_2 rounded-4 p-3 py-4">
-                <h3 class="text_light_em fs-4 fw-medium mb-3">
-                  Stabilità e chiarezza
-                </h3>
-                <p class="text_light_em fs_6 fw-light">
-                  Siamo convinti che lo sviluppo sostenibile nasca da processi
-                  chiari e da scelte metodiche. Ogni iniziativa deve poter
-                  dimostrare coerenza, integrità e attenzione al lungo termine.
-                </p>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-12 my-3">
-              <div class="aboutCard aboutCard_3 rounded-4 p-3 py-4">
-                <h3 class="text_light_em fs-4 fw-medium mb-3">
-                  Etica come guida
-                </h3>
-                <p class="text_light_em fs_6 fw-light">
-                  Ogni progetto è valutato attraverso principi etici rigorosi,
-                  in linea con le normative del Regno Unito. Il rispetto delle
-                  regole e la responsabilità sociale sono elementi
-                  imprescindibili del nostro approccio.
-                </p>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-12 my-3">
-              <div class="aboutCard aboutCard_4 rounded-4 p-3 py-4">
-                <h3 class="text_light_em fs-4 fw-medium mb-3">
-                  Innovazione responsabile
-                </h3>
-                <p class="text_light_em fs_6 fw-light">
-                  Sosteniamo percorsi di innovazione che siano radicati nella
-                  realtà, orientati a creare valore concreto e rispettosi delle
-                  persone e dell’ambiente.
-                </p>
-              </div>
-            </div>
-          </div>
+        <section id="about" class="about-section py-5">
+  <div class="container wrapper my-5">
+    <div class="row">
+      <div class="col-lg-4 col-12 my-3 py-3">
+        <div
+          class="sectionTxt text_light_em d-flex align-items-center mb-3 gap-3"
+        >
+          <span class="fs-4 fw-bold">•</span>
+          <span class="fs_5 text-uppercase">Main Title</span>
         </div>
-      </section>
-
-      <style>
-        .circle-hero {
-          position: relative;
-          width: 100vw;
-          height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          background-color: black;
-        }
-
-        .circle-bg {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 60vmin;
-          height: 60vmin;
-          border-radius: 50%;
-          overflow: hidden;
-          transform: translate(-50%, -50%);
-          z-index: -1;
-          will-change: transform, width, height;
-        }
-
-        .circle-bg video {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 100vw; /* full screen width */
-          height: 100vh; /* full screen height */
-          transform: translate(-50%, -50%);
-          object-fit: cover; /* sharp quality */
-          backface-visibility: hidden;
-        }
-
-        .circle-content {
-          color: white;
-          text-align: center;
-          z-index: 2;
-          position: relative;
-        }
-      </style>
-      <section class="circle-hero" id="circleHero">
-        <div class="circle-bg">
-          <video autoplay muted loop playsinline>
-            <source src="./assets/img/video_bg.mp4" type="video/mp4" />
-          </video>
+        <h2 class="headingTxt text_light_em fs_heading m-0 display-4">
+          Shaping the Future of Enterprises
+        </h2>
+      </div>
+      <div class="col-lg-8 col-12 my-3">
+        <div class="aboutCard aboutCard_1 rounded-4 p-3 py-4">
+          <p class="text_light_em fw-light fs_5">
+            We do not follow fleeting trends. Our vision is to build a future founded on trust,
+            transparency, and enduring values. We believe that every growth journey must rest on
+            solid foundations, with clarity and responsibility.
+          </p>
         </div>
-        <div class="circle-content">
-          <h1>Ethica Holdings</h1>
-          <p>Scorri per espandere il video</p>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12 my-3">
+        <div class="aboutCard aboutCard_2 rounded-4 p-3 py-4">
+          <h3 class="text_light_em fs-2 fw-medium mb-3">
+       Stability and Clarity
+          </h3>
+          <p class="text_light_em fw-light fs_5">
+            We are convinced that sustainable development arises from clear processes and methodical
+            choices. Every initiative must demonstrate consistency, integrity, and long-term focus.
+          </p>
         </div>
-      </section>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-12 my-3">
+        <div class="aboutCard aboutCard_3 rounded-4 p-3 py-4">
+          <h3 class="text_light_em fs-2 fw-medium mb-3">
+            Ethics as a Guide
+          </h3>
+          <p class="text_light_em fw-light fs_5">
+            Every project is assessed through rigorous ethical principles, in full alignment with UK
+            regulations. Compliance and social responsibility are essential elements of our approach.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-12 my-3">
+        <div class="aboutCard aboutCard_4 rounded-4 p-3 py-4">
+          <h3 class="text_light_em fs-2 fw-medium mb-3">
+            Responsible Innovation
+          </h3>
+          <p class="text_light_em fw-light fs_5">
+            We support innovation paths that are grounded in reality, aimed at creating tangible
+            value, and respectful of people and the environment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+.circle-hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: black;
+}
+
+.circle-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60vmin;
+  height: 60vmin;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  will-change: transform, width, height;
+  backface-visibility: hidden;
+}
+
+.circle-bg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;   /* full screen width */
+  height: 100vh;  /* full screen height */
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* sharp quality */
+}
+
+.circle-content {
+  color: white;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+
+</style>
+ <section class="circle-hero" id="circleHero">
+  <div class="circle-bg">
+    <video autoplay muted loop playsinline>
+      <source src="./assets/img/video_bg.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="circle-content">
+    <h1>Ethica Holdings</h1>
+    <p>Scroll to expand the  video</p>
+  </div>
+</section>
 
       <section id="company" class="my-5 py-4">
         <div class="container wrapper">
@@ -1727,10 +1099,10 @@
                 class="sectionTxt text_dark_em d-flex align-items-center mb-3 gap-3"
               >
                 <span class="fs-4 fw-bold">•</span>
-                <span class="fs_5 text-uppercase">Industrie</span>
+                <span class="fs_5 text-uppercase">Industries</span>
               </div>
               <h2 class="headingTxt text_dark_em fs_heading m-0 display-4">
-                I principali settori in cui investiamo
+                Top industries we invest in
               </h2>
             </div>
             <div class="col-lg-4 col-md-6 col-12 my-3 companyCard">
@@ -1745,10 +1117,10 @@
                 >
                   <div>
                     <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">
-                      Investiamo in
+                      We invest in
                     </div>
                     <h3 class="text_dark_em fs-4 fw-medium mb-5">
-                      Società di capitale di rischio
+                      Venture Capital Companies
                     </h3>
                   </div>
                   <div class="text-end m-2">
@@ -1778,10 +1150,10 @@
                 >
                   <div>
                     <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">
-                      Investiamo in
+                      We invest in
                     </div>
                     <h3 class="text_dark_em fs-4 fw-medium mb-5">
-                      Family Office
+                      Family Offices
                     </h3>
                   </div>
                   <div class="text-end m-2">
@@ -1811,10 +1183,10 @@
                 >
                   <div>
                     <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">
-                      Investiamo in
+                      We invest in
                     </div>
                     <h3 class="text_dark_em fs-4 fw-medium mb-5">
-                      Società di gestione patrimoniale
+                      Wealth Management Firms
                     </h3>
                   </div>
                   <div class="text-end m-2">
@@ -1844,10 +1216,10 @@
                 >
                   <div>
                     <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">
-                      Investiamo in
+                      We invest in
                     </div>
                     <h3 class="text_dark_em fs-4 fw-medium mb-5">
-                      Startup DeFi e Web3
+                      DeFi & Web3 Startups
                     </h3>
                   </div>
                   <div class="text-end m-2">
@@ -1877,10 +1249,10 @@
                 >
                   <div>
                     <div class="mb-1 mt-2 text-uppercase text_dark_em fs_6">
-                      Investiamo in
+                      We invest in
                     </div>
                     <h3 class="text_dark_em fs-4 fw-medium mb-5">
-                      Piattaforme di custodia di criptovalute regolamentate
+                      Regulated Crypto Custody Platforms
                     </h3>
                   </div>
                   <div class="text-end m-2">
@@ -1910,10 +1282,10 @@
                 class="sectionTxt text_dark_em d-flex align-items-center mb-2 gap-3"
               >
                 <span class="fs-4 fw-bold">•</span>
-                <span class="fs_5 text-uppercase">Contatto</span>
+                <span class="fs_5 text-uppercase">Contact</span>
               </div>
               <h2 class="headingTxt text_dark_em fs_heading m-0 display-4">
-                Pronti a lavorare insieme? Contattaci
+                Ready to work together? Get in touch with us
               </h2>
               <div class="my-3 cta_cont">
                 <a
@@ -1924,7 +1296,7 @@
                 <a
                   href="mailto:info@ethica.holdings"
                   class="btn_outline_primary cta_btn rounded-pill fs_6"
-                  >Scrivici</a
+                  >Email us</a
                 >
               </div>
             </div>
@@ -1936,7 +1308,7 @@
                     name="name"
                     id="name"
                     class="form-control shadow-none inputField"
-                    placeholder="Il tuo nome"
+                    placeholder="Your Name"
                   />
                 </div>
                 <div class="mb-4 contactFormItem">
@@ -1945,7 +1317,7 @@
                     name="email"
                     id="email"
                     class="form-control shadow-none inputField"
-                    placeholder="La tua email di lavoro"
+                    placeholder="Your Work Email"
                   />
                 </div>
                 <div class="mb-4 contactFormItem">
@@ -1954,7 +1326,7 @@
                     name="company"
                     id="company"
                     class="form-control shadow-none inputField"
-                    placeholder="Il nome della tua azienda"
+                    placeholder="Your Company Name"
                   />
                 </div>
                 <div class="mb-4 contactFormItem">
@@ -1962,13 +1334,13 @@
                     name="message"
                     id="message"
                     class="form-control shadow-none inputField"
-                    placeholder="Il tuo messaggio"
+                    placeholder="Your Message"
                     rows="4"
                   ></textarea>
                 </div>
                 <div class="mb-4 contactFormItem pt-2">
                   <button type="submit" class="btn_dark w-100 rounded py-3">
-                    Invia messaggio
+                    Send Message
                   </button>
                 </div>
               </form>
@@ -1976,101 +1348,99 @@
           </div>
         </div>
       </section>
-
+ 
       <section id="footer" class="pt-5 pb-3 bg_dark">
         <div class="container wrapper">
           <div class="row my-4 justify-content-between">
             <div class="col-lg-5 col-md-6 col-sm-6 col-12 mb-3">
               <a href="#" class="sectionTxt d-inline-flex mb-4">
-                <img
-                  src="assets/img/light-logo.png"
-                  width="140"
-                  alt="ethica holdings"
-                />
+                <img src="assets/img/light-logo.png" width="140" alt="" />
               </a>
               <h2 class="headingTxt text_light_em fs_heading display-6">
-                Dai forma al futuro della tua attività con noi oggi stesso!
+                Shape your
+                <span class="text_dark_primary">business future</span> with us
+                today!
               </h2>
               <p class="paraTxt text_light_emphasis fw-light mb-4">
-                Avviamo la tua attività con noi e plasmiamo il tuo futuro con le
-                nostre strategie e roadmap. E vedrai la differenza in un solo
-                anno!
+                Let's get your business started with us and shape your future
+                with our strategies and roadmaps. And see the difference in just
+                one year!
               </p>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
               <h4 class="sectionTitle text_light_em fw-medium fs-5 mb-4">
-                Link principali
+                Main links
               </h4>
               <ul class="footerLinksCont list-unstyled my-2">
                 <li class="mb-3 footerLinks">
                   <a
                     href="#"
                     class="d-inline-flex align-items-center footer_links"
-                    >Casa</a
+                    >Home</a
                   >
                 </li>
                 <li class="mb-3 footerLinks">
                   <a
                     href="#about"
                     class="d-inline-flex align-items-center footer_links"
-                    >Chi siamo</a
+                    >About us</a
                   >
                 </li>
                 <li class="mb-3 footerLinks">
                   <a
                     href="#steps"
                     class="d-inline-flex align-items-center footer_links"
-                    >Criteri di investimento</a
+                    >Investment Criteria</a
                   >
                 </li>
                 <li class="mb-3 footerLinks">
                   <a
                     href="#roadmap"
                     class="d-inline-flex align-items-center footer_links"
-                    >Carta stradale</a
+                    >Road Map</a
                   >
                 </li>
                 <li class="mb-3 footerLinks">
                   <a
                     href="#contact"
                     class="d-inline-flex align-items-center footer_links"
-                    >Contatto</a
+                    >Contact</a
                   >
                 </li>
               </ul>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
               <h4 class="sectionTitle2 text_light_em fw-medium fs-5 mb-4">
-                Link rapidi
+                Quick links
               </h4>
               <ul class="footerLinksCont2 list-unstyled my-2">
                 <li class="mb-3 footerLinks">
                   <a
-                    target="_blank"
-                    href="https://ethica.dbpos.xyz/"
+                  target="_blank"
+                    href="https://investor.ethica.holdings/"
                     class="d-inline-flex align-items-center footer_links"
-                    >Accesso investitori</a
+                    >Login</a
                   >
                 </li>
                 <li class="mb-3 footerLinks">
                   <a
                     href="#"
                     class="d-inline-flex align-items-center footer_links"
-                    >Scarica Pitch Deck</a
+                    >Download Pitch Deck</a
                   >
                 </li>
                 <li class="mb-3 footerLinks">
                   <a
                     href="#"
                     class="d-inline-flex align-items-center footer_links"
-                    >Pianifica un incontro</a
+                    >Schedule a Meeting</a
                   >
                 </li>
                 <li class="mb-3 footerLinks">
                   <a
                     href="#contact"
                     class="d-inline-flex align-items-center footer_links"
-                    >Contatto</a
+                    >Contact</a
                   >
                 </li>
               </ul>
@@ -2080,14 +1450,14 @@
           <p
             class="copyrightTxt text_light_emphasis fw-light fs_6 text-center my-1"
           >
-            Copyright &copy; 2025 Ethica Holdings. Tutti i diritti riservati
+            Copyright &copy; 2025 Ethica Holdings. All rights reserved
           </p>
           <p class="companyTxt fw-light fs_6 text-center my-1">
             <a
               href="https://heckto.com"
               target="_blank"
               class="text-decoration-none text_light_emphasis"
-              >Alimentato da Heckto</a
+              >Powered by Heckto</a
             >
           </p>
         </div>
@@ -2097,8 +1467,7 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -2120,7 +1489,7 @@
     ></script>
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+<script src="./assets/js/circle.js"></script>
     <script>
       // Initialize AOS
       AOS.init({
@@ -2135,17 +1504,17 @@
       const videoSection = document.querySelector(".video-hero");
       const logoImg = navbar.querySelector(".navbar-brand img");
       function handleNavbarScroll() {
-        const videoHeight = videoSection.offsetHeight;
-        const scrollPosition = window.scrollY;
+  const videoHeight = videoSection.offsetHeight;
+  const scrollPosition = window.scrollY;
 
-        if (scrollPosition > videoHeight - 100) {
-          navbar.classList.add("scrolled");
-          logoImg.setAttribute("src", "./assets/img/logo.png"); // dark logo
-        } else {
-          navbar.classList.remove("scrolled");
-          logoImg.setAttribute("src", "./assets/img/light-logo.png"); // light logo
-        }
-      }
+  if (scrollPosition > videoHeight - 100) {
+    navbar.classList.add("scrolled");
+    logoImg.setAttribute("src", "./assets/img/logo.png"); // dark logo
+  } else {
+    navbar.classList.remove("scrolled");
+    logoImg.setAttribute("src", "./assets/img/light-logo.png"); // light logo
+  }
+}
 
       // Throttled scroll event for better performance
       let ticking = false;
@@ -2167,17 +1536,18 @@
       gsap.registerPlugin(ScrollTrigger);
 
       // Enhanced animations for video hero
-      gsap.from(".video-hero-content > *", {
-        scrollTrigger: {
-          trigger: ".video-hero-content",
-          start: "top 70%", // jab viewport me aaye
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.3,
-        ease: "power1.out",
-        stagger: 0.15, // ek ke baad ek snap
-      });
+    gsap.from(".video-hero-content > *", {
+  scrollTrigger: {
+    trigger: ".video-hero-content",
+    start: "top 70%", // jab viewport me aaye
+  },
+  opacity: 0,
+  y: 30,
+  duration: 0.3,
+  ease: "power1.out",
+  stagger: 0.15, // ek ke baad ek snap
+});
+
 
       // Swiss Heritage Section
       var swiss_tl = gsap.timeline({
@@ -2282,119 +1652,72 @@
       });
 
       // Bot section
-      var bot_tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#bot",
-          start: "top 20%",
-        },
-      });
-
-      bot_tl.from("#bot .sectionTxt", {
-        opacity: 0,
-        y: -40,
-        duration: 0.4,
-        ease: "back.out(1.7)",
-      });
-
-      bot_tl.from("#bot .headingTxt", {
-        opacity: 0,
-        x: -100,
-        duration: 0.1,
-        ease: "back.out(1.7)",
-      });
-
-      bot_tl.from("#bot .paraTxt", {
-        opacity: 0,
-        x: -50,
-        duration: 0.2,
-      });
-
-      bot_tl.from("#bot .botImgCont", {
-        opacity: 0,
-        y: 100,
-        duration: 0.3,
-      });
-
-      bot_tl.from("#bot .paraTxt2", {
-        opacity: 0,
-        x: -50,
-        duration: 0.4,
-      });
-
-      bot_tl.from("#bot .cta_link", {
-        opacity: 0,
-        y: 50,
-        duration: 0.4,
-      });
+    
 
       // Steps section
-      var steps_tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#steps",
-          start: "top 30%", // thoda late trigger se bhi tez feel hoti hai
-        },
-      });
+  var steps_tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#steps",
+    start: "top 30%", // thoda late trigger se bhi tez feel hoti hai
+  },
+});
 
-      steps_tl.from("#steps .sectionTxt", {
-        opacity: 0,
-        y: -20,
-        duration: 0.25,
-        ease: "power1.out",
-      });
+steps_tl.from("#steps .sectionTxt", {
+  opacity: 0,
+  y: -20,
+  duration: 0.25,
+  ease: "power1.out",
+});
 
-      steps_tl.from("#steps .headingTxt", {
-        opacity: 0,
-        x: -60,
-        duration: 0.3,
-        ease: "power1.out",
-      });
+steps_tl.from("#steps .headingTxt", {
+  opacity: 0,
+  x: -60,
+  duration: 0.3,
+  ease: "power1.out",
+});
 
-      steps_tl.from("#steps .paraTxt", {
-        opacity: 0,
-        x: -30,
-        duration: 0.25,
-      });
+steps_tl.from("#steps .paraTxt", {
+  opacity: 0,
+  x: -30,
+  duration: 0.25,
+});
 
-      steps_tl.from("#steps .stepsCardCont .stepsCard", {
-        opacity: 0,
-        y: 30,
-        stagger: 0.15,
-        duration: 0.4,
-        ease: "power1.out",
-      });
+steps_tl.from("#steps .stepsCardCont .stepsCard", {
+  opacity: 0,
+  y: 30,
+  stagger: 0.15,
+  duration: 0.4,
+  ease: "power1.out",
+});
 
       // Enhanced Cube Swiper section
-      var cube_tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".enhanced-cube-section",
-          start: "top 20%",
-        },
-      });
+    var cube_tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".enhanced-cube-section",
+    start: "top 20%",
+  },
+});
 
-      cube_tl.from(".enhanced-cube-section .sectionTxt", {
-        opacity: 0,
-        y: -30,
-        duration: 0.3,
-        ease: "power1.out",
-      });
+cube_tl.from(".enhanced-cube-section .sectionTxt", {
+  opacity: 0,
+  y: -30,
+  duration: 0.3,
+  ease: "power1.out",
+});
 
-      cube_tl.from(
-        ".enhanced-cube-section .headingTxt",
-        {
-          opacity: 0,
-          x: -60,
-          duration: 0.35,
-          ease: "power1.out",
-        },
-        "-=0.2"
-      ); // ← sectionTxt khatam hone se 0.2s pehle heading start
+cube_tl.from(".enhanced-cube-section .headingTxt", {
+  opacity: 0,
+  x: -60,
+  duration: 0.35,
+  ease: "power1.out",
+}, "-=0.2"); // ← sectionTxt khatam hone se 0.2s pehle heading start
 
-      cube_tl.from(".enhanced-cube-section .cubeSwiper", {
-        opacity: 0,
-        scale: 0.9,
-        duration: 0.5,
-        ease: "power1.out",
-      });
+cube_tl.from(".enhanced-cube-section .cubeSwiper", {
+  opacity: 0,
+  scale: 0.9,
+  duration: 0.5,
+  ease: "power1.out",
+});
 
       // Company section
       var company_tl = gsap.timeline({
@@ -2466,72 +1789,72 @@
       );
 
       // Footer section
-      var footer_tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#footer",
-          start: "top 60%", // thoda late trigger so it fires snappier
-        },
-      });
+  var footer_tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#footer",
+    start: "top 60%", // thoda late trigger so it fires snappier
+  },
+});
 
-      footer_tl.from("#footer .sectionTxt", {
-        opacity: 0,
-        y: -20,
-        duration: 0.25,
-        ease: "power1.out",
-      });
+footer_tl.from("#footer .sectionTxt", {
+  opacity: 0,
+  y: -20,
+  duration: 0.25,
+  ease: "power1.out",
+});
 
-      footer_tl.from("#footer .headingTxt", {
-        opacity: 0,
-        x: -60,
-        duration: 0.3,
-        ease: "power1.out",
-      });
+footer_tl.from("#footer .headingTxt", {
+  opacity: 0,
+  x: -60,
+  duration: 0.3,
+  ease: "power1.out",
+});
 
-      footer_tl.from("#footer .paraTxt", {
-        opacity: 0,
-        x: -30,
-        duration: 0.25,
-      });
+footer_tl.from("#footer .paraTxt", {
+  opacity: 0,
+  x: -30,
+  duration: 0.25,
+});
 
-      footer_tl.from("#footer .sectionTitle", {
-        opacity: 0,
-        y: 20,
-        duration: 0.2,
-      });
+footer_tl.from("#footer .sectionTitle", {
+  opacity: 0,
+  y: 20,
+  duration: 0.2,
+});
 
-      footer_tl.from("#footer .footerLinksCont .footerLinks", {
-        opacity: 0,
-        x: 20,
-        stagger: 0.15,
-        duration: 0.35,
-        ease: "power1.out",
-      });
+footer_tl.from("#footer .footerLinksCont .footerLinks", {
+  opacity: 0,
+  x: 20,
+  stagger: 0.15,
+  duration: 0.35,
+  ease: "power1.out",
+});
 
-      footer_tl.from("#footer .sectionTitle2", {
-        opacity: 0,
-        y: 20,
-        duration: 0.2,
-      });
+footer_tl.from("#footer .sectionTitle2", {
+  opacity: 0,
+  y: 20,
+  duration: 0.2,
+});
 
-      footer_tl.from("#footer .footerLinksCont2 .footerLinks", {
-        opacity: 0,
-        x: 20,
-        stagger: 0.15,
-        duration: 0.35,
-        ease: "power1.out",
-      });
+footer_tl.from("#footer .footerLinksCont2 .footerLinks", {
+  opacity: 0,
+  x: 20,
+  stagger: 0.15,
+  duration: 0.35,
+  ease: "power1.out",
+});
 
-      footer_tl.from("#footer .copyrightTxt", {
-        opacity: 0,
-        y: 20,
-        duration: 0.2,
-      });
+footer_tl.from("#footer .copyrightTxt", {
+  opacity: 0,
+  y: 20,
+  duration: 0.2,
+});
 
-      footer_tl.from("#footer .companyTxt", {
-        opacity: 0,
-        y: 20,
-        duration: 0.2,
-      });
+footer_tl.from("#footer .companyTxt", {
+  opacity: 0,
+  y: 20,
+  duration: 0.2,
+});
 
       // Initialize Swiper
       var swiper = new Swiper(".cubeSwiper", {
@@ -2552,6 +1875,8 @@
           el: ".swiper-pagination",
         },
       });
+
+      
 
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -2597,18 +1922,17 @@
         },
       });
 
-      var swiper = new Swiper(".mySwiper", {
-        loop: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        effect: "fade",
-        fadeEffect: { crossFade: true },
-      });
+
+    var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+  });
     </script>
-    <script src="./assets/js/circle.js"></script>
-    <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script> -->
-    <script src="./assets/js/3d.js"></script>
+    
   </body>
 </html>
